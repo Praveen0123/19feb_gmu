@@ -1,0 +1,63 @@
+<section class="grid-y">
+
+  <!-- TITLE -->
+  <div class="cell">
+    <section class="title-container">
+      {{ occupationProfileDetails.title }}
+    </section>
+  </div>
+
+
+  <!-- DESCRIPTION & VIDEO -->
+  <div class="cell">
+
+    <section class="grid-x">
+
+      <!-- VIDEO -->
+      <ng-container *ngIf="occupationProfileDetails.videoId">
+      <div class="cell medium-auto">
+        <gmu-video
+                   [videoUrl]="occupationProfileDetails.videoUrl"
+                   [posterUrl]="occupationProfileDetails.posterUrl"></gmu-video>
+      </div>
+      </ng-container>
+      <!-- DESCRIPTION -->
+      <div class="cell medium-auto what-they-do-messaging">
+        <section class="grid-y">
+
+          <div class="cell">
+            <span class="message__label message__label--medium message__label--primary message__label--bold">What They Do</span>
+          </div>
+          <div class="cell">
+            <span class="message__label message__label--small">{{ occupationProfileDetails.description }}</span>
+          </div>
+
+        </section>
+
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <!-- SALARIES & STATS -->
+  <div class="cell">
+
+    <section class="grid-x grid-margin-x salaries-stats-container">
+
+      <!-- SALARIES -->
+      <div class="cell medium-auto">
+        <gmu-occupation-salary [occupationProfileDetails]="occupationProfileDetails"></gmu-occupation-salary>
+      </div>
+
+      <!-- STATS -->
+      <div class="cell medium-auto medium-offset-1">
+        <gmu-occupation-stats [occupationProfileDetails]="occupationProfileDetails"></gmu-occupation-stats>
+      </div>
+
+    </section>
+
+  </div>
+
+</section>

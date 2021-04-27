@@ -1,0 +1,32 @@
+<section class="grid-y grid-margin-y content-width">
+
+  <!-- CLEAR BUTTON -->
+  <div class="cell shrink text-right"
+       (click)="closeDialogBox($event)">
+    <mat-icon aria-hidden="false"
+              aria-label="clear"
+              class="clear text-color">clear</mat-icon>
+  </div>
+
+  <div class="cell">
+
+    <section class="grid-x grid-margin-y">
+
+      <!-- MESSAGE -->
+      <div class="cell medium-7  xsmall-7">
+        <span class="message__label message__label--bold message__label--large text-color"> SUCCESS! </span>
+        <span class="message_label message__label--bold message__label--medium"> Student Was 
+        <ng-container *ngIf="update">Updated</ng-container><ng-container *ngIf="!update">Added!</ng-container> </span>
+      </div>
+
+      <!-- TRY AGAIN BUTTON -->
+      <div class="cell auto text-center">
+        <mat-icon class="hands-image"
+                  [svgIcon]="'icon-success-hands'"></mat-icon>
+      </div>
+
+
+    </section>
+    <p class="message__label"> A confirmation email has been sent to the student.</p>
+  </div>
+</section>

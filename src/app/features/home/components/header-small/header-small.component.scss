@@ -1,0 +1,67 @@
+@import "common";
+
+:host {
+  color: $color-primary;
+  display: block;
+  margin: 0 auto;
+}
+
+.advance-container {
+  margin-right: rem-calc(20);
+  text-align: center;
+
+  .advance {
+    font-size: rem-calc(24);
+    font-weight: bold;
+    letter-spacing: 0.6px;
+    text-decoration: none;
+  }
+
+  .partnership {
+    font-size: rem-calc(12);
+    font-weight: 500;
+    letter-spacing: 0.18px;
+    margin-top: rem-calc(-6);
+    text-align: right;
+  }
+}
+
+.icon-nova {
+  height: rem-calc(34);
+  width: rem-calc(51);
+}
+
+.plusStyle {
+  font-size: rem-calc(14);
+  margin-top: rem-calc(18);
+  padding: 0 rem-calc(4);
+}
+
+.icon-gmu {
+  height: rem-calc(54);
+  width: rem-calc(83);
+}
+a {
+  position: relative;
+  //bottom: rem-calc(18);
+  cursor: pointer;
+
+  .sign-in {
+    width: rem-calc(38);
+    height: rem-calc(38);
+    margin-right: 6px;
+    display: inline-block;
+  }
+
+  h5 {
+    color: $color-header;
+    font: 700 rem-calc(12) Roboto;
+    margin: 0;
+  }
+}
+
+.dehaze {
+  color: $color-header ;
+  margin-right: rem-calc(10);
+  font-size: rem-calc(30);
+}

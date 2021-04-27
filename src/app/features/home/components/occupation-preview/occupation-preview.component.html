@@ -1,0 +1,72 @@
+<ng-container *ngIf="occupationPreview">
+  <h3 class="title">{{occupationPreview.title}}</h3>
+
+  <section class="grid-container">
+    <section class="grid-y grid-margin-y">
+
+      <!-- DESCRIPTION & VIDEO -->
+      <div class="cell">
+
+        <section class="grid-x grid-margin-x grid-margin-y">
+
+          <!-- VIDEO -->
+          <div class="cell medium-auto">
+            <gmu-video *ngIf="occupationPreview.videoId"
+                       [videoUrl]="occupationPreview.videoUrl"
+                       [posterUrl]="occupationPreview.posterUrl"></gmu-video>
+          </div>
+
+          <!-- DESCRIPTION -->
+          <div class="cell medium-auto">
+            <span class="message__label message__label--large">{{ occupationPreview.description }}</span>
+          </div>
+
+        </section>
+
+      </div>
+
+
+      <!-- AT A GLANCE -->
+      <div class="cell">
+
+        <span class="message__label message__label--xlarge message__label--bold message__label--primary at-a-glance">At a glance</span>
+
+
+        <section class="grid-x grid-margin-y text-center">
+
+          <div class="cell medium-auto xsmall-6">
+            <span class="message__label message__label--xlarge message__label--bold">{{occupationPreview.preferredSalary.medianSalaryPerYear | salarySuffix}}</span>
+            <span class="message__label message__label--responsive-font-size">Median Salary</span>
+          </div>
+
+          <div class="cell medium-auto xsmall-6">
+            <span class="message__label message__label--xlarge message__label--bold">{{occupationPreview.percentOfPeopleWithDegree | percent}}</span>
+            <span class="message__label message__label--responsive-font-size">People have a Degree</span>
+          </div>
+
+          <div class="cell medium-auto xsmall-6">
+            <span class="message__label message__label--xlarge message__label--bold">{{occupationPreview.projectedGrowthRate}}</span>
+            <span class="message__label message__label--responsive-font-size">Projected Growth</span>
+          </div>
+
+          <div class="cell medium-auto xsmall-6">
+            <span class="message__label message__label--xlarge message__label--bold">{{occupationPreview.projectedJobOpenings2018To2028 | number}}</span>
+            <span class="message__label message__label--responsive-font-size">10-year Projected Job Openings</span>
+          </div>
+
+        </section>
+
+
+      </div>
+
+
+      <!-- CALL TO ACTION -->
+      <div class="cell text-center">
+        <button mat-raised-button
+                (click)="onOccupationClick()"
+                class="search-button">VIEW FULL PROFILE</button>
+      </div>
+
+    </section>
+  </section>
+</ng-container>

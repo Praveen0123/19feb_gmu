@@ -1,0 +1,44 @@
+<ng-container *ngIf="{
+    pathwayList: pathwayList$ | async,
+    pathway: pathway$ | async,
+    deviceCharacteristics: deviceCharacteristics$ | async
+  } as dataOwner">
+
+  <section class="grid-x grid-margin-x">
+
+    <!-- PATHWAY EXPLORER -->
+    <div class="cell medium-auto">
+      <gmu-pathway-explorer-form [pathwayList]="dataOwner.pathwayList"
+                                 [selectedPathway]="dataOwner.pathway"
+                                 (onFormSubmit)="onPathwayExplorerFormSubmit($event)"
+                                 (onClearSelection)="onClearPathwaySelection()"></gmu-pathway-explorer-form>
+    </div>
+
+    <!-- CONNECT WITH COACH FORM -->
+    <div class="cell medium-auto">
+
+      <section class="grid-x connect-with-coach-grid">
+
+        <!-- Message Only for Desktop View -->
+        <div class="cell"
+             *ngIf="dataOwner.deviceCharacteristics?.isGreaterThanSmall">
+
+          <!-- PATHWAY META DATA  -->
+          <h3 class="title">
+            {{description}}
+          </h3>
+          <span class="message__label">{{highLightText}}</span>
+
+        </div>
+
+        <!-- Connect With Coach -->
+        <div class="cell align-self-bottom">
+          <gmu-connect-with-coach [eventLabel]="'Pathway Explorer Browse Page'"></gmu-connect-with-coach>
+        </div>
+
+      </section>
+
+    </div>
+  </section>
+
+</ng-container>

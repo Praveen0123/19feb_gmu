@@ -1,0 +1,45 @@
+@import "common";
+@import "~@angular/material/theming";
+.margin-top {
+  margin-top: rem-calc(15);
+}
+.cell {
+  &.course-header {
+    background-color: $black;
+    color: $white;
+    height: rem-calc(45);
+    padding-top: rem-calc(15);
+    border-top-left-radius: rem-calc(10);
+    border-top-right-radius: rem-calc(10);
+    font-weight: 500;
+  }
+
+  &.course-item {
+    border-bottom: solid rem-calc(0.4) $color-primary;
+    padding-top: rem-calc(10);
+    padding-bottom: rem-calc(5);
+
+    &.odd {
+      background-color: $color6;
+    }
+  }
+
+  &.course-footer {
+    color: $black;
+    font-size: rem-calc(14);
+    padding: rem-calc(20);
+  }
+
+  &.semester-width {
+    max-width: rem-calc(95);
+  }
+
+  &.credits-width {
+    max-width: rem-calc(30);
+  }
+}
+
+.mat-checkbox {
+  //pointer-events              : none;
+  //cursor                      : none;
+}

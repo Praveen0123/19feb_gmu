@@ -1,0 +1,52 @@
+@import 'common';
+@import "~@angular/material/theming";
+
+:host {
+  display: block;
+  height : rem-calc(147);
+
+  @include mat-elevation-transition;
+  @include mat-elevation(1);
+
+  &.first {
+    height: rem-calc(200);
+
+    @include breakpoint(medium) {
+      height: 100%;
+    }
+
+    .icon-building {
+      height: rem-calc(64);
+      width : rem-calc(90);
+    }
+  }
+
+}
+
+.top-bar {
+  background-color: $background-header-gold;
+  height          : rem-calc(22);
+}
+
+.icon-first-place {
+  height: rem-calc(52);
+  width : rem-calc(44);
+}
+
+.icon-building {
+  height       : rem-calc(38);
+  width        : rem-calc(50);
+  margin-bottom: rem-calc(8);
+}
+
+.align-center-middle {
+  height: 100%;
+}
+
+.company-container {
+  padding: 0 rem-calc(10);
+}
+
+.message__label {
+  line-height: 1.2;
+}

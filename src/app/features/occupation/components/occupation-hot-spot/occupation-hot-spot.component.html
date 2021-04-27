@@ -1,0 +1,56 @@
+<section class="grid-y grid-margin-y">
+
+  <!-- HEADER: What They Do -->
+  <div class="cell">
+    <gmu-section-header [title]="'Career Hotspots'"></gmu-section-header>
+  </div>
+
+
+  <!-- HOTSPOT MAP & DETAILS -->
+  <div class="cell">
+
+    <section class="grid-x grid-margin-x">
+
+      <!-- DESCRIPTION & MAP -->
+      <div class="cell medium-auto">
+
+        <section class="grid-y grid-margin-y">
+
+          <!-- DESCRIPTION -->
+          <div class="cell">
+            {{hotSpotDescription}}
+          </div>
+
+          <!-- MAP -->
+          <div class="cell">
+            <vp-map-occupation-hotspots [mapTitle]="''"
+                                        [hotSpotsList]="hotspotList"></vp-map-occupation-hotspots>
+          </div>
+
+        </section>
+
+      </div>
+
+
+      <!-- HOTSPOTS DETAILS -->
+      <div class="cell medium-auto">
+
+        <section class="grid-x grid-margin-x bold">
+          <div class="cell auto"> Area </div>
+          <div class="cell shrink"> Salary </div>
+        </section>
+
+        <section class="grid-x grid-margin-x"
+                 *ngFor="let hotspot of orderedHotspotList; let i = index; let even = even"
+                 [ngClass]="{ even1: even}">
+          <div class="cell auto"> {{hotspot.cityName}}, {{hotspot.stateAbbreviation}} </div>
+          <div class="cell shrink"> {{hotspot.preferredSalary.minimumSalaryPerYear | salarySuffix}} </div>
+        </section>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</section>

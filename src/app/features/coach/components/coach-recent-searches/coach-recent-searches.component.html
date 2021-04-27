@@ -1,0 +1,47 @@
+<ng-container *ngIf="recentDataSource">
+  <section class="grid-y grid-margin-y">
+
+    <!-- IF NO DATA FOUND BASED ON STUDENT ID OR EMAIL OR NUMBER -->
+    <ng-container *ngIf="!(recentDataSource)">
+
+      <div class="cell text-center">
+        <h1 class=" message__label message__label--medium">No Student Details Found with this Id...!</h1>
+      </div>
+
+    </ng-container>
+
+    <!-- RECENT SEARCH TABLE -->
+    <ng-container *ngIf="(recentDataSource)">
+      <div class="cell">
+        <table mat-table
+               [dataSource]="recentDataSource"
+               class="mat-elevation-z2">
+
+          <!-- RECENT SEARCHES COLUMN -->
+          <ng-container matColumnDef="Recent">
+            <th mat-header-cell
+                *matHeaderCellDef> Recent Searches </th>
+            <td mat-cell
+                *matCellDef="let element">
+              <a (click)="goToMilestonePage(element.email)"> {{element.name}} </a>
+            </td>
+          </ng-container>
+
+          <!-- DATE COLUMN -->
+          <ng-container matColumnDef="Date">
+            <th mat-header-cell
+                *matHeaderCellDef> Date </th>
+            <td mat-cell
+                *matCellDef="let element"> {{element.date | date:'MM/dd/yyyy'}} </td>
+          </ng-container>
+
+          <tr mat-header-row
+              *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row
+              *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+    </ng-container>
+
+  </section>
+</ng-container>

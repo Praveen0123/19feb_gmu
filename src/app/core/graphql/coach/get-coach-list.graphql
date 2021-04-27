@@ -1,0 +1,11 @@
+query coachList {
+  coachList {
+    ...coachFragment
+  }
+}
+
+fragment coachFragment on Coach {
+  id
+  name
+  email
+}

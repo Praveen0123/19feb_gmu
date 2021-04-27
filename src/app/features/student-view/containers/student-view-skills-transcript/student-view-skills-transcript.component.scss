@@ -1,0 +1,21 @@
+@import 'common';
+ .arrow-down {
+  width                     : rem-calc(15);
+  height                    : rem-calc(15);
+  border-top                : rem-calc(0) solid $gray-400;
+  border-right              : rem-calc(2) solid $gray-400;
+  border-bottom             : rem-calc(2)solid $gray-400;
+  border-left               : rem-calc(0)solid $gray-400;
+  position                  : absolute ;
+  bottom                    : rem-calc(-10);
+  left                      : 87%;
+  transform                 : rotate(45deg);
+  background                : $white;  
+}
+
+.arrow{
+   position                 : relative ;
+   z-index                  : 1 ;    
+   margin-top               : rem-calc(-24);
+   border-bottom            : solid rem-calc(2) $gray-400;
+}

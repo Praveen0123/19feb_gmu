@@ -1,0 +1,154 @@
+
+<section class="grid-y">
+
+  <!-- HEADER -->
+  <div class="cell course-header message__label message__label--small">
+
+    <section class="grid-x grid-margin-x grid-padding-x grid-margin-y medium-margin-collapse align-justify">
+
+      <div class="cell medium-2 semester-width">
+        Semester
+      </div>
+
+      <div class="cell medium-1">
+        Year
+      </div>
+
+      <div class="cell medium-2">
+        {{skillType}}
+        <div class="cell"> Course Heading</div>
+      </div>
+
+      <div class="cell medium-1 credits-width">
+        Credits
+      </div>
+
+      <div class="cell auto">
+        <div class="grid-x">
+
+          <div class="cell medium-9">
+            Course Name
+          </div>
+
+          <div class="cell auto">
+            Planned
+          </div>
+
+          <div class="cell auto">
+            Completed
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <!-- Courses Details List -->
+  <div class="cell course-item"
+       *ngFor="let courseGrouping of courseGroupings;let i=index; let odd=odd"
+       [ngClass]="{ odd: odd}">
+
+    <section class="grid-x grid-margin-x grid-padding-x  medium-margin-collapse align-justify">
+
+      <!-- Semester Details -->
+      <div class="cell medium-2 semester-width">
+        <mat-form-field appearance="outline">
+
+          <mat-select [value]="getSemester(courseGrouping)" (selectionChange)="updateSemester(courseGrouping, $event)">
+            <mat-option value="Summer">Summer </mat-option>
+            <mat-option value="Spring">Spring</mat-option>
+            <mat-option value="Fall">Fall</mat-option>
+          </mat-select>
+
+
+        </mat-form-field>
+      </div>
+
+      <!-- Year Details -->
+      <div class="cell medium-1">
+        <mat-form-field appearance="outline">
+
+          <mat-select (selectionChange)="updateYear(courseGrouping, $event)" [value]="getYear(courseGrouping)">
+            <mat-option *ngFor="let y of yearList"
+                        [value]="y.year">{{y.year}}</mat-option>
+          </mat-select>
+
+
+        </mat-form-field>
+      </div>
+
+      <!-- Course Heading Details -->
+      <div class="cell medium-2">
+        <span> {{courseGrouping.name}} </span>
+      </div>
+
+      <!-- Credits Details -->
+      <div class="cell medium-1 credits-width">
+        <span> {{courseGrouping.credits}} </span>
+      </div>
+
+      <!-- Course Names Details  -->
+      <div class="cell auto">
+        <div class="grid-x grid-margin-y"
+             *ngFor="let course of courseGrouping.courseList; last as isLast">
+
+          <!-- Course Code and Name Details -->
+          <div class="cell medium-9">
+            <div class="cell message__label--bold"> {{course.code}} </div>
+            <div class="cell"> {{course.name}}
+              <span class="message__label--bold"
+                    *ngIf="courseGrouping.courseList.length>1"> 
+                    <ng-container *ngIf="courseGrouping.groupType == 'And' && !isLast">AND</ng-container>
+                    <ng-container *ngIf="courseGrouping.groupType == 'Or' && !isLast">OR</ng-container>
+              </span>
+            </div>
+          </div>
+
+          <!-- Planned Status Checkbox -->
+          <div class="cell auto">
+            <mat-checkbox [checked]="course.planned" (change)="updateCoursePlan(course.plannerId)"></mat-checkbox>
+          </div>
+
+          <!-- Completed Status Checkbox -->
+          <div class="cell auto">
+            <mat-checkbox [checked]="course.completed" (change)="updateCourseCompleted(course.plannerId)"></mat-checkbox>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <!-- COURSE TOTALS -->
+  <div class="cell course-footer">
+
+    <section class="grid-x grid-padding-x">
+
+      <!-- Course Name -->
+      <div class="cell medium-6">
+        <span class="message__label message__label--medium message__label--bold"> {{degreeName}} </span>
+      </div>
+
+      <!-- Total Credits Details -->
+      <div class="cell medium-3">
+        TOTAL CREDITS = {{totalCredits}}
+      </div>
+
+      <!-- Earned Credits Details -->
+      <div class="cell auto">
+        <span class="message__label message__label--bold "> EARNED CREDITS: {{earnedCredits}}</span>
+      </div>
+
+
+    </section>
+
+  </div>
+
+
+
+</section>

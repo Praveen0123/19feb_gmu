@@ -1,0 +1,134 @@
+<section class="grid-y grid-margin-y">
+  <!-- ROADMAP -->
+  <div class="cell">
+    <mat-icon class="roadmap" svgIcon="roadmap"></mat-icon>
+  </div>
+
+  <!-- YOU ARE QUALIFIED -->
+  <div class="cell">
+    <section class="grid-y grid-margin-y text-center">
+      <div class="cell" *ngIf="occupationProfileDetails">
+        <span class="message__label message__label--"
+          >You are on your way to the career of</span
+        >
+        <span class="message__label message__label--xxlarge">{{
+          occupationProfileDetails.title
+        }}.</span>
+         <span class="message__label message__label--"> 
+         Make sure to gain relevant experience to complement your academics.</span>
+      </div>
+
+      <div class="cell" *ngIf="arePathwaysVisible">
+        <span
+          class="message__label message__label--large message__label--primary"
+        >
+          See other Pathways aligned with this career:
+        </span>
+
+        <form
+          novalidate
+          autocomplete="off"
+          [formGroup]="formGroup"
+          *ngIf="formGroup"
+        >
+          <mat-form-field appearance="outline">
+            <mat-select
+              formControlName="pathway"
+              (selectionChange)="onSelectionPathway($event.value)"
+            >
+              <mat-option
+                class="alternate"
+                *ngFor="let option of sortedPathwayList"
+                [value]="option"
+                >{{ option.name }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+        </form>
+      </div>
+    </section>
+  </div>
+  <!-- <div *ngIf="acquiredSkills" class="cell">
+    <div><mat-icon>done</mat-icon> - Acquired</div>
+    <div><mat-icon>hourglass_top</mat-icon> - In progress</div>
+  </div> -->
+  <!-- Skills List -->
+  <div class="cell">
+    <section
+      class="grid-x grid-margin-x grid-margin-y align-stretch text-center"
+    >
+      <!-- YEAR 1: BLUE -->
+      <div class="cell medium-auto year one">
+        <mat-icon class="year-circle" svgIcon="year-1-circle"></mat-icon>
+
+        <gmu-skill-list
+          *ngIf="mode !== 'Course View'"
+          class="roadmap"
+          [skillList]="skillListYear1"
+          [acquiredSkills]="acquiredSkills"
+          [topX]="10"
+          (onClickSkill)="openBottomSheet($event)"
+        ></gmu-skill-list>
+
+        <gmu-student-view-skills-roadmap-course 
+          *ngIf="mode === 'Course View'" 
+          [degreeModel]="courseListYear1">
+        </gmu-student-view-skills-roadmap-course>
+
+        <div *ngIf="!skillListYear1 || skillListYear1.length < 1">Plan out your courses to view the skills that you will acquire</div>
+      </div>
+
+      <!-- YEAR 2: GREEN -->
+      <div class="cell medium-auto year two">
+        <mat-icon class="year-circle" svgIcon="year-2-circle"></mat-icon>
+
+        <gmu-skill-list
+          *ngIf="mode !== 'Course View'"
+          class="roadmap"
+          [skillList]="skillListYear2"
+          [acquiredSkills]="acquiredSkills"
+          [topX]="10"
+          (onClickSkill)="openBottomSheet($event)"       
+        ></gmu-skill-list>
+        <gmu-student-view-skills-roadmap-course *ngIf="mode === 'Course View'" [degreeModel]="courseListYear2"></gmu-student-view-skills-roadmap-course>
+        <div *ngIf="!skillListYear2 || skillListYear2.length < 1">Plan out your courses to view the skills that you will acquire</div>
+      </div>
+
+      <!-- YEAR 3: YELLOW -->
+      <div class="cell medium-auto year three">
+        <mat-icon class="year-circle" svgIcon="year-3-circle"></mat-icon>
+
+        <gmu-skill-list
+          *ngIf="mode !== 'Course View'"
+          class="roadmap"
+          [skillList]="skillListYear3"
+          [acquiredSkills]="acquiredSkills"
+          [topX]="10"
+          (onClickSkill)="openBottomSheet($event)"
+        ></gmu-skill-list>
+        
+        <gmu-student-view-skills-roadmap-course *ngIf="mode === 'Course View'" [degreeModel]="courseListYear3"></gmu-student-view-skills-roadmap-course>
+       
+        <div *ngIf="(!skillListYear3 || skillListYear3.length < 1)">Plan out your courses to view the skills that you will acquire</div>
+      </div>
+
+      <!-- YEAR 4: ORANGE -->
+      <div class="cell medium-auto year four">
+        <mat-icon class="year-circle" svgIcon="year-4-circle"></mat-icon>
+
+        <gmu-skill-list
+          *ngIf="mode !== 'Course View'"
+          class="roadmap"
+          [skillList]="skillListYear4"
+          [topX]="10"
+          [acquiredSkills]="acquiredSkills"
+          (onClickSkill)="openBottomSheet($event)"
+        ></gmu-skill-list>
+        
+        <gmu-student-view-skills-roadmap-course *ngIf="mode === 'Course View'" [degreeModel]="courseListYear4"></gmu-student-view-skills-roadmap-course>
+       
+        <div *ngIf="!skillListYear4 || skillListYear4.length < 1">Plan out your courses to view the skills that you will acquire</div>
+      </div>
+    </section>
+  </div>
+</section>

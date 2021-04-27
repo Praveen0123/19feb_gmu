@@ -1,0 +1,39 @@
+<section class="grid-y">
+  <!-- AREA OF STUDY NAME & CLOSE -->
+  <div class="cell">
+    <section class="grid-x grid-padding-x grid-margin-x align-middle course-outline-header">
+      <!-- Arera Of Study Name -->
+      <div class="cell auto">
+        <span class="message__label message__label--large message__label--bold">{{ data.pathway.bachelorDegree.name }}</span>
+      </div>
+
+      <!-- CLOSE THE BOTTOM SHEET -->
+      <div class="cell shrink"
+           (click)="closeBottomSheet($event)">
+        <mat-icon aria-hidden="false"
+                  aria-label="clear"
+                  class="clear">clear</mat-icon>
+      </div>
+    </section>
+  </div>
+
+  <!-- COURSE OUUTLINE -->
+  <div class="cell">
+    <section class="grid-x course-list-container">
+      <!-- NOVA DEGREE COURSES -->
+      <div class="cell xsmall-12 medium-6 large-6">
+        <gmu-course-outline [title]="'Nova Courses'"
+                            [courseList]="data.summary.novaCourses"
+                            [degreeName]="data.pathway.associateDegree.name"
+                            class="nova-courses"></gmu-course-outline>
+      </div>
+
+      <!-- MASON DEGREE COURSES -->
+      <div class="cell xsmall-12 medium-6 large-6">
+        <gmu-course-outline [title]="'Mason Courses'"
+                            [courseList]="data.summary.masonCourses"
+                            [degreeName]="data.pathway.bachelorDegree.name"></gmu-course-outline>
+      </div>
+    </section>
+  </div>
+</section>

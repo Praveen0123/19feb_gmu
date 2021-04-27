@@ -1,0 +1,52 @@
+<section class="grid-y grid-margin-y">
+
+  <!-- BACK BUTTON -->
+  <div class="cell">
+    <gmu-back-button></gmu-back-button>
+  </div>
+
+
+  <!-- AREA OF STUDY META -->
+  <div class="cell">
+
+
+    <section class="grid-x align-justify align-middle">
+
+      <!-- AREA OF STUDY NAME -->
+      <div class="cell shrink small-offset-1">
+        <div class="message__label message__label--gray">Career Opportunities Related to:</div>
+        <div class="message__label message__label--bold message__label--responsive-font-size">{{areaOfStudy.name}}</div>
+      </div>
+
+      <!-- Sort By -->
+      <div class="cell shrink small-offset-1-right">
+
+        <mat-form-field appearance="none">
+          <mat-label>Sort By</mat-label>
+          <mat-select [formControl]="sortByAreaOfStudy">
+            <mat-option *ngFor="let type of sortTypes"
+                        [value]="type">{{ type }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </div>
+
+    </section>
+
+
+  </div>
+
+
+  <!-- OCCUPATION LIST -->
+  <div class="cell text-center">
+
+    <ng-container *ngFor="let item of areaOfStudy.occupationList | sortByTypes: sortByAreaOfStudy.value ">
+
+      <gmu-occupation-card [occupation]="item"
+                           (click)="onOccupationClick(item)"></gmu-occupation-card>
+
+    </ng-container>
+
+  </div>
+
+</section>

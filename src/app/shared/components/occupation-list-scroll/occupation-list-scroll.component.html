@@ -1,0 +1,61 @@
+<section class="{{!showOccupationSkills ? 'occupation-list-container' : 'occupation-list-container2'}}">
+
+  <!-- LEFT BUTTON -->
+  <span class="left-side"
+        *ngIf="areButtonsVisible">
+    <button mat-mini-fab
+            id="rightScroll"
+            class="round"
+            [ngClass]="{'disabled': percentScrolled === 0}"
+            [disabled]="(percentScrolled === 0)"
+            matTooltip="Scroll right"
+            (click)="scrollLeft()">
+      <mat-icon class="round-icon">chevron_left</mat-icon>
+    </button>
+  </span>
+
+
+  <!-- SCROLL VIEW PORT -->
+  <cdk-virtual-scroll-viewport #scrollViewPort
+                               orientation="horizontal"
+                               [itemSize]="occupationCardWidth"
+                               class="{{!showOccupationSkills ? 'viewport-occupation-list' : 'viewport-occupation-2'}}">
+
+    <ng-container>
+
+      <gmu-occupation-card *cdkVirtualFor="let item of occupationList; let index = index; trackBy: trackByFn"
+                           data-id="{{index}}"
+                           [occupation]="item"
+                           [pathway]="pathway"
+                           [showSkills]="showOccupationSkills"
+                           (click)="onOccupationClick(item)"></gmu-occupation-card>
+
+
+
+    </ng-container>
+
+  </cdk-virtual-scroll-viewport>
+
+
+
+
+  <!-- RIGHT BUTTON -->
+  <span class="right-side"
+        *ngIf="areButtonsVisible">
+    <button mat-mini-fab
+            id="leftScroll"
+            class="round"
+            [ngClass]="{'disabled': percentScrolled === 100}"
+            [disabled]="(percentScrolled === 100)"
+            matTooltip="Scroll left"
+            (click)="scrollRight()">
+      <mat-icon class="round-icon">chevron_right</mat-icon>
+    </button>
+  </span>
+
+</section>
+
+<!-- SCROLL PROGRESS BAR -->
+<mat-progress-bar class="gmu-progress-bar"
+                  *ngIf="isProgressBarVisible"
+                  [value]="percentScrolled"></mat-progress-bar>

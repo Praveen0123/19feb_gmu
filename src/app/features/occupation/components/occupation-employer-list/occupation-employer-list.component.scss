@@ -1,0 +1,17 @@
+@import 'common';
+
+:host {
+  display: block;
+}
+
+.grid-x {
+  &.align-center-middle {
+    height: 100%;
+  }
+}
+
+.top-company-list {
+  display  : block;
+  margin   : 0 auto;
+  max-width: 800px;
+}

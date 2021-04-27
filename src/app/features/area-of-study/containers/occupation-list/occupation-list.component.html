@@ -1,0 +1,19 @@
+<ng-container *ngIf="{ areaOfStudy:areaOfStudy$ | async
+                     } as dataOwner">
+
+  <section class="grid-y grid-margin-y">
+
+    <!-- AREA OF STUDY OCCUPATION LIST -->
+    <div class="cell ">
+      <gmu-area-of-study-occupation-list [areaOfStudy]="dataOwner.areaOfStudy"
+                                         (onOccupationClick)="onOccupationClick($event)"></gmu-area-of-study-occupation-list>
+    </div>
+
+    <!-- CONNECT WITH COACH FORM -->
+    <div class="cell">
+      <gmu-connect-with-coach [eventLabel]="'Career View All Page'"></gmu-connect-with-coach>
+    </div>
+
+  </section>
+
+</ng-container>

@@ -1,0 +1,21 @@
+<section
+  class="grid-x grid-padding-x pathway-container border"
+  (click)="onPathwayClick()"
+>
+  <!-- CHECK MARK -->
+  <div class="cell shrink align-self-middle text-center">
+    <mat-icon
+      class="icon-check-mark-small"
+      [svgIcon]="'icon-check-mark'"
+    ></mat-icon>
+  </div>
+
+  <!-- AVAILABLE MASON DEGREE -->
+  <div class="cell auto pathway-details-container">
+    <section class="grid-x">
+      <div class="cell align-self-middle">
+        {{ pathway.name }}
+      </div>
+    </section>
+  </div>
+</section>

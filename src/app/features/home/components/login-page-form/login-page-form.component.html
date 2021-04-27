@@ -1,0 +1,93 @@
+<form novalidate
+      autocomplete="off"
+      autocomplete="chrome-off"
+      [formGroup]="formGroup"
+      (ngSubmit)="onFormSubmit()"
+      *ngIf="formGroup">
+
+
+  <section class="grid-y grid-margin-y">
+
+
+    <!-- MESSAGE -->
+    <div class="cell">
+      <p class="message__label message__label--bold message__label--large">Sign In to ADVANCE! </p>
+    </div>
+
+    <!-- USER NAME FIELD -->
+    <div class="cell medium-6">
+
+      <mat-form-field appearance="outline">
+        <mat-label>Mason Email </mat-label>
+        <input matInput
+               placeholder="jdoe@masonlive.gmu.edu"
+               formControlName="userName"
+               autocomplete="none" />
+        <mat-error *ngIf="formGroup.controls.userName.hasError('required')
+                          || (formGroup.get('userName').invalid && formGroup.get('userName').touched)">
+          Mason Email is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+
+    <!-- PASSWORD FIELD AND FORGOT PASSWORD LINK-->
+    <div class="cell text-right">
+      <mat-form-field appearance="outline">
+        <mat-label>Password </mat-label>
+        <input matInput
+               type="password"
+               placeholder="Must have at least 8 characters"
+               formControlName="userPassword"
+               autocomplete="none" />
+
+        <mat-error *ngIf="formGroup.controls.userPassword.hasError('required') || 
+         (formGroup.get('userPassword').invalid && formGroup.get('userPassword').touched)">
+          Password is required.
+        </mat-error>
+      </mat-form-field>
+
+      <p><a (click)="onForgotPassword()"
+           class="forgot-pwd">Forgot your password?</a> </p>
+
+    </div>
+
+    <!-- SIGN IN AND  CREATE AN ACCOUNT LINK -->
+    <div class="cell">
+
+      <section class="grid-x align-middle grid-margin-y align-justify"
+               mat-dialog-actions>
+
+
+        <div class="cell auto text-right">
+          <button mat-raised-button
+                  type="submit"
+                  class="search-button"
+                  [disabled]="!formGroup.valid">
+            SIGN IN
+          </button>
+        </div>
+
+
+
+      </section>
+    </div>
+
+    <!-- CREATE AN ACCOUNT LINK -->
+    <!-- <div class="cell text-right">
+      <div> <a class="register"
+           mat-dialog-close
+           (click)="onRegisterNewUser()">Create an Account </a> </div>
+    </div> -->
+        <!-- CREATE AN ACCOUNT LINK -->
+    <div class="cell text-right">
+          <button mat-raised-button primary
+                  class="search-button"
+                  (click)="onRegisterNewUser()"
+          >
+            CREATE AN ACCOUNT
+          </button>
+    </div>
+
+  </section>
+</form>

@@ -1,0 +1,87 @@
+<ngx-spinner>
+  <p class="loading">Loading...</p>
+</ngx-spinner>
+
+<ng-container *ngIf="{ deviceCharacteristics: deviceCharacteristics$ | async,
+userDetails: userDetails$ | async } as dataOwner">
+
+  <!-- grid-container: OUTER CONTAINER FOR ZURB FOUNDAION'S XY GRID -->
+  <section class="grid-container md-grid-container"
+           *ngIf="dataOwner.deviceCharacteristics?.isGreaterThanSmall">
+    <gmu-header-medium [userDetails]="dataOwner.userDetails"
+                       (signOutEventEmitter)="signOut()">
+    </gmu-header-medium>
+    <section class="page-container desktop-body-margin">
+      <router-outlet></router-outlet>
+    </section>
+  </section>
+
+  <!-- FOR MOBILE VIEW -->
+  <section class="grid-container md-grid-container"
+           *ngIf="dataOwner.deviceCharacteristics?.isLessThanMedium">
+
+    <mat-drawer-container class="example-container">
+      <mat-drawer #drawer
+                  [mode]="'push'">
+        <div class="grid-x  grid-padding-y">
+          <div class="cell">
+
+            <ul>
+              <li routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  [ngClass]="{'active': ( !aboutActive.isActive && !signInActive.isActive ) }">
+                <a [routerLink]="['/']"
+                   class="message__label  message__label--medium">EXPLORE </a>
+              </li>
+
+              <li class="links"
+                  *ngIf="dataOwner.userDetails">
+                <a class="message__label  message__label--medium">My HOME </a>
+              </li>
+
+              <li routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  #aboutActive="routerLinkActive">
+                <a [routerLink]="['/about']"
+                   class="message__label  message__label--medium">ABOUT </a>
+              </li>
+
+              <li routerLinkActive="active"
+                  #signInActive="routerLinkActive"
+                  [routerLinkActiveOptions]="{ exact: true }">
+                <ng-container *ngIf="dataOwner.userDetails">
+                  <a (click)="signOut()"
+                     class="  message__label  message__label--medium ">
+
+                    Sign Out
+                  </a>
+                </ng-container>
+                <ng-container *ngIf="!dataOwner.userDetails">
+                  <a [routerLink]="['/home/login']"
+                     class="message__label message__label--medium">
+
+                    Sign In
+                  </a>
+                </ng-container>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+
+      </mat-drawer>
+      <mat-drawer-content>
+        <gmu-header-small [userDetails]="dataOwner.userDetails"
+                          (signOutEventEmitter)="signOut()"
+                          (openSideDrawer)="drawer.toggle()">
+        </gmu-header-small>
+        <section class="page-container desktop-body-margin">
+          <router-outlet></router-outlet>
+        </section>
+      </mat-drawer-content>
+    </mat-drawer-container>
+  </section>
+
+  <gmu-footer [deviceCharacteristics]="dataOwner.deviceCharacteristics"></gmu-footer>
+
+</ng-container>

@@ -1,0 +1,13 @@
+ <h1 mat-dialog-title class="bolder">Frequently Asked Questions</h1>
+  <div class="cell shrink text-right shift-up"
+       (click)="closeDialogBox($event)">
+           <mat-icon aria-hidden="false"
+              aria-label="clear"
+              class="clear text-color">clear</mat-icon>
+  </div>
+<div>
+  <ng-container *ngFor="let faq of faqList">
+  <p class="message__label message__label--bold message__label--large">Q: {{faq.question}}</p>
+  <p>{{faq.answer}}</p>
+  </ng-container>
+</div>

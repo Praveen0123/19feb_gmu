@@ -1,0 +1,26 @@
+@import "~@angular/material/theming";
+@import '~foundation-sites/scss/util/unit';
+@import 'common';
+
+@mixin skills-view-theme ($theme) {
+
+  .mat-checkbox {
+    .mat-checkbox-frame {
+    border-color:  $color-header;
+    }
+
+   &.mat-checkbox-checked .mat-checkbox-background {
+    background-color: #FBD269;
+    }
+
+    .mat-checkbox-checkmark-path {
+    stroke: $black !important;
+    } 
+  }
+
+ .mat-checkbox-inner-container {
+  height: 22px!important;
+  width: 22px!important;
+  }
+
+}

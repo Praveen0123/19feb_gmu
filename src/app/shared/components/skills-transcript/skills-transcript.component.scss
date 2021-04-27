@@ -1,0 +1,77 @@
+@import "common";
+@import "~@angular/material/theming";
+
+.style-transition {
+  @include mat-elevation-transition;
+  @include mat-elevation(8);
+  margin-left: rem-calc(30);
+  margin-top: rem-calc(30);
+  margin-right: rem-calc(30);
+}
+
+.cell {
+  &.course-header {
+    background-color: $black;
+    color: $white;
+    height: rem-calc(45);
+    padding-top: rem-calc(15);
+    border-top-left-radius: rem-calc(10);
+    border-top-right-radius: rem-calc(10);
+    font-weight: 500;
+  }
+
+  &.course-item {
+    padding-top: rem-calc(15);
+    padding-bottom: rem-calc(10);
+
+    &.even {
+      background-color: $color6;
+    }
+  }
+
+  &.year-width {
+    max-width: rem-calc(100);
+  }
+}
+
+.skillName {
+  @include mat-elevation-transition;
+  @include mat-elevation(5);
+  background-color: $white;
+  padding: rem-calc(2);
+  border: solid rem-calc(1) $white;
+  border-radius: rem-calc(5);
+}
+
+.course-button {
+  color: $white;
+  background: $color-secondary;
+  border-radius: rem-calc(30);
+  letter-spacing: rem-calc(1.12);
+  height: rem-calc(30);
+}
+
+.showHide {
+  font-size: large;
+  background-color: black;
+  color: white;
+  border-radius: rem-calc(4);
+  margin-left: rem-calc(26);
+  cursor: pointer;
+}
+.centered {
+  text-align: center;
+}
+
+.print-style {
+  margin-top: rem-calc(15);
+  margin-right: rem-calc(30);
+}
+@media print {
+  #print-style {
+    overflow-y: auto !important;
+    position: static;
+    float: none;
+    page-break-inside: avoid;
+  }
+}

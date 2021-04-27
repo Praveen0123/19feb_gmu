@@ -1,0 +1,103 @@
+<form novalidate
+      autocomplete="off"
+      [formGroup]="formGroup"
+      (ngSubmit)="onFormSubmit()"
+      *ngIf="formGroup">
+
+  <section class="grid-x grid-padding-y-bottom">
+
+    <!-- AREA OF STUDY -->
+    <div class="cell">
+      <mat-form-field appearance="outline">
+        <mat-label>When did you join the ADVANCE Program?</mat-label>
+        <mat-select formControlName="cohortYear"
+                    (selectionChange)="onSelectionCohortYear($event.value)"
+                    required>
+
+          <mat-option class="alternate"
+                      *ngFor="let cohortYear of cohortYears"
+                      [value]="cohortYear">{{cohortYear}}</mat-option>
+
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <!-- AREA OF STUDY -->
+    <div class="cell">
+      <mat-form-field appearance="outline">
+        <mat-label>SELECT an Area of Study</mat-label>
+        <mat-select formControlName="areaOfStudy"
+                    (selectionChange)="onSelectionAreaOfStudy($event.value)"
+                    required>
+
+          <mat-option class="alternate"
+                      *ngFor="let option of uniqueAreaOfStudyList"
+                      [value]="option">{{option.areaOfStudy}}</mat-option>
+
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+
+    <!-- BACHELORS DEGREE (MASON) -->
+    <div class="cell">
+      <mat-form-field appearance="outline">
+        <mat-label>SELECT a MASON Degree</mat-label>
+        <mat-select formControlName="bachelorsDegree"
+                    (selectionChange)="onSelectionBachelorsDegree($event.value)"
+                    required>
+
+          <mat-option class="alternate"
+                      *ngFor="let option of uniqueBachelorsDegreeList"
+                      [value]="option">{{option.bachelorDegree.name}}</mat-option>
+
+        </mat-select>
+
+        <mat-error *ngIf="uniqueBachelorsDegreeList.length > 0 && formGroup.controls.bachelorsDegree.hasError('required')">Mason Degree is required</mat-error>
+        <mat-error *ngIf="uniqueBachelorsDegreeList.length === 0 && formGroup.controls.bachelorsDegree.hasError('required')">Select an Area of Study above</mat-error>
+      </mat-form-field>
+    </div>
+
+
+    <!-- ASSOCIATES DEGREE (NOVA) -->
+    <div class="cell ">
+      <mat-form-field appearance="outline">
+        <mat-label>SELECT a NOVA Degree</mat-label>
+        <mat-select formControlName="associatesDegree"
+                    (selectionChange)="onSelectionAssociatesDegree($event.value)">
+
+          <mat-option class="alternate"
+                      class="alternate"
+                      *ngFor="let option of uniqueAssociatesDegreeList"
+                      [value]="option">{{option.associateDegree.name}}</mat-option>
+
+        </mat-select>
+
+        <mat-error *ngIf="uniqueAssociatesDegreeList.length > 0 && formGroup.controls.associatesDegree.hasError('required')">Nova Degree is required</mat-error>
+        <mat-error *ngIf="uniqueAssociatesDegreeList.length === 0 && formGroup.controls.associatesDegree.hasError('required')">Select a Mason Degree above</mat-error>
+      </mat-form-field>
+    </div>
+
+
+    <!-- SEARCH CTA -->
+    <div class="cell"
+         *ngIf="searchButtonVisible">
+      <section class="grid-x grid-marginx align-middle align-right">
+
+        <div class="cell shrink"
+             *ngIf="selectedPathway">
+          <button mat-button
+                  (click)="clearSelectionClick()">clear selection</button>
+        </div>
+
+        <div class="cell shrink">
+          <button mat-raised-button
+                  [disabled]="!formGroup.valid"
+                  class="search-button">SEARCH</button>
+        </div>
+      </section>
+
+    </div>
+
+  </section>
+
+</form>

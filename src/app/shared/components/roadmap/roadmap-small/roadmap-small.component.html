@@ -1,0 +1,122 @@
+<section class="grid-y grid-margin-y">
+
+  <!-- Top Skills Description -->
+  <div class="cell">
+    {{topSkillsDescription}}
+  </div>
+
+
+  <!-- ROADMAP -->
+  <div class="cell">
+
+    <mat-icon class="roadmap"
+              svgIcon="roadmap-small"></mat-icon>
+
+  </div>
+
+
+  <!-- YOU ARE QUALIFIED -->
+  <div class="cell">
+
+    <section class="grid-x grid-padding-x">
+
+      <div class="cell text-right">
+        <span class="message__label message__label--xsmall">You are now qualified for the career of</span>
+        <span class="message__label message__label--bold message__label--responsive-font-size">{{occupationProfileDetails.title}}</span>
+      </div>
+
+    </section>
+
+
+  </div>
+
+
+  <!-- YEAR 1: BLUE -->
+  <div class="cell">
+
+    <section class="grid-x grid-margin-x align-middle">
+      <div class="cell shrink">
+        <mat-icon class="year-circle"
+                  svgIcon="year-1-circle"></mat-icon>
+      </div>
+
+      <div class="cell shrink">
+        <span class="message__label message__label--bold message__label--black">Skills</span>
+      </div>
+    </section>
+
+    <gmu-skill-list class="year one"
+                    [skillList]="skillListYear1"
+                    [topX]="10"
+                    (onClickSkill)="openBottomSheet($event)"></gmu-skill-list>
+
+  </div>
+
+
+  <!-- YEAR 2: GREEN -->
+  <div class="cell">
+
+    <section class="grid-x grid-margin-x align-middle">
+      <div class="cell shrink">
+        <mat-icon class="year-circle"
+                  svgIcon="year-2-circle"></mat-icon>
+      </div>
+
+      <div class="cell shrink">
+        <span class="message__label message__label--bold message__label--black">Skills</span>
+      </div>
+    </section>
+
+    <gmu-skill-list class="year two"
+                    [skillList]="skillListYear2"
+                    [topX]="10"
+                    (onClickSkill)="openBottomSheet($event)"></gmu-skill-list>
+
+  </div>
+
+
+  <!-- YEAR 3: YELLOW -->
+  <div class="cell">
+
+    <section class="grid-x grid-margin-x align-middle">
+      <div class="cell shrink">
+        <mat-icon class="year-circle"
+                  svgIcon="year-3-circle"></mat-icon>
+      </div>
+
+      <div class="cell shrink">
+        <span class="message__label message__label--bold message__label--black">Skills</span>
+      </div>
+    </section>
+
+    <gmu-skill-list class="year three"
+                    [skillList]="skillListYear3"
+                    [topX]="10"
+                    (onClickSkill)="openBottomSheet($event)"></gmu-skill-list>
+
+  </div>
+
+
+  <!-- YEAR 4: ORANGE -->
+  <div class="cell">
+
+    <section class="grid-x grid-margin-x align-middle">
+      <div class="cell shrink">
+        <mat-icon class="year-circle"
+                  svgIcon="year-4-circle"></mat-icon>
+      </div>
+
+      <div class="cell shrink">
+        <span class="message__label message__label--bold message__label--black">Skills</span>
+      </div>
+    </section>
+
+    <gmu-skill-list class="year four"
+                    [skillList]="skillListYear4"
+                    [topX]="10"
+                    (onClickSkill)="openBottomSheet($event)"></gmu-skill-list>
+
+  </div>
+
+
+</section>

@@ -1,0 +1,22 @@
+// theme.scss
+
+// import custom palettes
+@import './gmu-palettes.scss';
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$gmu-green-primary: mat-palette($gmu-palette-green, 500, 300, 700);
+$gmu-green-accent : mat-palette($gmu-palette-green, A200, A100, A400);
+$gmu-green-warn   : mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$gmu-green-theme: mat-light-theme($gmu-green-primary, $gmu-green-accent, $gmu-green-warn);
+
+// Theme for notifications / snackbar
+$notifications-theme: (default: #fff,
+  info: mat-color(mat-palette($mat-blue), 400),
+  success: mat-color(mat-palette($mat-green), 400),
+  warning: mat-color(mat-palette($mat-yellow), 400),
+  error: mat-color(mat-palette($mat-red), 400),
+);

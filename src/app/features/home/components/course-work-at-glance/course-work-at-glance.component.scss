@@ -1,0 +1,37 @@
+@import 'common';
+
+:host {
+  display: block;
+}
+
+.course-container {
+  margin       : 0 auto;
+  margin-top   : rem-calc(20);
+  margin-bottom: rem-calc(20);
+  max-width    : rem-calc(300);
+}
+
+.line {
+  border-top : rem-calc(1) solid black;
+  padding-top: rem-calc(12);
+  margin     : 0 auto;
+  margin-top : rem-calc(6);
+}
+
+.course-button {
+  color         : $white;
+  background    : $color-secondary;
+  border-radius : rem-calc(30);
+  letter-spacing: rem-calc(1.12);
+}
+
+div.credits {
+  text-align    : left;
+  letter-spacing: rem-calc(0);
+  color         : $black;
+  font-weight   : 500;
+}
+
+.or-message {
+  padding: rem-calc(10) 0;
+}

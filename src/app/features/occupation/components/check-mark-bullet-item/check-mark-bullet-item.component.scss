@@ -1,0 +1,24 @@
+@import 'common';
+
+:host {
+  display: block;
+}
+
+.mat-icon {
+  &.icon-checkmark-circle {
+    bottom : 0;
+    display: none;
+    height : rem-calc(36);
+    left   : rem-calc(-40);
+    top    : rem-calc(6);
+    width  : rem-calc(36);
+
+    @include breakpoint(440) {
+      display: block;
+    }
+
+    @include breakpoint(medium) {
+      top: rem-calc(16);
+    }
+  }
+}

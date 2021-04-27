@@ -1,0 +1,177 @@
+<mat-dialog-content>
+<form novalidate
+      autocomplete="off"
+      autocomplete="chrome-off"
+      [formGroup]="formGroup"
+      (ngSubmit)="onFormSubmit()"
+      *ngIf="formGroup">
+
+  <section class="grid-y grid-padding-x ">
+
+    <!-- CLEAR ICON -->
+    <div class="cell text-right"
+         (click)="closeBottomSheet($event)">
+      <mat-icon aria-hidden="false"
+                aria-label="clear"
+                class="clear">clear</mat-icon>
+    </div>
+    <div class="cell ">
+
+      <section class="grid-x grid-padding-x">
+        <div class="cell shrink small-10 xsmall-10">
+          <p class="message">Interested in learning more? Connect with us.</p>
+        </div>
+      </section>
+
+    </div>
+    <!-- FIRST NAME -->
+    <div class="cell">
+      <div class="grid-x grid-padding-x">
+        <div class="cell small-10 xsmall-10 auto form-group">
+          <mat-label> First Name <span>*</span> </mat-label>
+          <mat-form-field appearance="outline">
+
+            <input matInput
+                   formControlName="firstName"
+                   autocomplete="none"
+                   required />
+
+            <mat-error *ngIf="formGroup.controls.firstName.hasError('required')
+                          || (formGroup.get('firstName').invalid && formGroup.get('firstName').touched)">
+              First Name is required.
+            </mat-error>
+
+          </mat-form-field>
+        </div>
+
+        <!-- LAST NAME -->
+        <div class="cell small-10 xsmall-10 auto">
+          <mat-label>Last Name <span>*</span></mat-label>
+          <mat-form-field appearance="outline">
+
+
+
+            <input matInput
+                   formControlName="lastName"
+                   autocomplete="none"
+                   required />
+
+            <mat-error *ngIf="formGroup.controls.lastName.hasError('required')
+                          || (formGroup.get('lastName').invalid && formGroup.get('lastName').touched)">
+              Last Name is required.
+            </mat-error>
+
+          </mat-form-field>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <!-- EMAIL ADDRESS -->
+    <div class="cell">
+      <div class="grid-x grid-padding-x">
+        <div class="cell small-10 xsmall-10 auto">
+          <mat-label>Email Address <span>*</span></mat-label>
+          <mat-form-field appearance="outline">
+            <input matInput
+                   formControlName="emailAddress"
+                   autocomplete="none"
+                   required />
+
+            <mat-error *ngIf="formGroup.controls.emailAddress.hasError('required')
+                          || formGroup.controls.emailAddress.hasError('email')
+                          || (formGroup.get('emailAddress').invalid && formGroup.get('emailAddress').touched)">
+              Please enter a valid email address.
+            </mat-error>
+
+          </mat-form-field>
+        </div>
+        <div class="cell small-10 xsmall-10 auto">
+          <mat-label>Phone <span class="optional">( Optional ) </span> </mat-label>
+          <mat-form-field appearance="outline">
+            <input matInput
+                   formControlName="phone"
+                   autocomplete="none" />
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+    <!-- ORGANIZATION -->
+    <div class="cell">
+
+      <div class="grid-x grid-padding-x">
+        <div class="cell small-10 xsmall-10 auto">
+          <mat-label>Organization <span>*</span></mat-label>
+          <mat-form-field appearance="outline">
+            <input matInput
+                   formControlName="organization"
+                   autocomplete="none"
+                   required />
+
+            <mat-error *ngIf="formGroup.controls.organization.hasError('required')
+                          || (formGroup.get('organization').invalid && formGroup.get('organization').touched)">
+              Organization is required.
+            </mat-error>
+
+          </mat-form-field>
+        </div>
+
+        <!-- YOUR ROLE -->
+        <div class="cell small-10 xsmall-10 auto">
+          <mat-label> Your Role <span>*</span></mat-label>
+          <mat-form-field appearance="outline">
+            <mat-select formControlName="jobTitle"
+                        placeholder="Please Select"
+                        required>
+              <mat-option value="Business">Business </mat-option>
+              <mat-option value="Non-Profit">Non-Profit </mat-option>
+              <mat-option value="Student">Student </mat-option>
+              <mat-option value="University">University</mat-option>
+              <mat-option value="Other">Other</mat-option>
+
+            </mat-select>
+
+            <mat-error *ngIf="formGroup.controls.jobTitle.hasError('required')
+                          || (formGroup.get('jobTitle').invalid && formGroup.get('jobTitle').touched)">
+              You must select an option.
+            </mat-error>
+
+          </mat-form-field>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ADDITIONAL INFORMATION -->
+    <div class="cell">
+      <mat-label>Additional Information <span class="optional">( Optional ) </span> </mat-label>
+      <mat-form-field appearance="outline">
+
+        <textarea matInput
+                  rows="5"
+                  formControlName="description"
+                  autocomplete="none"></textarea>
+      </mat-form-field>
+    </div>
+
+    <div class="cell">
+      <div class="grid-x grid-padding-x grid-padding-y">
+        <div class="cell">
+          <button mat-raised-button
+                  type="submit"
+                  [disabled]="!formGroup.valid"
+                  class="search-button">
+            Send Request
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+</form>
+</mat-dialog-content>

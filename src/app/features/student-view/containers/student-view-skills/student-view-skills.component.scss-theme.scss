@@ -1,0 +1,18 @@
+@import "~@angular/material/theming";
+@import "~foundation-sites/scss/util/unit";
+@import "common";
+
+@mixin student-view-skills-theme($theme) {
+  // retrieve variables from theme
+  // (all possible variables, use only what you really need)
+  $primary: map-get($theme, primary);
+  // $accent    : map-get($theme, accent);
+  // $warn      : map-get($theme, warn);
+  // $foreground: map-get($theme, foreground);
+  // $background: map-get($theme, background);
+
+  .tabs-students.mat-tab-link {
+    background-color: $white;
+    min-width: rem-calc(267) !important;
+  }
+}

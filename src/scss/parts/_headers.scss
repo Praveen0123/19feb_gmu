@@ -1,0 +1,25 @@
+h1 {
+  &.title {
+    color         : $color-primary;
+    font-size     : rem-calc(26);
+    font-weight   : 900;
+    letter-spacing: 0px;
+    opacity       : 1;
+
+    @include breakpoint(medium up) {
+      font-size: rem-calc(30);
+    }
+  }
+}
+
+
+h2 {}
+
+
+h3 {
+  &.title {
+    color      : $color-primary;
+    font-size  : rem-calc(20);
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,96 @@
+query studentByStudentIdOrEmail($studentIdOrEmail: String) {
+  studentByStudentIdOrEmail(studentIdOrEmail: $studentIdOrEmail) {
+    ...studentDetailedFields
+    milestones {
+      id
+      milestoneId
+      name
+      completed
+    }
+    courseGroupings {
+      id
+      name
+      studentId
+      year
+      sequenceNumber
+      groupType
+      credits
+      courseList {
+        id
+        name
+        code
+        school
+        semester
+        year
+        planned
+        completed
+        credits
+        plannerId
+        schoolYear
+        skillList {
+          id
+          label
+          description
+        }
+      }
+    }
+    courses {
+      id
+      name
+      code
+      school
+      semester
+      year
+      credits
+      planned
+      completed
+      plannerId
+      schoolYear
+      skillList {
+        id
+        label
+        description
+      }
+    }
+    skillsByYear {
+      year
+      skillList {
+        id
+        label
+        description
+        demandLevel
+      }
+    }
+  }
+}
+
+fragment studentDetailedFields on Student {
+  id
+  firstName
+  lastName
+  email
+  studentId
+  cohortYear
+  active
+  pathway {
+    id
+    name
+    areaOfStudy
+    code
+    bachelorDegree {
+      id
+      name
+    }
+    associateDegree {
+      id
+      name
+    }
+    occupationList {
+      ...occupationCardFragment
+    }
+  }
+  successCoach {
+    id
+    name
+  }
+}

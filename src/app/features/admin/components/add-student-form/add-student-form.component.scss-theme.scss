@@ -1,0 +1,54 @@
+@import "~@angular/material/theming";
+@import '~foundation-sites/scss/util/unit';
+@import 'common';
+
+@mixin add-student-form-theme($theme) {
+  // retrieve variables from theme
+  // (all possible variables, use only what you really need)
+  $primary      : map-get($theme, primary);
+  // $accent    : map-get($theme, accent);
+  // $warn      : map-get($theme, warn);
+  // $foreground: map-get($theme, foreground);
+  // $background: map-get($theme, background);
+
+
+  .mat-form-field-has-label .mat-form-field-outline:not(.mat-form-field-outline-thick) {
+    border       : solid 1px mat-color($primary);
+    background-color: $white;
+    border-radius: rem-calc(4);
+  }
+  .mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-outline {
+      background-color: $white;
+  }
+  .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
+  background-color: $white;
+  }
+ .mat-form-field-outline .mat-form-field-outline-thick {
+   background-color:  $white;
+ }
+
+  .mat-form-field-should-float .mat-form-field-label {
+    mat-label {
+      background-color: $white;
+      padding         : 0 rem-calc(8) 0 rem-calc(8);
+    }
+
+    .mat-form-field-required-marker {
+      background-color: $white;
+      padding-right   : rem-calc(8);
+    }
+   
+    .mat-form-field-outline {
+      opacity: 0;
+      background-color: $white;
+    }
+    
+  }
+  .mat-focused {
+    background-color: $white;
+  }
+
+  .mat-select-arrow {
+    color: mat-color($primary);
+  }
+}

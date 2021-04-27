@@ -1,0 +1,28 @@
+<section class="grid-y grid-margin-y">
+
+  <!-- HEADER: CAREER OPPORTUNITIES WITH THIS PATHWAY -->
+  <div class="cell">
+    <gmu-section-header [title]="'Career Opportunities with this Pathway'"></gmu-section-header>
+  </div>
+
+
+  <!-- VIEW BY SALARY RANGE -->
+  <div class="cell ">
+
+    <gmu-career-occupations [title]="'Salary Range'"
+                            [subTitle]="'View by'"
+                            [occupationList]="sortAccordingToSalary"
+                            (onOccupationClick)="onOccupationClick($event)"></gmu-career-occupations>
+  </div>
+
+
+  <!-- VIEW BY DEMAND -->
+  <div class="cell ">
+
+    <gmu-career-occupations [title]="'Demand'"
+                            [subTitle]="'View by'"
+                            [occupationList]="sortAccordingToDemand"
+                            (onOccupationClick)="onOccupationClick($event)"></gmu-career-occupations>
+  </div>
+
+</section>

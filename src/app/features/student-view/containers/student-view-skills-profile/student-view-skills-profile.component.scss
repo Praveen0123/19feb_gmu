@@ -1,0 +1,82 @@
+@import "common";
+@import "~@angular/material/theming";
+
+.arrow-down {
+  width: rem-calc(15);
+  height: rem-calc(15);
+  border-top: rem-calc(0) solid $gray-400;
+  border-right: rem-calc(2) solid $gray-400;
+  border-bottom: rem-calc(2) solid $gray-400;
+  border-left: rem-calc(0) solid $gray-400;
+  position: absolute;
+  bottom: rem-calc(-10);
+  left: 37%;
+  transform: rotate(45deg);
+  background: $white;
+}
+
+.arrow {
+  position: relative;
+  z-index: 1;
+  margin-top: rem-calc(-24);
+  border-bottom: solid rem-calc(2) $gray-400;
+}
+
+.buttonToggle {
+  margin-left: -6%;
+}
+
+.active {
+  position: relative;
+  background-color: $black !important;
+  color: $white;
+}
+
+.active:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 99%;
+  margin-left: rem-calc(-50);
+  width: 0;
+  height: 0;
+  border-top: solid rem-calc(8) $black !important;
+  border-left: solid rem-calc(8) transparent !important;
+  border-right: solid rem-calc(8) transparent !important;
+}
+
+.inactive {
+  border: rem-calc(2) solid $black;
+  background-color: $white;
+}
+
+.mat-button-toggle-checked {
+  background-color: $black;
+  color: $white;
+  font-weight: normal;
+}
+
+mat-button-toggle {
+  border: rem-calc(1) solid $black;
+  font-weight: normal;
+  background-color: $white;
+  color: $black;
+  width: rem-calc(80);
+}
+
+.mat-button-toggle-standalone,
+.mat-button-toggle-group {
+  overflow: unset;
+}
+
+.margin-top {
+  margin-top: rem-calc(15);
+}
+
+.padding-left {
+  padding-left: rem-calc(50);
+}
+
+.padding-right {
+  padding-right: rem-calc(10);
+}

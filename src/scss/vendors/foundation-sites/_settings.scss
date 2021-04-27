@@ -1,0 +1,76 @@
+@import './grid_width_setting';
+
+
+
+// GRID WIDTH
+// ---------------------------------------------------------------------------------------------
+$global-width: $global-grid-width;
+
+
+
+
+// Breakpoints
+// ---------------------------------------------------------------------------------------------
+/*
+https://github.com/angular/flex-layout/wiki/Responsive-API
+breakpoint	mediaQuery
+xs	'screen and (max-width: 599px)'
+sm	'screen and (min-width: 600px) and (max-width: 959px)'
+md	'screen and (min-width: 960px) and (max-width: 1279px)'
+lg	'screen and (min-width: 1280px) and (max-width: 1919px)'
+xl	'screen and (min-width: 1920px) and (max-width: 5000px)'
+lt-sm	'screen and (max-width: 599px)'
+lt-md	'screen and (max-width: 959px)'
+lt-lg	'screen and (max-width: 1279px)'
+lt-xl	'screen and (max-width: 1919px)'
+gt-xs	'screen and (min-width: 600px)'
+gt-sm	'screen and (min-width: 960px)'
+gt-md	'screen and (min-width: 1280px)'
+gt-lg	'screen and (min-width: 1920px)'
+
+ZURB's XY GRID BREAKPOINTS:
+  xsmall:   0 - 599px
+  small:    600px - 959px,
+  medium:   960px - 1279px,
+  large:    1280px - 1919px,
+  xlarge:   1920px - 2499px,
+  xxlarge:  2500px & up
+*/
+$breakpoints: (xsmall: 0,
+  small: 600px,
+  medium: 960px,
+  large: 1280px,
+  xlarge: 1920px,
+  xxlarge: 2500px,
+) !default;
+$print-breakpoint  : large;
+$breakpoint-classes: (xsmall small medium large);
+
+
+
+
+// Flexbox Utilities
+// ---------------------------------------------------------------------------------------------
+$flex-source-ordering-count    : 6;
+$flexbox-responsive-breakpoints: true;
+
+
+
+
+// XY GRID
+// ---------------------------------------------------------------------------------------------
+$xy-grid               : true;
+$grid-container        : $global-grid-width;
+$grid-columns          : 12;
+$grid-margin-gutters   : (xsmall: 20px, small: 24px, medium : 28px, large : 28px);
+$grid-padding-gutters  : $grid-margin-gutters;
+$grid-container-padding: (xsmall: 32px, small: 28px, medium : 0, large : 0);
+$grid-container-max    : $global-grid-width;
+$xy-block-grid-max     : 8;
+
+
+
+
+// Utilities
+// ---------------------------------------------------------------------------------------------
+@import '../../node_modules/foundation-sites/scss/util/util';

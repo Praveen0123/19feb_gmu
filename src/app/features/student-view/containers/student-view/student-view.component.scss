@@ -1,0 +1,40 @@
+@import "common";
+@import "~@angular/material/theming";
+
+.router-outlet-wrapper {
+  @include breakpoint(medium up) {
+    @include mat-elevation-transition;
+    @include mat-elevation(8);
+    padding: rem-calc(10);
+  }
+}
+
+.desktop-body-margin-remove {
+  @include breakpoint(medium) {
+    margin-left: rem-calc(-40);
+    margin-top: rem-calc(-23);
+  }
+}
+
+.desktop-body-margin-remove2 {
+  @include breakpoint(medium) {
+    margin-top: rem-calc(-23);
+    margin-right: rem-calc(-40);
+  }
+}
+
+.width-80 {
+  padding-top: rem-calc(50);
+  padding-left: rem-calc(50);
+  padding-right: rem-calc(50);
+  //padding-bottom: rem-calc(10);
+  width: 90%;
+}
+
+.padding-only {
+  //margin-top: rem-calc(-50);
+  padding-top: rem-calc(-25);
+  padding-left: rem-calc(50);
+  padding-right: rem-calc(50);
+  width: 90%;
+}

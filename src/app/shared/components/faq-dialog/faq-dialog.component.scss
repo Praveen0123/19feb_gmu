@@ -1,0 +1,16 @@
+@import "common";
+p {
+  text-align: left;
+}
+
+h1 {
+  font-weight: bolder;
+}
+
+.shift-up {
+  margin-top: -45px;
+  margin-bottom: 25px;
+}
+.message__label {
+  color: $color-primary;
+}

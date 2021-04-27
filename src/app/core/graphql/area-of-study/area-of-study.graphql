@@ -1,0 +1,33 @@
+query areaOfStudyById($areaOfStudyId: ID!)
+{
+  areaOfStudyById(id: $areaOfStudyId)
+  {
+    ...areaOfStudyFragment
+  }
+}
+
+query areaOfStudyList
+{
+  areaOfStudyList
+  {
+    ...areaOfStudyFragment
+  }
+}
+
+query areaOfStudyListSilently
+{
+  areaOfStudyList
+  {
+    ...areaOfStudyFragment
+  }
+}
+
+fragment areaOfStudyFragment on AreaOfStudy
+{
+  id
+  name
+  occupationList
+  {
+    ...occupationCardFragment
+  }
+}

@@ -1,0 +1,23 @@
+<!-- Average Salary Display Content -->
+<section class="grid-x grid-padding-x grid-padding-y">
+
+  <!-- Toggle Button Change  -->
+  <div class="cell auto text-left">
+    <mat-button-toggle-group class="mat-button-style"
+                             #group="matButtonToggleGroup"
+                             [value]="selectedSalaryType"
+                             (change)="onSalaryTypeSelection(group.value)">
+      <mat-button-toggle [value]="availableSalaryTypes.Annual">{{availableSalaryTypes.Annual}}</mat-button-toggle>
+      <mat-button-toggle [value]="availableSalaryTypes.Hourly">{{availableSalaryTypes.Hourly}}</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+</section>
+
+<vp-salary-distribution [lowSalary]="minimumSalary"
+                        [medianSalary]="medianSalary"
+                        [highSalary]="maximumSalary"
+                        [barColorColumn1]="barColorColumn1"
+                        [barColorColumn2]="barColorColumn2"
+                        [barColorColumn3]="barColorColumn3"
+                        [barColorColumn4]="barColorColumn4"
+                        [barColorColumn5]="barColorColumn5"></vp-salary-distribution>

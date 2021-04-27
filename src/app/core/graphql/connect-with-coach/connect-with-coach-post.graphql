@@ -1,0 +1,36 @@
+mutation saveConnectWithCoach($connectWithCoachInput: ConnectWithCoachInput!) 
+{
+  saveConnectWithCoach(connectWithCoachInput: $connectWithCoachInput) 
+  {
+    userId
+    firstName
+    lastName
+    emailAddress
+    mobileNumber
+    birthDate
+    isCurrentNovaStudent
+    currentNovaProgram
+    {
+      ...degreeFields
+    }
+    desiredMasonProgram
+    {
+      ...degreeFields
+    }
+    startingSemesterAtMason
+    desiredNovaProgram
+    {
+      ...degreeFields
+    }
+    startingSemesterAtNova
+  }
+}
+
+fragment degreeFields on Degree
+{
+  id
+  name
+  type
+  school
+  cipCode
+}

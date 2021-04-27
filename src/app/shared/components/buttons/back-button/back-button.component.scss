@@ -1,0 +1,18 @@
+@import 'common';
+
+:host {
+  display: block;
+}
+
+a.mat-button {
+  color         : $color-header;
+  font-size     : rem-calc(12);
+  line-height   : initial;
+  padding       : 0;
+  text-transform: uppercase;
+
+  .mat-icon {
+    height: rem-calc(15);
+    width : rem-calc(15);
+  }
+}

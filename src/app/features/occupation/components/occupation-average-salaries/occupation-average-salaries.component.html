@@ -1,0 +1,41 @@
+<section class="grid-y grid-margin-y">
+
+  <!-- HEADER: Average Salaries -->
+  <div class="cell">
+    <gmu-section-header [title]="'Average Salaries'"></gmu-section-header>
+  </div>
+
+
+  <!-- MESSAGING & MAP -->
+  <div class="cell">
+
+    <section class="grid-x grid-margin-x">
+
+      <!-- MESSAGING -->
+      <div class="cell medium-auto">
+
+        <span class="cell message__label message__label--bold message__label--large">
+          {{averageSalariesTitle}}
+        </span>
+        <span class="cell message__label">
+          {{averageSalariesDescription}}
+        </span>
+
+      </div>
+
+
+      <!-- MAP -->
+      <div class="cell medium-auto">
+
+        <vp-map-occupation-average-salaries [nationalSalaryList]="nationalSalaryList"
+                                            [stateSalaryList]="stateSalaryList"
+                                            [mapTitle]="mapTitle"
+                                            (onStateSelected)="onStateSelected($event)"></vp-map-occupation-average-salaries>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</section>

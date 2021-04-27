@@ -1,0 +1,11 @@
+<div class="course-item"
+     *ngFor="let course of degreeModel">
+  <section class="grid-y ">
+    <div class="cell">
+      <span>{{course.code}} - {{course.credits || 0}} Credits</span>
+    </div>
+    <div class="cell">
+      <span>{{course.name}}</span>
+    </div>
+  </section>
+</div>

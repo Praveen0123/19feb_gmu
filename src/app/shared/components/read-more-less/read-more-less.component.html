@@ -1,0 +1,10 @@
+<p class="message__label">
+
+  {{ descriptionDetails }}
+
+  <a (click)="onShowMoreClick()"
+     *ngIf="isReadMoreVisible">
+    {{showMoreLabel}}
+  </a>
+
+</p>

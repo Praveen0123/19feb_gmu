@@ -1,0 +1,29 @@
+<ng-container *ngIf="{ areaOfStudyList:areaOfStudyList$ | async
+                     } as dataOwner">
+
+  <section class="grid-y grid-margin-y">
+
+    <!-- OCCUPATION SEARCH BOX FORM -->
+    <div class="cell">
+
+      <gmu-occupation-auto-complete (onOccupationSelected)="onOccupationSelected($event)"></gmu-occupation-auto-complete>
+
+    </div>
+
+
+    <!-- OCCUPATION CARDS BY AREA OF STUDY -->
+    <div class="cell ">
+      <gmu-occupation-list-by-area-of-study [areaOfStudyList]="dataOwner.areaOfStudyList"
+                                            (onAreaOfStudyClick)="onAreaOfStudyClick($event)"
+                                            (onOccupationClick)="onOccupationClick($event)"></gmu-occupation-list-by-area-of-study>
+    </div>
+
+
+    <!-- CONNECT WITH COACH FORM -->
+    <div class="cell">
+      <gmu-connect-with-coach [eventLabel]="'Careers Browse Page'"></gmu-connect-with-coach>
+    </div>
+
+  </section>
+
+</ng-container>

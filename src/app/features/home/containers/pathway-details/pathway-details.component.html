@@ -1,0 +1,80 @@
+<ng-container *ngIf="{ pathwayList:pathwayList$ | async,
+                       pathway:pathway$ | async,
+                       occupationCardList: occupationCardList$ | async
+                     } as dataOwner">
+
+  <section class="grid-y grid-margin-y"
+           *ngIf="dataOwner.pathway">
+
+    <!-- PATHWAY EXPLORER FORM & META DATA -->
+    <div class="cell">
+
+      <section class="grid-x grid-margin-x align-top">
+
+        <!-- PATHWAY EXPLORER FORM -->
+        <div class="cell medium-6">
+          <gmu-pathway-explorer-form [pathwayList]="dataOwner.pathwayList"
+                                     [selectedPathway]="dataOwner.pathway"
+                                     (onFormSubmit)="onPathwayExplorerFormSubmit($event)"
+                                     (onClearSelection)="onClearPathwaySelection()"></gmu-pathway-explorer-form>
+        </div>
+
+        <!-- PATHWAY META DATA -->
+        <div class="cell medium-6">
+
+          <!-- PATHWAY META DATA  -->
+          <h3 class="title">
+            {{dataOwner.pathway.bachelorDegree.name}}
+          </h3>
+
+          <!-- Read More-Less Component -->
+          <gmu-read-more-less [description]="dataOwner.pathway.description"
+                              [maxLength]="250"></gmu-read-more-less>
+        </div>
+
+      </section>
+
+
+    </div>
+
+
+    <!-- COURSE WORK AT A GLANCE -->
+    <div class="cell">
+      <gmu-course-work-at-glance [pathway]="dataOwner.pathway"></gmu-course-work-at-glance>
+    </div>
+
+
+    <!-- TOP SKILLS -->
+    <div class="cell">
+      <gmu-degree-details-top-skills [pathway]="dataOwner.pathway"></gmu-degree-details-top-skills>
+    </div>
+
+
+    <!-- CAREER OPPORTUNITIES -->
+    <div class="cell">
+      <gmu-career-opportunities [occupationCardList]="dataOwner.pathway.occupationList"
+                                (onOccupationClick)="onOccupationClick(dataOwner.pathway, $event)"></gmu-career-opportunities>
+    </div>
+
+
+    <!-- CONNECT WITH COACH FORM -->
+    <div class="cell">
+
+      <section class="grid-x">
+
+        <div class="cell auto show-for-medium">
+          <p class="message__label message__label"> {{description}} </p>
+          <p class="message__label message__label--bold"> {{highlightedText}} </p>
+        </div>
+
+        <div class="cell auto">
+          <gmu-connect-with-coach [eventLabel]="'Pathway Explorer Details Page'"></gmu-connect-with-coach>
+        </div>
+
+      </section>
+
+    </div>
+
+  </section>
+
+</ng-container>

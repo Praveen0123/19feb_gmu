@@ -1,0 +1,37 @@
+@import "common";
+
+:host {
+  display: block;
+  margin: 0 auto;
+  max-width: rem-calc(800);
+}
+
+mat-label {
+  font-size: rem-calc(14);
+  line-height: rem-calc(40);
+  font-family: Avenir Next !important;
+  span {
+    color: $color-warning;
+  }
+  .optional {
+    color: $gray-400;
+  }
+}
+
+button {
+  border-radius: rem-calc(5);
+  width: rem-calc(200);
+}
+
+.message {
+  font-size: rem-calc(24);
+  line-height: rem-calc(32);
+  font-family: Avenir Next !important;
+  font-weight: 700;
+}
+
+.clear {
+  font-size: rem-calc(30);
+  cursor: pointer;
+  color: $color1;
+}

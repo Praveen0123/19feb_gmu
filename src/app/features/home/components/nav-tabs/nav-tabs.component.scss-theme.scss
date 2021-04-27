@@ -1,0 +1,94 @@
+@import "~@angular/material/theming";
+@import "~foundation-sites/scss/util/unit";
+
+@mixin nav-tabs-theme($theme) {
+  // retrieve variables from theme
+  // (all possible variables, use only what you really need)
+  $primary: map-get($theme, primary);
+  // $accent    : map-get($theme, accent);
+  // $warn      : map-get($theme, warn);
+  // $foreground: map-get($theme, foreground);
+  // $background: map-get($theme, background);
+
+  .mat-tab-nav-bar,
+  .mat-tab-header {
+    border-bottom: none;
+  }
+
+  .mat-icon {
+    &.nav-icon {
+      height: rem-calc(32);
+      width: rem-calc(45);
+
+      @include breakpoint(small up) {
+        height: rem-calc(63);
+        width: rem-calc(77);
+      }
+    }
+  }
+
+  .mat-ink-bar {
+    display: none !important;
+  }
+
+  .mat-tab-link {
+    background-color: mat-color($primary, 300);
+    border-radius: rem-calc(5) rem-calc(5) 0 0;
+    height: rem-calc(86) !important;
+    min-width: rem-calc(128) !important;
+    opacity: 1 !important;
+    padding: 0 rem-calc(12) !important;
+
+    @include breakpoint(small) {
+      height: rem-calc(118) !important;
+      min-width: rem-calc(184) !important;
+    }
+
+    @include breakpoint(medium up) {
+      top: rem-calc(5);
+    }
+
+    &:nth-child(2) {
+      margin-left: rem-calc(12) !important;
+    }
+
+    h2 {
+      color: mat-color($primary);
+      font-size: rem-calc(14);
+      margin-bottom: 0;
+
+      @include breakpoint(small) {
+        font-size: rem-calc(20);
+        margin-bottom: rem-calc(8);
+      }
+    }
+
+    .mat-icon {
+      svg {
+        .a {
+          fill: mat-color($primary);
+          stroke: none;
+        }
+      }
+    }
+  }
+
+  .mat-tab-label-active {
+    background: mat-color($primary, lighter-contrast);
+    border-radius: rem-calc(5) rem-calc(5) 0 0;
+    opacity: 1 !important;
+
+    h2 {
+      color: mat-color($primary, 500);
+    }
+
+    .mat-icon {
+      svg {
+        .a {
+          fill: mat-color($primary);
+          stroke: none;
+        }
+      }
+    }
+  }
+}

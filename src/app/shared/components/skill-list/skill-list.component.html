@@ -1,0 +1,103 @@
+<section class="{{ gridClass }}">
+  <div class="cell" *ngIf="title && subTitle">
+    <h3>
+      <span class="title">{{ title }}</span>
+      <span class="subTitle">{{ subTitle }}</span>
+    </h3>
+  </div>
+  <ng-container *ngIf="acquiredSkills == null">
+  <div
+    class="cell xsmall-12 small-12 medium-12 padding"
+    *ngFor="let skill of skillListToDisplay"
+  >
+    <a
+      mat-raised-button
+      *ngIf="!displaySkillsAsLinks"
+      (click)="onClickSkill(skill)"
+      >
+      
+      <span class="message__label message__label--small message__label--wrap text-left">
+      {{ skill.label }}
+      <span *ngIf="acquiredSkills?.has(skill.label)">&nbsp;<mat-icon>done</mat-icon></span>
+      <span *ngIf="acquiredSkills && !acquiredSkills?.has(skill.label)">&nbsp;<mat-icon>hourglass_top</mat-icon></span> 
+        
+      </span> </a
+    >
+
+    <a
+      mat-button
+      class="link"
+      *ngIf="displaySkillsAsLinks"
+      (click)="onClickSkill(skill)"
+      ><span
+        class="message__label message__label--small message__label--wrap text-left"
+        >{{ skill.label }}</span
+      ></a
+    >
+  </div>
+  </ng-container>
+    <ng-container *ngIf="acquiredSkills != null">
+    <div *ngIf="progressSkills && progressSkills.length > 0"
+    class=" cell xsmall-12 small-12 medium-12 message__label text-left bold">In Progress</div>
+  <div
+    class="cell xsmall-12 small-12 medium-12 padding"
+    *ngFor="let skill of progressSkills"
+  >
+    <a
+      mat-raised-button
+      *ngIf="!displaySkillsAsLinks"
+      (click)="onClickSkill(skill)"
+      >
+      
+      <span class="message__label message__label--small message__label--wrap text-left">
+      {{ skill.label }}
+      
+        
+      </span> </a
+    >
+
+    <a
+      mat-button
+      class="link"
+      *ngIf="displaySkillsAsLinks"
+      (click)="onClickSkill(skill)"
+      ><span
+        class="message__label message__label--small message__label--wrap text-left"
+        >{{ skill.label }}</span
+      ></a
+    >
+  </div>
+  <div *ngIf="completedSkills && completedSkills.length > 0"
+  class=" cell xsmall-12 small-12 medium-12 message__label text-left bold"
+  >Completed</div>
+  <div
+    class="cell xsmall-12 small-12 medium-12 padding"
+    *ngFor="let skill of completedSkills"
+  >
+    <a
+      mat-raised-button
+      class="completed"
+      *ngIf="!displaySkillsAsLinks"
+      (click)="onClickSkill(skill)"
+      >
+      
+      <span class="message__label message__label--small message__label--wrap text-left">
+      {{ skill.label }}
+      
+        
+      </span> </a
+    >
+
+    <a
+      mat-button
+      class="link"
+      *ngIf="displaySkillsAsLinks"
+      (click)="onClickSkill(skill)"
+      ><span
+        class="message__label message__label--small message__label--wrap text-left"
+        >{{ skill.label }}</span
+      ></a
+    >
+  </div>
+  </ng-container>
+</section>

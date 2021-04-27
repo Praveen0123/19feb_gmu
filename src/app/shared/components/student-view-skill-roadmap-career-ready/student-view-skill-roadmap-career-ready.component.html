@@ -1,0 +1,28 @@
+<ng-container>
+
+  <section class="grid-x grid-margin-x text-center  align-center-middle">
+
+    <!-- CAREER READY & Description -->
+    <!-- <div class="cell">
+      <div class="grid-y grid-margin-y grid-padding-y"> -->
+        <div class="cell margin">
+          <h1 class="text-career">CAREER READY!</h1>
+          <h3>Here are some occupations you will be qualified and prepared for with your degree</h3>
+        </div>
+      <!-- </div>
+    </div> -->
+
+
+    <!-- OCCUPATION LIST -->
+    <div class="cell max-width margin">
+
+      <gmu-occupation-list-scroll [occupationList]="pathway?.occupationList || []"
+                                  [pathway]="pathway"
+                                  (onOccupationClick)="onOccupationClick($event)"
+                                  ></gmu-occupation-list-scroll>
+
+    </div>
+
+  </section>
+
+</ng-container>

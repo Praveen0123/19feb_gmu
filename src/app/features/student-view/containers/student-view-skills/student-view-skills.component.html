@@ -1,0 +1,43 @@
+<div class="cell ">
+  <nav mat-tab-nav-bar
+       mat-align-tabs="center"
+       disablePagination="true">
+
+    <!-- NAVIGATION TABS: QUICK MATCH, BUILD YOUR TARGET -->
+    <a mat-tab-link
+       class="tabs-students"
+       *ngFor="let link of navLinks; trackBy: trackByFn;"
+       [routerLink]="link.path"
+       routerLinkActive
+       #rla="routerLinkActive"
+       [active]="rla.isActive || link.isActive">
+
+
+      <section class="grid-y grid-margin-y ">
+        <div class="cell ">
+          <div class="cell tabHeading "
+               *ngIf="link.isActive">
+            ADVANCE
+          </div>
+        </div>
+        <div class="cell ">
+          <section class="grid-x  grid-padding-x
+           align-spaced align-stretch">
+            <div class="cell ">
+              <h2 *ngIf="link.isActive"
+                  class="tabSubHeading">{{link.label}}</h2>
+              <h6 *ngIf="!link.isActive"
+                  class="tabSubHeading2">{{link.label}}</h6>
+            </div>
+          </section>
+        </div>
+
+      </section>
+    </a>
+
+
+  </nav>
+</div>
+  <div class="arrow2">
+    <div class="arrow2-down " [ngClass]="arrowClass"></div>
+  </div>

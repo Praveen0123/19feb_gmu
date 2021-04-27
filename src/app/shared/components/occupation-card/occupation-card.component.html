@@ -1,0 +1,114 @@
+<mat-card class="{{showSkills ? 'viewport-occupation-roadmap': 'viewport-occupation'}}">
+  <mat-card-content>
+
+
+    <section class="grid-x card-wrapper">
+
+      <!-- IMAGE -->
+      <div class="cell align-self-top">
+        <!-- IMAGE -->
+        <div class="occupation-image-container"
+             [style.background]="'url(' + imageUrl + ')'">
+
+          <!-- THE OVERLAY TO MAKE THE IMAGE DARKER -->
+          <div class="image-overlay"></div>
+
+          <!-- TITLE -->
+          <div class="title-container">
+            <div class="occupation-title"
+                 [matTooltip]="occupation.title">
+              {{occupation.title}}</div>
+          </div>
+
+        </div>
+      </div>
+
+  <ng-container *ngIf="!showSkills">
+      <!-- SALARY/GROWTH -->
+      <div class="cell align-self-bottom"
+           >
+
+        <!-- SALARY AND GROWTH -->
+        <section class="grid-x grid-padding-x align-center-middle text-center">
+
+          <div class="cell auto vertical-line">
+            <span class="message__label message__label--bold message__label--nowrap">{{ salary | salarySuffix }} /yr</span>
+            <span class="message__label message__label--xsmall">median salary</span>
+          </div>
+          <div class="cell auto">
+            <span class="message__label message__label--bold message__label--nowrap">{{ occupation.projectedGrowthRate }}</span>
+            <span class="message__label message__label--xsmall">growth</span>
+          </div>
+        </section>
+      </div>
+  </ng-container>
+<ng-container *ngIf="showSkills">
+      <!-- SALARY/GROWTH -->
+      <div class="cell"
+           *ngIf="showSkills">
+
+        <!-- SALARY AND GROWTH -->
+        <section class="grid-y  grid-margin-y align-content ">
+
+          <div class="cell">
+            <span class="text-font">{{ salary | salarySuffix }}</span>
+            <div>/ year</div>
+          </div>
+          <div class="cell text-align">
+            <span class="text-font"> {{occupation.projectedGrowthRate}}</span>
+            <div>growth</div>
+          </div>
+
+        </section>
+
+      </div>
+
+      <!-- SALARY/GROWTH -->
+      <div class="cell">
+
+        <!-- SALARY AND GROWTH -->
+        <section class="grid-x ">
+
+          <div class="cell  medium-4">
+            <b> TOP SKILLS</b>
+
+          </div>
+          <div class="cell">
+
+            <section class="grid-x  grid-margin-x">
+
+              <!-- ESSENTIAL SKILLS -->
+              <div class="cell auto">
+
+                <gmu-skill-list [title]="'Essential'"
+                                [subTitle]="' '"
+                                [topX]="3"
+                                [skillList]="essentialSkillList">
+                </gmu-skill-list>
+
+              </div>
+
+              <!-- TECHNICAL SKILLS -->
+              <div class="cell auto">
+
+                <gmu-skill-list [title]="'Technical'"
+                                [subTitle]="' '"
+                                [topX]="3"
+                                [skillList]="technicalSkillList">
+                </gmu-skill-list>
+
+              </div>
+
+            </section>
+          </div>
+
+
+        </section>
+
+      </div>
+    </ng-container>
+    </section>
+
+
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,181 @@
+<section class="grid-x align-right grid-padding-y">
+  <div class="cell medium-3 buttonToggle">
+    <label><b>Skill Definition:</b></label>
+
+    <button (click)="showHide()" class="grid-margin-x showHide">
+      {{ show ? "Hide" : "Show" }}
+    </button>
+  </div>
+</section>
+
+<section class="grid-y style-transition" id="print-section">
+  <!-- HEADER -->
+  <div class="cell course-header">
+    <section class="grid-x grid-padding-x grid-margin-y align-justify">
+      <div class="cell medium-2 year-width">Year Completed</div>
+
+      <div class="cell medium-2">Course Name</div>
+
+      <div class="cell auto">
+        <div class="grid-x">
+          <div class="cell medium-3">Skills Acquired</div>
+
+          <div class="cell auto">How I Applied The Skill</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Transcript Details List -->
+  <div
+    class="cell course-item"
+    *ngFor="let course of filteredCourses; let i = index; let even = even"
+    [ngClass]="{ even: even }"
+  >
+    <section
+      class="grid-x grid-margin-x grid-padding-x medium-margin-collapse align-justify"
+    >
+      <!-- Year Completed Details -->
+      <div class="cell medium-2 year-width">
+        {{ course.year }}
+      </div>
+
+      <!-- Course Name Details -->
+      <div class="cell medium-2">
+        <div class="grid-y">
+          <div class="cell message__label message__label--bold">
+            {{ course.code }}
+          </div>
+          <div class="cell">{{ course.name }}</div>
+        </div>
+      </div>
+
+      <!-- Skils Details -->
+      <div class="cell auto">
+        <div
+          class="grid-x grid-margin-y"
+          *ngFor="let skill of course.skillList"
+        >
+          <!-- Skills Name Details -->
+          <div class="cell medium-3">
+            <div class="cell">
+              <span class="skillName"> {{ skill.label }} </span>
+            </div>
+          </div>
+
+          <!-- Skills Definition Details -->
+          <div class="cell auto">
+            <div>
+              <mat-form-field class="w-full" appearance="outline">
+                <textarea rows="3" matInput (click)="update()"></textarea>
+              </mat-form-field>
+            </div>
+
+            <label *ngIf="show"><b>Skill Definition:</b></label>
+            <div *ngIf="show" class="cell">
+              {{ skill.description }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div
+    *ngIf="!filteredCourses?.length"
+    class="cell course-item even message__label message__label--bold"
+  >
+    <div class="centered">
+      As you complete courses, mark them complete the ADVANCE Planner to view
+      the skills you have gained here.
+    </div>
+  </div>
+</section>
+<div [hidden]="true">
+  <section class="grid-y style-transition" id="print-section2">
+    <!-- HEADER -->
+    <div class="cell course-header">
+      <section class="grid-x grid-padding-x grid-margin-y align-justify">
+        <div class="cell medium-2">Course Name</div>
+
+        <div class="cell auto">
+          <div class="grid-x">
+            <div class="cell medium-3">Skills Acquired</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Transcript Details List -->
+    <div
+      class="cell course-item"
+      *ngFor="let course of filteredCourses; let i = index; let even = even"
+      [ngClass]="{ even: even }"
+    >
+      <section
+        class="grid-x grid-margin-x grid-padding-x medium-margin-collapse align-justify"
+      >
+        <!-- Year Completed Details -->
+
+        <!-- Course Name Details -->
+        <div class="cell medium-2">
+          <div class="grid-y">
+            <div class="cell message__label message__label--bold">
+              {{ course.code }}
+            </div>
+            <div class="cell">{{ course.name }}</div>
+            <div class="cell">
+              {{ course.year }}
+            </div>
+          </div>
+        </div>
+
+        <!-- Skils Details -->
+        <div class="cell auto">
+          <div
+            class="grid-x grid-margin-y"
+            *ngFor="let skill of course.skillList"
+          >
+            <!-- Skills Name Details -->
+            <div class="cell medium-3">
+              <div class="cell">
+                <span class="skillName"> {{ skill.label }} </span>
+              </div>
+            </div>
+
+            <!-- Skills Definition Details -->
+            <div class="cell auto">
+              <mat-form-field class="w-full" appearance="outline">
+                <textarea rows="4" matInput></textarea>
+              </mat-form-field>
+              <div class="cell">{{ skill.description }}</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div
+      *ngIf="!filteredCourses?.length"
+      class="cell course-item even message__label message__label--bold"
+    >
+      <div class="centered">
+        As you complete courses, mark them complete the ADVANCE Planner to view
+        the skills you have gained here.
+      </div>
+    </div>
+  </section>
+</div>
+<!-- Print Button -->
+<section class="grid-y grid-padding-y print-style">
+  <div class="text-right cell">
+    <button
+      mat-raised-button
+      useExistingCss="true"
+      printSectionId="print-section2"
+      ngxPrint
+      (click)="onPrintClick()"
+      class="course-button"
+    >
+      <span class="material-icons">print</span> PRINT
+    </button>
+  </div>
+</section>

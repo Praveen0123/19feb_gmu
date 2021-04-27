@@ -1,0 +1,11 @@
+@import 'common';
+
+:host {
+  display: block;
+}
+
+vp-salary-distribution {
+  height: rem-calc(140);
+  margin: 0;
+  width : 100%;
+}

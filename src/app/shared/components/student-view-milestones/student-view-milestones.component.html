@@ -1,0 +1,48 @@
+
+<section>
+
+  <!-- HEADING OF MILESTONES -->
+  <div class="cell course-header message__label message__label--small content">
+
+    <section class="grid-x grid-margin-x grid-padding-x  align-justify">
+
+      <div class="cell auto ">
+        MILESTONES - {{degree}}
+      </div>
+      <div class="cell shrink">
+        Completed
+      </div>
+    </section>
+
+  </div>
+
+  <!-- CONTENT OF MILESTONE -->
+  <div class="content">
+
+    <div class="cell course-item "
+         *ngFor="let item of milestones;let i=index; let odd=odd"
+         [ngClass]="{ odd: odd}">
+
+      <section class="grid-x grid-margin-x grid-padding-x   align-justify">
+        <div class="cell auto font-weight">
+          <span> <b>{{i+1}}</b>. {{item.name}}</span>
+          <!-- <span *ngIf="item.name">
+            <ol type="a"
+                *ngFor="let desc of item.description">
+              <li>{{desc.name1}}</li>
+              <li>{{desc.name2}}</li>
+            </ol>
+          </span> -->
+
+        </div>
+
+        <div class="cell shrink">
+          <mat-checkbox [checked]="item.completed" (change)="markCompleted(item)"></mat-checkbox>
+        </div>
+      </section>
+
+    </div>
+
+  </div>
+
+</section>

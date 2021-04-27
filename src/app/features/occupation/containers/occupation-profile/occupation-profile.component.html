@@ -1,0 +1,60 @@
+<ng-container *ngIf="{
+    occupationProfileModel: occupationProfileModel$ | async,
+    selectedPathway: selectedPathway$ | async,
+    deviceCharacteristics: deviceCharacteristics$ | async
+  } as dataOwner">
+  <section class="grid-y grid-margin-y"
+           *ngIf="dataOwner.occupationProfileModel">
+    <!-- BACK BUTTON -->
+    <div class="cell">
+      <gmu-back-button></gmu-back-button>
+    </div>
+
+    <!-- WHAT THEY DO -->
+    <div class="cell">
+      <gmu-occupation-what-they-do [occupationProfileDetails]="dataOwner.occupationProfileModel"></gmu-occupation-what-they-do>
+    </div>
+
+    <div class="cell text-center">
+      <mat-icon class="icon-white-arrow"
+                [svgIcon]="'icon-white-arrow'"></mat-icon>
+    </div>
+
+    <!-- SELECTED PATHWAY -->
+    <div class="cell">
+      <gmu-selected-pathway [occupationProfileDetails]="dataOwner.occupationProfileModel"
+                            [selectedPathway]="dataOwner.selectedPathway"></gmu-selected-pathway>
+    </div>
+
+    <!-- CONNECT WIH COACH -->
+    <div class="cell">
+      <gmu-connect-with-coach [eventLabel]="'Careers Details Page'"></gmu-connect-with-coach>
+    </div>
+
+    <section class="grid-x connect-with-coach-grid">
+      <div class="cell auto show-for-medium">
+        <p class="message__label message__label">{{ description }}</p>
+        <p class="message__label message__label--bold">{{ highLightText }}</p>
+      </div>
+    </section>
+    <!-- HEADER: TOP SKILLS GAINED IN THIS MAJOR -->
+    <div class="cell">
+      <gmu-section-header [title]="'Skills Roadmap'"></gmu-section-header>
+    </div>
+
+    <!-- SKILLS ROADMAP -->
+    <div class="cell">
+      <gmu-roadmap-medium [occupationProfileDetails]="dataOwner.occupationProfileModel"></gmu-roadmap-medium>
+    </div>
+
+    <!-- TOP EMPLOYERS -->
+    <div class="cell">
+      <gmu-occupation-employer-list [occupationProfileDetails]="dataOwner.occupationProfileModel"></gmu-occupation-employer-list>
+    </div>
+
+    <!-- OCCUPATION HOSTSPOTS -->
+    <div class="cell">
+      <gmu-occupation-hot-spot [occupationProfileDetails]="dataOwner.occupationProfileModel"></gmu-occupation-hot-spot>
+    </div>
+  </section>
+</ng-container>

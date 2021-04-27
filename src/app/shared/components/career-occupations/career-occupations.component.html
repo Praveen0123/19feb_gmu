@@ -1,0 +1,23 @@
+<section class="grid-y">
+
+  <!--HEADER: VIEW BY SALARY RANGE AND DEMAND -->
+  <div class="cell">
+
+    <h3>
+      <span class="subTitle">{{subTitle}}</span>
+      <span class="title">{{title}}</span>
+    </h3>
+
+  </div>
+
+
+  <!-- OCCUPATION LIST -->
+  <div class="cell">
+
+    <gmu-occupation-list-scroll [occupationList]="occupationList"
+                                (onOccupationClick)="onOccupationClick($event)"></gmu-occupation-list-scroll>
+
+  </div>
+
+
+</section>

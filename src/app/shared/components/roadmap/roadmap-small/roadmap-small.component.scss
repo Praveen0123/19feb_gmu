@@ -1,0 +1,40 @@
+@import 'common';
+
+.mat-icon {
+
+  &.roadmap {
+    height: 100%;
+    width : 100%;
+  }
+
+}
+
+.year {
+  height : 100%;
+  padding: rem-calc(16);
+
+  &.one {
+    background-color: $color-year1;
+    border          : solid 2px $color-year1-border;
+  }
+
+  &.two {
+    background-color: $color-year2;
+    border          : solid 2px $color-year2-border;
+  }
+
+  &.three {
+    background-color: $color-year3;
+    border          : solid 2px $color-year3-border;
+  }
+
+  &.four {
+    background-color: $color-year4;
+    border          : solid 2px $color-year4-border;
+  }
+}
+
+.year-circle {
+  height: rem-calc(28);
+  width : rem-calc(28);
+}

@@ -1,0 +1,8 @@
+<ng-container *ngIf="{deviceCharacteristics: deviceCharacteristics$ | async} as dataOwner">
+<ng-container *ngIf="dataOwner.deviceCharacteristics.isGreaterThanSmall">
+<gmu-mason-splash-page-list (onButtonClick)="onButtonClick($event)" (onFormSubmit)="onFormSubmit($event)"></gmu-mason-splash-page-list>
+</ng-container>
+<ng-container *ngIf="dataOwner.deviceCharacteristics.isLessThanMedium">
+<gmu-mason-splash-list-mobile (onButtonClick)="onButtonClick($event)" (onFormSubmit)="onFormSubmit($event)"></gmu-mason-splash-list-mobile>
+</ng-container>
+</ng-container>

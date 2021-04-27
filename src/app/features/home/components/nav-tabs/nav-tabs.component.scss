@@ -1,0 +1,14 @@
+@import "common";
+
+:host {
+  display: block;
+  margin : 0 auto;
+  width  : rem-calc(300);
+
+  margin-top   : rem-calc(28);
+  margin-bottom: rem-calc(28);
+
+  @include breakpoint(small up) {
+    width: rem-calc(400);
+  }
+}

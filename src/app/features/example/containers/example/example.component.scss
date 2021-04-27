@@ -1,0 +1,81 @@
+@import 'common';
+
+
+:host {
+  display      : block;
+  margin-bottom: rem-calc(40);
+}
+
+h2 {
+  color    : $gray-650;
+  font-size: rem-calc(24);
+
+  @include breakpoint(small only) {
+    color    : dodgerblue;
+    font-size: rem-calc(32);
+  }
+
+  @include breakpoint(medium only) {
+    color    : deeppink;
+    font-size: rem-calc(48);
+  }
+
+  @include breakpoint(large only) {
+    color      : orange;
+    font-size  : rem-calc(64);
+    font-weight: 100;
+  }
+}
+
+.grid-y {
+  >.cell {
+    border: solid 1px $gray-100;
+  }
+}
+
+.responsive-adjustments {
+  >.cell {
+
+    @include breakpoint(medium) {
+      background-color: $gray-400;
+    }
+
+
+  }
+}
+
+
+
+// Foundation Colors
+$primary-color : #1779ba;
+$black         : #0a0a0a;
+$white         : #fefefe;
+
+// demo css 
+.grid--demo {
+  margin-top: 5px;
+
+  .grid-x,
+  .grid-y {
+    background   : lighten($primary-color, 50%);
+    font-size    : 12px;
+    line-height  : 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .grid-y .grid-x {
+    margin-bottom: 0;
+  }
+
+  .cell {
+    &:nth-child(odd) {
+      background: lighten($primary-color, 30%);
+      color     : $black;
+    }
+
+    &:nth-child(even) {
+      background: $primary-color;
+      color     : $white;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+<nav mat-tab-nav-bar
+     mat-align-tabs="center"
+     disablePagination="true">
+
+  <!-- NAVIGATION TABS: QUICK MATCH, BUILD YOUR TARGET -->
+  <a mat-tab-link
+     *ngFor="let link of navLinks; trackBy: trackByFn;"
+     [routerLink]="link.path"
+     routerLinkActive
+     #rla="routerLinkActive"
+     [class.mat-elevation-z2]="!rla.isActive"
+     [class.mat-elevation-z8]="rla.isActive"
+     [active]="rla.isActive || link.isActive">
+
+    <section class="grid-x grid-margin-x align-center-middle">
+
+      <div class="cell auto">
+        <section class="grid-y">
+          <div class="cell">
+            <h2>{{link.label}}</h2>
+          </div>
+          <div class="cell">
+            <mat-icon class="nav-icon"
+                      [svgIcon]="link.icon"></mat-icon>
+          </div>
+        </section>
+      </div>
+
+    </section>
+  </a>
+
+</nav>

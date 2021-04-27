@@ -1,0 +1,14 @@
+<!-- <section class="grid-y">
+  <div class="arrow">
+    <div class="arrow-down "></div>
+  </div>
+</section> -->
+
+<ng-container *ngIf="{ student: student$ | async} as dataOwner">
+
+  <section class="grid-y">
+    <gmu-skills-transcript [student]="dataOwner.student">
+    </gmu-skills-transcript>
+  </section>
+
+</ng-container>

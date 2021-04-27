@@ -1,0 +1,5 @@
+mutation saveFeedback($feedbackInput: FeedbackInput!) {
+  saveFeedback(feedbackInput: $feedbackInput) {
+    id
+  }
+}

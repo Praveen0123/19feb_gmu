@@ -1,0 +1,6 @@
+{
+  "authSelections": "identityPoolAndUserPool",
+  "resourceName": "gmuadvancetoolkit64f835d9",
+  "serviceType": "imported",
+  "region": "us-east-2"
+}

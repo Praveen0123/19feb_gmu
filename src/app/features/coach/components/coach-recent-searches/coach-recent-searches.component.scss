@@ -1,0 +1,47 @@
+
+@import "common";
+
+
+table {
+  width                           : 100%;
+  border-radius                   : rem-calc(8)  rem-calc(8)  rem-calc(0)  rem-calc(0);
+ 
+  th {
+    color                         : $white;
+    font-size                     : rem-calc(18);
+    font-weight                   : 500;       
+  }
+
+  td {
+     font-size                    : rem-calc(16);
+     font-weight                  : 500; 
+
+          a {
+          text-decoration         : underline;
+          cursor                  : pointer;
+          }
+          
+   }
+}
+
+h1 {
+  color: $color-warning ;
+  margin: 0;
+}
+
+.mat-row:nth-child(even) {
+    background-color              :  $background-light-green;
+ }
+ .mat-column-Recent {
+ border-top-left-radius        : rem-calc(8);
+
+ }
+ .mat-column-Date {
+ border-top-right-radius        : rem-calc(8);
+
+ }
+  
+.mat-header-row {
+  background-color                : $black !important;
+} 
+ 

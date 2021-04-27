@@ -1,0 +1,27 @@
+@import "common";
+@import "~@angular/material/theming";
+
+.router-outlet-wrapper {
+  @include breakpoint(medium up) {
+    @include mat-elevation-transition;
+    @include mat-elevation(2);
+    padding: rem-calc(10);
+  }
+}
+
+.heading {
+  color: $color-header;
+  font-size: rem-calc(18);
+  font-weight: bold;
+}
+
+.course-button {
+  color: $white;
+  background: $color-secondary;
+  font-size: rem-calc(13);
+  border-radius: rem-calc(30);
+  letter-spacing: rem-calc(1);
+}
+.gradIcon {
+  height: rem-calc(36);
+}

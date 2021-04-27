@@ -1,0 +1,57 @@
+<section class="grid-y grid-padding-y">
+  <!-- TITLE -->
+  <div class="cell course-header">
+    <section class="grid-x grid-margin-x grid-padding-x align-justify">
+      <div class="cell auto">
+        {{ title }}
+      </div>
+
+      <div class="cell auto">Top Skills Acquired</div>
+    </section>
+  </div>
+
+  <!-- COURSES LIST -->
+  <div class="cell course-item">
+
+    <ng-container *ngFor="let course of courseList; let i = index; let odd = odd">
+
+      <section class="grid-x grid-padding-x align-justify"
+               [ngClass]="{ odd: odd }">
+        <!-- COURSE -->
+        <div class="cell auto">
+          <section class="grid-y">
+            <div class="cell">
+              <span class="message__label message__label--small">{{ course.code }} - {{ course.credits || 0 }} Credits</span>
+            </div>
+            <div class="cell">
+              <span class="message__label message__label--small">{{
+              course.name
+            }}</span>
+            </div>
+          </section>
+        </div>
+
+        <!-- TOP SKILLS -->
+        <div class="cell auto">
+          <gmu-skill-list [topX]="2"
+                          [skillList]="course.skillList"
+                          [displaySkillsAsLinks]="true"
+                          (onClickSkill)="onClickSkill($event)"></gmu-skill-list>
+        </div>
+      </section>
+
+    </ng-container>
+
+  </div>
+
+  <!-- COURSE TOTALS -->
+  <div class="cell course-footer">
+    <section class="grid-x grid-margin-x grid-padding-x">
+      <div class="cell">
+        {{ degreeName }}
+      </div>
+
+      <div class="cell">TOTAL CREDITS = {{ totalCourseCredits }}</div>
+    </section>
+  </div>
+</section>

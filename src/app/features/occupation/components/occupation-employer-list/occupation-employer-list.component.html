@@ -1,0 +1,45 @@
+<section class="grid-y grid-margin-y">
+
+  <!-- HEADER: TOP COMPANIES -->
+  <div class="cell">
+    <gmu-section-header [title]="'Top Companies Hiring'"></gmu-section-header>
+  </div>
+
+
+  <!-- TOP COMPANY LIST -->
+  <div class="cell">
+
+    <section class="top-company-list">
+      <section class="grid-x grid-margin-x grid-margin-y">
+
+        <!-- TOP EMPLOYER -->
+        <div class="cell medium-auto">
+          <gmu-employer-card class="first"
+                             [ordinal]="1"
+                             [employer]="topEmployer"></gmu-employer-card>
+        </div>
+
+
+        <!-- RUNNERS UP -->
+        <div class="cell medium-auto">
+
+          <section class="grid-x">
+
+            <div class="cell xsmall-6"
+                 *ngFor="let item of employerList; let i = index;">
+
+              <gmu-employer-card [ordinal]="i+2"
+                                 [employer]="item"></gmu-employer-card>
+
+            </div>
+
+          </section>
+
+        </div>
+
+      </section>
+    </section>
+
+  </div>
+
+</section>

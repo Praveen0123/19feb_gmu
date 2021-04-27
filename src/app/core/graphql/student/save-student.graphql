@@ -1,0 +1,39 @@
+mutation saveStudent($studentInput: StudentInput) {
+  saveStudent(studentInput: $studentInput) {
+    ...studentFields
+  }
+}
+
+fragment studentFields on Student {
+  id
+  firstName
+  lastName
+  email
+  studentId
+  cohortYear
+  active
+  pathway {
+    id
+    name
+    areaOfStudy
+    code
+    bachelorDegree {
+      id
+      name
+    }
+    associateDegree {
+      id
+      name
+    }
+  }
+  successCoach {
+    id
+    name
+  }
+  milestones {
+    id
+    milestoneId
+    name
+    completed
+  }
+}

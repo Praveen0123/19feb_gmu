@@ -1,0 +1,38 @@
+@import "common";
+
+:host {
+  display: block;
+  margin: 0 auto;
+  max-width: rem-calc(800);
+}
+
+p {
+  color: $color-primary;
+  font-size: rem-calc(18);
+  font-weight: 700;
+  margin: 0;
+  padding: 0 0 rem-calc(6) 0;
+}
+
+.mat-radio-button {
+  margin: rem-calc(5);
+  font-weight: 700;
+}
+
+.required span {
+  color: $color-secondary;
+  font-size: rem-calc(16);
+}
+
+.background {
+  margin-bottom: rem-calc(35);
+  background-color: $background-light-green;
+}
+
+.set-padd {
+  padding-top: rem-calc(15) !important;
+}
+
+button {
+  padding: 0 rem-calc(10);
+}

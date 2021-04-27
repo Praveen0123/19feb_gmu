@@ -1,0 +1,25 @@
+@import "common";
+
+.text-career {
+  margin-top: rem-calc(30);
+  font-weight: bolder;
+}
+.mat-tab-link-container {
+  display: flex;
+  flex-grow: 1;
+  overflow-x: auto !important;
+  z-index: 1;
+}
+
+mat-card {
+  padding: rem-calc(0) !important;
+  height: rem-calc(178);
+}
+
+.max-width {
+  width: 80%;
+}
+
+.margin {
+  margin-right: 12%;
+}

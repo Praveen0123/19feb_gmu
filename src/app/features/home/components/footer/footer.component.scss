@@ -1,0 +1,31 @@
+@import 'common';
+
+:host {
+  display      : block;
+  margin-top   : rem-calc(100);
+  margin-bottom: rem-calc(30);
+  height       : rem-calc(20);
+  position     : relative;
+
+  &.is-development {
+    background-color: $gray-100;
+    height          : rem-calc(200);
+    margin-top      : rem-calc(80);
+  }
+}
+
+
+.what-am-i-container {
+  bottom    : rem-calc(10);
+  left      : 0;
+  position  : absolute;
+  right     : 0;
+  text-align: center;
+}
+
+h3.what-am-i {
+  color        : $gray-400;
+  font-size    : rem-calc(72);
+  font-weight  : 200;
+  margin-bottom: rem-calc(18);
+}

@@ -1,0 +1,52 @@
+<ng-container *ngIf="{ student: student$ | async } as dataOwner">
+<!-- <section class="grid-y">
+  <div class="arrow">
+    <div class="arrow-down "></div>
+  </div>
+</section>
+
+
+<section class="grid-y">
+  <div class="arrow">
+    <div class="arrow-down "></div>
+  </div>
+</section> -->
+
+
+<!-- Toggle Button Change  -->
+<section class="grid-y grid-padding-y grid-margin-y margin-top">
+
+  <div class="cell">
+    
+    <section class="grid-x align-left">
+      <div class="cell medium-10 align-left padding-left"><gmu-faq-open-button></gmu-faq-open-button></div>
+      <div class="cell medium-2 buttonToggle padding-right">
+
+        <mat-button-toggle-group #group="matButtonToggleGroup"
+                                 [value]="selectedSkillType"
+                                 (change)="changeSkillType(group.value)">
+          <mat-button-toggle [value]="'NOVA'"
+                             [ngClass]="{'active': selectedSkillType === 'NOVA'}">NOVA</mat-button-toggle>
+          <mat-button-toggle [value]="'MASON'"
+                             [ngClass]="{'active': selectedSkillType === 'MASON'}">MASON</mat-button-toggle>
+
+        </mat-button-toggle-group>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</section>
+
+
+
+
+
+  <section class="grid-y">
+    <gmu-skills-profile [student]="dataOwner.student"
+                        [skillType]="selectedSkillType"
+                        (courseUpdateEventEmitter)="onUpdateStudentCourses($event)"></gmu-skills-profile>
+  </section>
+</ng-container>

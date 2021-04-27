@@ -1,0 +1,17 @@
+<ng-container *ngIf="{ pathwayList:pathwayList$ | async,
+coachList: coachList$ | async
+                     } as dataOwner">
+
+  <section class="grid-y">
+
+    <div class="cell">
+
+      <gmu-edit-profile-form [pathwayList]="dataOwner.pathwayList"
+                            [coachList]="dataOwner.coachList"
+                            (onFormSubmit)="onStudentFormSubmit($event)"></gmu-edit-profile-form>
+
+    </div>
+
+  </section>
+
+</ng-container>

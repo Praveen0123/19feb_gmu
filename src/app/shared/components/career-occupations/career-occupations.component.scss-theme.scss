@@ -1,0 +1,27 @@
+@import "~@angular/material/theming";
+@import '~foundation-sites/scss/util/unit';
+@import 'common';
+
+@mixin career-occupations-theme($theme) {
+  // retrieve variables from theme
+  // (all possible variables, use only what you really need)
+  $primary      : map-get($theme, primary);
+  // $accent    : map-get($theme, accent);
+  // $warn      : map-get($theme, warn);
+  // $foreground: map-get($theme, foreground);
+  // $background: map-get($theme, background);
+
+  .mat-tab-link-container {
+    display   : flex;
+    flex-grow : 1;
+    overflow-x: auto !important;
+    z-index   : 1;
+  }
+
+  mat-card {
+    padding: rem-calc(0) !important;
+    height : rem-calc(178);
+  }
+
+
+}

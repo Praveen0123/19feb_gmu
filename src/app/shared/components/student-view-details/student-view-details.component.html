@@ -1,0 +1,104 @@
+<section class="grid-y router-outlet-wrapper grid-padding-y"
+         *ngIf="student">
+  <div class="cell">
+
+    <!-- HEADING FOR ADVANCE STUDENT -->
+    <div class="grid-x">
+      <div class="cell  medium-2">
+
+        <!-- STUDENT MATICON -->
+        <mat-icon class="gradIcon"
+                  svgIcon="Grad_Icon_AdminView"></mat-icon>
+      </div>
+
+      <!-- HEADING -->
+      <div class="cell  auto align-self-bottom">
+        <span class="heading">ADVANCE Student</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="cell">
+    <div class="grid-y">
+      <div class="cell ">
+        <b> STUDENT NAME </b>
+      </div>
+      <div class="cell ">
+
+        <span>{{student?.firstName}} {{student?.lastName}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="cell">
+    <div class="grid-y">
+      <div class="cell ">
+        <b> AREA OF STUDY </b>
+      </div>
+      <div class="cell ">
+        <span>{{student?.pathway?.areaOfStudy}} </span>
+      </div>
+    </div>
+  </div>
+  <div class="cell">
+    <div class="grid-y">
+      <div class="cell ">
+        <b> NOVA Degree </b>
+      </div>
+      <div class="cell ">
+        <span>{{student?.pathway?.associateDegree?.name}} </span>
+      </div>
+    </div>
+  </div>
+  <div class="cell">
+    <div class="grid-y">
+      <div class="cell ">
+        <b> MASON Degree </b>
+      </div>
+      <div class="cell ">
+        <span> {{student?.pathway?.bachelorDegree?.name}} </span>
+      </div>
+    </div>
+  </div>
+  <div class="cell">
+    <div class="grid-y">
+      <div class="cell ">
+        <b> SUCCESS COACH </b>
+      </div>
+      <div class="cell ">
+        <span> {{student?.successCoach?.name}} </span>
+      </div>
+      <div class="cell">
+        <span> {{student?.successCoach?.email}} </span>
+      </div>
+    </div>
+  </div>
+  <div class="cell">
+    <div class="grid-y">
+      <div class="cell ">
+        <b> COHORT YEAR</b>
+      </div>
+      <div class="cell">
+        <span> {{student?.cohortYear}} </span>
+      </div>
+    </div>
+  </div>
+  <div class="cell">
+    <div class="grid-y">
+      <div class="cell ">
+        <b> EXPECTED GRADUATION DATE </b>
+      </div>
+      <div class="cell ">
+        <span>{{expectedGraduation()}}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIEW COURSE PDF BUTTON  -->
+  <div class="cell text-center">
+    <button mat-raised-button (click)="getCoursePDF()"
+            class="course-button">
+      <span><i class="fas fa-file-pdf"></i></span> VIEW PATHWAY PDF
+    </button>
+  </div>
+</section>

@@ -1,0 +1,207 @@
+<ng-container *ngIf="alive">
+<form #form="ngForm"
+      novalidate
+      autocomplete="off"
+      autocomplete="chrome-off"
+      [formGroup]="formGroup"
+      (ngSubmit)="onFormSubmit()">
+
+
+  <!-- MESSAGE AND STUDENT STATUS-->
+  <section class="grid-x grid-margin-x  grid-margin-y grid-padding-y">
+
+    <!-- Message -->
+    <div class="cell">
+
+      <span class="message__label--large"
+            *ngIf="forUpdate">Enter </span>
+      <span class=" message__label--bold message__label--large"> Student Information</span>
+
+    </div>
+
+    <!-- STUDENT STATUS -->
+    <div class="cell " *ngIf="!forUpdate">
+
+      <mat-radio-group formControlName="active" [value]="student?.active">
+        <mat-radio-button [value]="true">Active</mat-radio-button>
+        <mat-radio-button [value]="false">Non Active</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+  </section>
+
+  <!-- ADDITIONAL FORM FILED -->
+  <section class="grid-x grid-margin-x  grid-margin-y background set-padd">
+
+    <!-- First/Given Name -->
+    <div class="cell">
+      <mat-form-field appearance="outline">
+        <mat-label>First/Given Name </mat-label>
+        <input matInput
+               placeholder="Jane"
+               formControlName="firstName"
+               autocomplete="none"
+               required />
+        <mat-error *ngIf="formGroup.controls.firstName.hasError('required')
+                          || (formGroup.get('firstName').invalid && formGroup.get('firstName').touched)">
+          First/Given Name is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- Last/Family Name -->
+    <div class="cell">
+      <mat-form-field appearance="outline">
+        <mat-label>Last/Family Name </mat-label>
+        <input matInput
+               placeholder="Doe"
+               formControlName="lastName"
+               autocomplete="none"
+               required />
+        <mat-error *ngIf="formGroup.controls.lastName.hasError('required')
+                          || (formGroup.get('lastName').invalid && formGroup.get('lastName').touched)">
+          Last/Family Name is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- Student Id -->
+    <div class="cell">
+      <mat-form-field appearance="outline">
+        <mat-label>Student ID# </mat-label>
+        <input matInput
+               placeholder="ST100"
+               formControlName="studentId"
+               autocomplete="none"
+               required />
+        <mat-error *ngIf="formGroup.controls.studentId.hasError('required')
+                          || (formGroup.get('studentId').invalid && formGroup.get('studentId').touched)">
+          Student Id is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+
+    <!-- Email -->
+    <div class="cell">
+      <mat-form-field appearance="outline">
+        <mat-label>Email </mat-label>
+        <input matInput
+               placeholder="jane@example.com"
+               formControlName="email"
+               autocomplete="none"
+               required />
+        <mat-error *ngIf="formGroup.controls.email.hasError('required')
+                          || formGroup.controls.email.hasError('email')
+                          || (formGroup.get('email').invalid && formGroup.get('email').touched)">
+          Please enter a valid email address.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+
+    <!-- Verify Email -->
+    <div class="cell">
+      <mat-form-field appearance="outline">
+        <mat-label>Confirm Email</mat-label>
+        <input matInput
+               placeholder="jane@example.com"
+               formControlName="confirmEmail"
+               autocomplete="none"
+               required />
+        <mat-error *ngIf="(formGroup.controls.confirmEmail.hasError('required'))
+                          || (formGroup.get('confirmEmail').invalid && formGroup.get('confirmEmail').touched)
+                          && (!formGroup.controls.confirmEmail.hasError('equalTo')
+                          && formGroup.controls.confirmEmail.hasError('email'))">
+          Please enter a valid email address.
+        </mat-error>
+        <mat-error *ngIf="formGroup.controls.confirmEmail.hasError('equalTo') && !formGroup.controls.confirmEmail.hasError('required')">
+          Emails do not match.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+  </section>
+
+<!-- 
+  
+  <section class="grid-x  grid-margin-x grid-padding-y background">
+    <div class="cell">
+      <mat-form-field appearance="outline">
+        <mat-label>Select COHORT Year </mat-label>
+        <mat-select id="area"
+                    formControlName="cohortYear"
+                    placeholder="Please select an option."
+                    (selectionChange)="onSelectionCohortYear($event.value)"
+                    required>         
+          <mat-option *ngFor="let year of cohortYears" [value]="year">{{year}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="formGroup.controls.cohortYear.hasError('required')
+                          || (formGroup.get('cohortYear').invalid && formGroup.get('cohortYear').touched)">
+          You must select an option.
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </section> -->
+
+
+
+  <!-- PATHWAY DETAILS FORM -->
+  <section class="grid-x grid-margin-x background set-padd ">
+    <div class="cell">
+          <gmu-pathway-year-explorer #explorer
+                                 [pathwayList]="pathwayList"
+                                 [selectedPathway]="student?.pathway"
+                                 (getPathwayId)="pathwayValue($event)"
+                                 [searchButtonVisible]="false"></gmu-pathway-year-explorer>
+    </div>
+  </section>
+
+
+  <!-- COACH DETAILS -->
+  <section class="grid-x  grid-margin-x background  grid-padding-y">
+    <div class="cell">
+      <mat-form-field appearance="outline">
+        <mat-label>Select Success Coach</mat-label>
+        <mat-select formControlName="coachName"
+                    required>
+          <mat-option class="alternate"
+                      *ngFor="let option of coachList"
+                      [value]="option.id">{{option.name}}</mat-option>
+        </mat-select>
+
+        <mat-error *ngIf="formGroup.controls.coachName.hasError('required')
+                          || (formGroup.get('coachName').invalid && formGroup.get('coachName').touched)">
+          You must select an option.
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </section>
+
+  <!--REQUIRED AND SUBMIT BUTTONS -->
+  <section class="grid-x ">
+    <div class="cell">
+      <section class="grid-x align-middle align-justify">
+
+        <div class="cell auto"
+             *ngIf="forUpdate">
+          <div class="required">Required <span>*</span></div>
+        </div>
+
+        <div class="cell auto text-right">
+          <!-- BUTTONS FOR ADD STUDENT AND MANAGE STUDENT  -->
+          <button mat-raised-button
+                  type="submit"
+                  [disabled]="!formGroup.valid"
+                  class="search-button">
+            <span class="material-icons"
+                  *ngIf="!forUpdate">add</span> {{ forUpdate ? 'UPDATE' : 'ADD'}} STUDENT
+          </button>
+        </div>
+
+      </section>
+    </div>
+  </section>
+
+</form>
+</ng-container>

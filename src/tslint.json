@@ -1,0 +1,28 @@
+{
+  "extends": "../tslint.json",
+  "rules": {
+    "component-selector": [
+      true,
+      "element",
+      "kebab-case",
+      "roc"
+    ],
+    "no-input-rename": false,
+    "one-line": [
+      true,
+      "check-catch",
+      "check-whitespace"
+    ],
+    "check-open-brace": false,
+    "no-inferrable-types": [
+      false
+    ],
+    "max-line-length": false,
+    "no-output-rename": false,
+    "no-empty-interface": false,
+    "disable-next-line": false,
+    "space-before-function-paren": false,
+    "radix": false,
+    "ban-types": false
+  }
+}

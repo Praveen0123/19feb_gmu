@@ -1,0 +1,34 @@
+@import 'common';
+
+:host {
+  cursor : pointer;
+  display: block;
+  margin : 0 auto;
+}
+
+.border {
+  border       : solid 2px $color-primary;
+  border-radius: rem-calc(5);
+}
+
+.mat-icon {
+  &.icon-check-mark-small {
+    height: rem-calc(50);
+    width : rem-calc(45);
+  }
+}
+
+.pathway-container {
+  background-color          : $background-header-bright-green;
+  border-bottom-left-radius : rem-calc(4);
+  border-bottom-right-radius: rem-calc(4);
+  height                    : 100%;
+}
+
+.pathway-details-container {
+  background-color: $white;
+
+  .grid-x {
+    height: 100%;
+  }
+}

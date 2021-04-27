@@ -1,0 +1,190 @@
+<form novalidate
+      autocomplete="off"
+      autocomplete="chrome-off"
+      [formGroup]="formGroup"
+      (ngSubmit)="onFormSubmit()"
+      *ngIf="formGroup">
+  <section class="grid-y grid-margin-y align-center">
+
+    <!-- MESSAGE -->
+    <div class="cell">
+      <p class="message__label message__label--bold message__label--large"> Create an Account! </p>
+    </div>
+    <!-- First/Given Name -->
+    <div class="cell">
+      <mat-form-field appearance="outline">
+        <mat-label>First/Given Name </mat-label>
+        <input matInput
+               placeholder="Jane"
+               formControlName="firstName"
+               autocomplete="none"
+               required />
+        <mat-error *ngIf="formGroup.controls.firstName.hasError('required')
+                          || (formGroup.get('firstName').invalid && formGroup.get('firstName').touched)">
+          First/Given Name is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- Last/Family Name -->
+    <div class="cell">
+      <mat-form-field appearance="outline">
+        <mat-label>Last/Family Name </mat-label>
+        <input matInput
+               placeholder="Doe"
+               formControlName="lastName"
+               autocomplete="none"
+               required />
+        <mat-error *ngIf="formGroup.controls.lastName.hasError('required')
+                          || (formGroup.get('lastName').invalid && formGroup.get('lastName').touched)">
+          Last/Family Name is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <!-- EMAIL -->
+    <div class="cell">
+
+      <mat-form-field appearance="outline">
+
+        <mat-label>Mason Email</mat-label>
+
+        <input matInput
+               placeholder="jdoe@masonlive.gmu.edu"
+               formControlName="emailAddress"
+               autocomplete="none"
+               required />
+
+        <mat-error *ngIf="formGroup.controls.emailAddress.hasError('required')
+                          || formGroup.controls.emailAddress.hasError('email')
+                          || (formGroup.get('emailAddress').invalid && formGroup.get('emailAddress').touched)">
+          Please enter a valid GMU email address.
+        </mat-error>
+
+      </mat-form-field>
+
+    </div>
+
+    <!-- VERIFY EMAIL -->
+    <div class="cell">
+
+      <mat-form-field appearance="outline">
+
+        <mat-label>Verify Email</mat-label>
+
+        <input matInput
+               placeholder="jane@gmu.edu"
+               formControlName="verifyEmailAddress"
+               autocomplete="none"
+               required />
+
+        <mat-error *ngIf="(formGroup.controls.verifyEmailAddress.hasError('required'))
+                          || (formGroup.get('verifyEmailAddress').invalid && formGroup.get('verifyEmailAddress').touched)
+                          && (!formGroup.controls.verifyEmailAddress.hasError('equalTo')
+                          && formGroup.controls.verifyEmailAddress.hasError('email'))">
+          Please enter a valid GMU email address.
+        </mat-error>
+        <mat-error *ngIf="formGroup.controls.verifyEmailAddress.hasError('equalTo') && !formGroup.controls.verifyEmailAddress.hasError('required')">
+          Emails do not match.
+        </mat-error>
+
+      </mat-form-field>
+
+    </div>
+
+    <!-- Mason ID -->
+    <div class="cell">
+      <mat-form-field appearance="outline">
+        <mat-label>Mason ID (G Number) </mat-label>
+        <input matInput
+               placeholder="G012345678"
+               formControlName="studentId"
+               autocomplete="none"
+               required />
+        <mat-error *ngIf="formGroup.controls.lastName.hasError('required')
+                          || (formGroup.get('studentId').invalid && formGroup.get('studentId').touched)">
+          Mason ID is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- PASSWORD -->
+    <div class="cell">
+
+      <mat-form-field appearance="outline">
+
+        <mat-label>Password </mat-label>
+
+        <input matInput
+               placeholder="Must have at least 8 characters"
+               formControlName="password"
+               autocomplete="none"
+               type="password"
+               required />
+
+        <mat-error *ngIf="formGroup.controls.password.hasError('required')
+                          || (formGroup.get('password').invalid && formGroup.get('password').touched)">
+          Please enter a valid Password.
+        </mat-error>
+
+      </mat-form-field>
+
+    </div>
+
+    <!-- VERIFY PASSWORD -->
+    <div class="cell">
+
+      <mat-form-field appearance="outline">
+
+        <mat-label>Verify Password </mat-label>
+
+        <input matInput
+               placeholder="Must have at least 8 characters"
+               formControlName="verifyPassword"
+               autocomplete="none"
+               type="password"
+               required />
+
+        <mat-error *ngIf="(formGroup.controls.verifyPassword.hasError('required'))
+                          || (formGroup.get('verifyPassword').invalid && formGroup.get('verifyEmailAddress').touched)
+                          && (!formGroup.controls.verifyPassword.hasError('equalTo')
+                          && formGroup.controls.verifyPassword.hasError('email'))">
+          Please enter a valid Password.
+        </mat-error>
+        <mat-error *ngIf="formGroup.controls.verifyPassword.hasError('equalTo') && !formGroup.controls.verifyPassword.hasError('required')">
+          Passwords do not match.
+        </mat-error>
+
+      </mat-form-field>
+
+    </div>
+
+    <!-- RQUIRED AND [ CREATE AN ACCOUNT ] BUTTON -->
+    <div class="cell">
+
+      <section class="grid-x align-middle align-justify">
+
+        <div class="cell auto">
+          <div class="required">Required <span>*</span></div>
+        </div>
+
+        <div class="cell auto text-right">
+          <button mat-raised-button
+                  type="submit"
+                  class="search-button"
+                  [disabled]="!formGroup.valid">
+            CREATE AN ACCOUNT
+          </button>
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- SIGN IN LINK -->
+    <div class="cell text-right">
+      <a class="sign-in"
+         [routerLink]="['/home/login']"> Sign In</a>
+    </div>
+
+  </section>
+</form>

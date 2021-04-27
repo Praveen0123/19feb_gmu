@@ -1,0 +1,26 @@
+@import 'common';
+
+:host {
+  display: block;
+}
+
+h3 {
+  color    : $black;
+  font-size: rem-calc(14);
+
+  margin: 0;
+
+  span {
+    &.title {
+      display       : inline-block;
+      padding       : 0 rem-calc(8) 0 rem-calc(7);
+      text-transform: initial;
+      font-weight   : bold;
+    }
+
+    &.subTitle {
+      display       : inline-block;
+      text-transform: initial;
+    }
+  }
+}

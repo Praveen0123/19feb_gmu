@@ -1,0 +1,42 @@
+<ng-container *ngFor="let item of areaOfStudyList">
+
+  <section class="grid-y">
+
+    <!-- AREA OF STUDY & CTA -->
+    <div class="cell">
+
+      <section class="grid-x align-justify align-middle">
+
+        <!-- AREA OF STUDY NAME -->
+        <div class="cell shrink">
+
+          <span class="message__label message__label--bold message__label--nowrap message__label--responsive-font-size">{{item.name}}</span>
+
+        </div>
+
+        <!-- VIEW ALL BUTTON -->
+        <div class="cell auto text-right">
+          <button mat-flat-button
+                  class="view-all-button"
+                  (click)="onAreaOfStudyClick(item)">
+            View All
+            <mat-icon>chevron_right</mat-icon>
+          </button>
+        </div>
+
+      </section>
+
+    </div>
+
+
+    <!-- OCCUPATION LIST -->
+    <div class="cell">
+
+      <gmu-occupation-list-scroll [occupationList]="item.occupationList"
+                                  (onOccupationClick)="onOccupationClick($event)"></gmu-occupation-list-scroll>
+
+    </div>
+
+  </section>
+
+</ng-container>

@@ -1,0 +1,24 @@
+<ng-container *ngIf="student">
+<section class="grid-y grid-padding-y">
+
+  <!-- Nova Courses List -->
+  <div class="cell grid-margin-y"
+       *ngIf="skillType === 'NOVA' ">
+    <gmu-skills-view [courseGroupings]="novaGroupings"
+                     [skillType]="skillType"
+                     [student]="student"
+                     (courseUpdateEventEmitter)="emit($event)"></gmu-skills-view>
+  </div>
+
+  <!-- Mason Courses List -->
+  <div class="cell grid-margin-y"
+       *ngIf="skillType === 'MASON' ">
+    <gmu-skills-view [courseGroupings]="masonGroupings"
+                     [skillType]="skillType"
+                     [student]="student"
+                     (courseUpdateEventEmitter)="emit($event)"></gmu-skills-view>
+  </div>
+
+
+</section>
+</ng-container>

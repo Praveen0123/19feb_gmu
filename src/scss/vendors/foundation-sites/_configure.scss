@@ -1,0 +1,28 @@
+// ZURB FOUNDATION'S XY GRID
+
+
+// IMPORT ZURB DEPENDENCIES
+// ---------------------------------------------------------------------------------------------
+@import '../../node_modules/foundation-sites/_vendor/sassy-lists/stylesheets/helpers/true';
+@import '../../node_modules/foundation-sites/_vendor/sassy-lists/stylesheets/functions/contain';
+@import '../../node_modules/foundation-sites/_vendor/sassy-lists/stylesheets/functions/purge';
+@import '../../node_modules/foundation-sites/_vendor/sassy-lists/stylesheets/functions/remove';
+@import '../../node_modules/foundation-sites/_vendor/sassy-lists/stylesheets/functions/replace';
+@import '../../node_modules/foundation-sites/_vendor/sassy-lists/stylesheets/functions/to-list';
+
+
+// OVERRIDE DEFAULT SETTINGS
+// ---------------------------------------------------------------------------------------------
+@import './settings';
+@import './global';
+
+
+// XY GRID, FLEX CLASSES, VISIBILIY CLASSES
+// ---------------------------------------------------------------------------------------------
+@import '../../node_modules/foundation-sites/scss/xy-grid/xy-grid';
+@import '../../node_modules/foundation-sites/scss/components/flex';
+@import '../../node_modules/foundation-sites/scss/components/visibility';
+
+@include foundation-xy-grid-classes;
+@include foundation-flex-classes;
+@include foundation-visibility-classes;

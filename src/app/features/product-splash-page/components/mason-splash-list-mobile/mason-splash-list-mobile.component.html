@@ -1,0 +1,367 @@
+<section class="grid-container md-grid-container">
+  <div class="grid-y">
+    <!-- LEARN MORE BUTTON WITH MESSAGE -->
+    <div class="cell">
+      <div class="grid-x align-bottom hero">
+        <div class="cell  mason-hero">
+          <div class="grid-x grid-margin-y">
+            <div class="cell">
+              <p class="text__x1large message__label--bold align-center msg_wd">
+                Bridging the gap between education and employment by translating the college experience into skills
+              </p>
+              <div class="pad-2">
+                <button class="text-left"
+                        mat-flat-button
+                        class="learn_more"
+                        (click)="onLearnMoreClick(advance_career)">Learn More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="cell">
+
+      <div class="grid-y grid-padding-y   shadow margin__top__bm">
+        <!-- PROGRAM ICONS -->
+
+        <div class="cell text-center">
+          <span class="message__label message__label--medium message__label--bold"> Collaboration Partners </span>
+        </div>
+        <div class="cell">
+          <div class="grid-x grid-padding-y grid-margin-y  grid-padding-y text-center align-bottom align-center">
+
+            <!-- ICON_VP -->
+            <div class="cell xsmall-6 small-3 shrink">
+              <a href="https://vantagepoint-inc.com/"
+                 target="_blank"
+                 rel="noopener">
+                <img class="icon-vp"
+                     [src]="vpIcon"
+                     (mouseover)="vpIcon = vpIconColor "
+                     (mouseout)=" vpIcon = vpIconColor " />
+              </a>
+            </div>
+            <!--  NOVA_ICON -->
+            <div class="cell xsmall-6 small-3 shrink">
+              <a href="https://www.nvcc.edu/"
+                 target="_blank"
+                 rel="noopener">
+                <img class="icon-nova"
+                     [src]="novaIcon"
+                     (mouseover)="novaIcon = novaIconColor "
+                     (mouseout)=" novaIcon = novaIconColor " />
+              </a>
+            </div>
+
+
+            <!-- ICON_GMU -->
+            <div class="cell xsmall-6 small-3 shrink">
+              <a href="https://www2.gmu.edu/"
+                 target="_blank"
+                 rel="noopener">
+                <img class="icon-gmu"
+                     [src]="gmuIcon"
+                     (mouseover)="gmuIcon = gmuLogoColor "
+                     (mouseout)=" gmuIcon = gmuLogoColor " />
+              </a>
+            </div>
+            <!-- ICON_BG -->
+            <div class="cell xsmall-6 small-3 shrink">
+              <a href="https://burning-glass.com/"
+                 target="_blank"
+                 rel="noopener">
+                <img class="icon-bg"
+                     [src]="bgIcon"
+                     (mouseover)="bgIcon = bgIconColor "
+                     (mouseout)=" bgIcon = bgIconColor " />
+              </a>
+
+            </div>
+            <div #advance_career></div>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <!-- THE ADVANCE CAREER ACCELERATOR TOOLKIT ALIGNS -->
+    <div class="cell">
+      <div class="margin__top__bm">
+        <div class="cell auto small-offset-1 pad-2">
+          <p class="text__x1large message__label--bold">
+            The ADVANCE Career Accelerator Toolkit aligns in-demand skills with the courses a student takes to help them understand and prepare for their future career.
+
+          </p>
+
+          <div>
+            <p class="text__medium message__label--bold">Our Platform Provides:</p>
+            <ul class="fa-ul "
+                *ngFor="let list of platforms">
+              <li class="text__medium"><span class="fa-li text-left"><i class="fa fa-chevron-right"
+                     aria-hidden="true"></i></span>{{ list }}</li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="cell auto">
+          <img [src]="digitalSkill" />
+        </div>
+
+      </div>
+    </div>
+
+    <!-- INTERESTED & GET TO KNOW US BUTTON -->
+    <div class="cell ">
+      <div class="grid-y text-center align-middle collaborating">
+        <div class="cell pad-top-25">
+          <p class="text__x2large message__label--bold"> Interested in collaborating?</p>
+          <button mat-flat-button
+                  class="get_to_know"
+                  (click)="onGetToKnowUsClick()">Get to know us</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- THE ADVANCE TOOLKIT  -->
+    <div class="cell">
+      <div class="grid-x align-center margin__top__bm">
+
+        <div class="cell large-9 medium-9">
+          <div class="grid-x align-center grid-padding-y ">
+            <div class="cell text-center">
+              <p class="text__x3large message__label--bold">
+                Relate academic pathways to career opportunities
+              </p>
+            </div>
+
+            <div class="cell large-11 medium-11">
+              <div class=" grid-padding-y grid-padding-x align-middle ">
+                <div class="cell auto">
+                  <img [src]="academicPathway" class="shadow"/>
+                </div>
+                <div class="cell  auto">
+                  <p class="text__medium">Provide prospective students a transparent and relatable view into academic pathways. </p>
+                </div>
+
+              </div>
+              <mat-divider></mat-divider>
+            </div>
+
+            <div class="cell large-11 medium-11">
+              <div class="grid-padding-y grid-padding-x align-middle">
+                <div class="cell auto">
+                  <img [src]="topSkillIcon" class="shadow"/>
+                </div>
+                <div class="cell auto">
+                  <p class="text__medium">Align academic pathways with in-demand skills in the labor market. </p>
+                </div>
+
+              </div>
+              <mat-divider></mat-divider>
+            </div>
+
+            <div class="cell large-11 medium-11">
+              <div class=" grid-margin-y grid-padding-x align-middle">
+
+                <div class="cell auto">
+                  <img [src]="careerPathwayIcon"/>
+                </div>
+                <div class="cell auto">
+                  <p class="text__medium">Browse career opportunities attainable through academic pathways. </p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WATCH VIDEO & EXPLORER ADVANCE -->
+    <div class="cell">
+      <div class="grid-x   text-center margin__bot_side">
+        <div class="cell">
+          <button mat-flat-button
+                  class="watch"
+                  (click)="onWatchVideoClick()">Watch Video</button>
+          <button mat-flat-button
+                  class="advancedEx"
+                  (click)="onExploreClick()">Explore ADVANCE</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILLS FOCUSED -->
+    <div class="cell">
+      <div class="grid-y align-center align-middle skill-focus pad-2 grid-padding-y">
+
+        <div class="cell large-5 medium-5 large-offset-4 medium-offset-4">
+
+          <div class="grid-y grid-padding-y">
+            <div class="cell shrink text-center">
+              <p class="text__x3large message__label--bold"> Skills Focused </p>
+            </div>
+          </div>
+          <div class="cell grid-padding-y">
+            <img [src]="skillfocusBg" class=""/>
+          </div>
+          <div class="grid-x grid-padding-y ">
+            <div class="cell "
+                 *ngFor="let skill of skillFocus">
+                 <div class="cell"> <img [src]="skill.imgPath"
+                       class="skill_focus align-center" /> </div>
+                       <div class="cell auto text__medium"> {{ skill.Description }}</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STUDENT FEATURES -->
+    <div class="cell">
+      <div class="grid-x align-center grid-padding-y margin__top__bm pad-2">
+        <div class="cell large-10 medium-10">
+          <div class="grid-x">
+            <div class="cell">
+              <p class="text-center text__x3large message__label--bold"> Student Features </p>
+            </div>
+
+            <div class="cell">
+              <div class="align-middle">
+
+                <div class="cell auto ">
+                  <p class="text__x1large message__label--bold">Skills Roadmap</p>
+                  <p class="text__medium">Students visualize and track
+                    the skills gained year by year as they progress toward academic goals and career aspirations.</p>
+                </div>
+                <div class="cell  auto">
+                  <img [src]="roadmapIcon" />
+                </div>
+              </div>
+            </div>
+
+            <div class="cell">
+              <div class="align-middle">
+                <div class="cell auto">
+                  <p class="text__x1large message__label--bold">Skills Transcript</p>
+                  <p class="text__medium">As skills are acquired through completed course work, students will benefit from a personalized skills transcript enabling them to speak intelligently to employers about the skills they learned and how these would apply to an internship or career opportunity.</p>
+                </div>
+                <div class="cell auto">
+                  <img [src]="skillTranscript" />
+                </div>
+              </div>
+            </div>
+            <div class="cell ">
+              <div class="align-middle">
+                <div class="cell  auto">
+                  <p class="text__x1large message__label--bold">Milestone Tracking</p>
+                  <p class="text__medium"> Students can view and track key program milestones.</p>
+                </div>
+                <div class="cell auto">
+                  <img [src]="milestoneIcon" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- COACHING SUPPORT -->
+    <div class="cell ">
+      <div class="align-middle coaching-support pad-2 ">
+        
+        <div class="cell auto align-middle">
+          <div class="grid-x grid-padding-y">
+            <div class="cell text-center">
+              <p class="text__x3large message__label--bold">Coaching Support</p>
+            </div>
+            <div class="cell">
+              <img [src]="coachingIcon" class="block-image"/>
+            </div>
+            <div class="cell">
+              <div class="grid-x grid-padding-x "
+                   *ngFor="let list of coaching">
+                <div class="cell text-left shrink">
+                  <span class="material-icons arrow__right">
+                    keyboard_arrow_right
+                  </span>
+                </div>
+                <div class=" cell auto">
+                  <label class="text__x1large message__label--bold">{{ list.Lable }}</label>
+                  <p class="text__medium"> {{ list.Description }} </p>
+                </div>
+              </div>
+              </div>
+          </div>
+        </div>
+        <div class="cell auto"></div>
+      </div>
+    </div>
+
+    <!-- BLOCKCHAIN FEATURE & DESCRIPTION -->
+    <div class="cell">
+      <div class="grid-y align-middle align-center blockchain margin__top__bm">
+        <div class="cell large-10 medium-10">
+          <div class="grid-padding-y grid-margin-y">
+            <div class="cell text-center">
+              <p class="text__x3large message__label--bold">Blockchain Future</p>
+            </div>
+          </div>
+
+          <div class="pad-2">
+            <div class="cell large-6 medium-6"
+                 *ngFor="let future of futures">
+              <div class="align-middle">
+                <div class="cell shrink"> <img [src]="future.imgPath"
+                       class="future" /> </div>
+                <div class="cell auto text__medium"> {{ future.Description }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INTEGRATION  -->
+    <div class="cell">
+      <div class=" align-center">
+        <div class="cell large-10 medium-10">
+          <div class="intergration_top">
+            <div class="cell text-center text-bottom auto">
+              <img [src]="integrationIcon"
+                   class="integration" />
+            </div>
+            <div class="cell auto pad-2">
+              <p class="text__large message__label--bold">Integrations</p>
+              <p class="text__medium"> We are working on integrations to Salesforce and numerous other Student Information systems and Learning Management software packages. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COONECT WITH US BUTTON & MESSAGE -->
+    <div class="cell footer">
+      <div class="grid-x align-bottom ">
+        <div class="cell text-center pad-top">
+          <h1 class="text__medium"> We are excited to collaborate with you! </h1>
+          <button mat-flat-button
+                  class="connect_with_us"
+                  (click)="onConnectWithUsClick()">Connect with us</button>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</section>

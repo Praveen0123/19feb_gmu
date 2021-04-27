@@ -1,0 +1,146 @@
+<section class="grid-container">
+  <section class="grid-y grid-margin-y grid-padding-y">
+
+    <div class="cell text-center">
+
+
+      <section class="grid-x grid-padding-x align-center-middle text-center"
+               style="height: 200px;">
+        <div class="cell small-4">
+          <h2>Examples</h2>
+        </div>
+      </section>
+    </div>
+
+    <div class="cell">
+      <button mat-raised-button
+              [color]="themeColor"
+              (click)="openDialog()">
+        Open Dialog
+      </button>
+    </div>
+
+    <div class="cell">
+      <button mat-raised-button
+              [color]="'accent'"
+              (click)="openNotificationDefault()">
+        Default Notification
+      </button>
+    </div>
+
+
+    <div class="cell">
+      <button mat-raised-button
+              [color]="themeColor"
+              (click)="openNotificationInfo()">
+        Info Notification
+      </button>
+    </div>
+
+
+    <div class="cell">
+
+      <section class="grid-x grid-padding-x">
+
+        <div class="cell small-4">
+          <button mat-raised-button
+                  [color]="themeColor"
+                  (click)="openNotificationSuccess()">
+            Success Notification
+          </button>
+        </div>
+
+        <div class="cell small-3">
+          <button mat-raised-button
+                  [color]="themeColor"
+                  (click)="openNotificationWarn()">
+            Warn Notification
+          </button>
+        </div>
+
+        <div class="cell shrink">
+          <button mat-raised-button
+                  [color]="themeColor"
+                  (click)="openNotificationError()">
+            Error Notification
+          </button>
+        </div>
+
+      </section>
+
+    </div>
+
+    <div class="cell show-for-small-only">
+      VISIBLE FOR SMALL ONLY
+    </div>
+
+    <div class="cell show-for-medium">
+      VISIBLE FOR MEDIUM AND UP
+      <p>
+        <a href="https://get.foundation/sites/docs/visibility.html"
+           target="_blank">learn about visibility</a>
+      </p>
+    </div>
+
+
+    <div class="cell">
+      <H4>Responsive Adjustments</H4>
+
+      <div class="grid-x responsive-adjustments text-center grid-margin-x">
+        <div class="cell medium-2 large-auto">One</div>
+        <div class="cell medium-1 large-auto">Two</div>
+        <div class="cell medium-2 large-auto">Three</div>
+        <div class="cell medium-4 large-auto">Four</div>
+        <div class="cell medium-2 large-auto">Five</div>
+        <div class="cell medium-1 large-auto">Six</div>
+      </div>
+      <p>
+        <a href="https://get.foundation/sites/docs/xy-grid.html"
+           target="_blank">learn about XY Grid</a>
+      </p>
+    </div>
+
+  </section>
+</section>
+
+
+<section class="grid-container grid-container-padded">
+  <section class="grid-x grid-margin-x">
+    <div class="cell">
+      <h3>Flexbox Utilities: Horizontal Alignment</h3>
+      <p>
+        <a href="https://get.foundation/sites/docs/flexbox-utilities.html"
+           target="_blank">learn about Flexbox Utilities</a>
+      </p>
+    </div>
+  </section>
+</section>
+
+
+<section class="grid-container grid-container-padded grid--demo">
+  <section class="grid-x grid-padding-x">
+    <!-- Aligned to the left -->
+    <div class="cell small-4">Aligned to</div>
+    <div class="cell small-4">the left</div>
+  </section>
+  <section class="grid-x grid-padding-x align-right">
+    <!-- Aligned to the right -->
+    <div class="cell small-4">Aligned to</div>
+    <div class="cell small-4">the right</div>
+  </section>
+  <section class="grid-x grid-padding-x align-center">
+    <!-- Aligned to the center -->
+    <div class="cell small-4">Aligned to</div>
+    <div class="cell small-4">the center</div>
+  </section>
+  <section class="grid-x grid-padding-x align-justify">
+    <!-- Aligned to the edges -->
+    <div class="cell small-4">Aligned to</div>
+    <div class="cell small-4">the edges</div>
+  </section>
+  <section class="grid-x grid-padding-x align-spaced">
+    <!-- Aligned to the space around -->
+    <div class="cell small-4">Aligned to</div>
+    <div class="cell small-4">the space around</div>
+  </section>
+</section>

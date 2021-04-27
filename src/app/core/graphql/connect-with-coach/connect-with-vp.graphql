@@ -1,0 +1,3 @@
+mutation saveConnectWithVP($connectWithVPInput: ConnectWithVPInput!) {
+  saveConnectWithVP(connectWithVPInput: $connectWithVPInput)
+}

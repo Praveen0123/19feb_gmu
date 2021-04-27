@@ -1,0 +1,43 @@
+@import 'common';
+
+:host {
+  display: block;
+}
+
+.cell {
+  &.course-header {
+    background-color: $black;
+    color           : $white;
+  }
+
+  &.course-item {
+
+    @include breakpoint(medium) {
+      height  : rem-calc(375);
+      overflow: auto;
+    }
+
+    >.grid-x {
+      border-bottom: solid rem-calc(1) $color-primary;
+      min-height   : rem-calc(75);
+
+      @include breakpoint(medium) {
+        min-height: rem-calc(90);
+      }
+
+      @include breakpoint(large) {
+        height: rem-calc(90);
+      }
+
+      &.odd {
+        background-color: $background-light-green;
+      }
+    }
+  }
+
+  &.course-footer {
+    color      : $black;
+    font-size  : rem-calc(14);
+    font-weight: bold;
+  }
+}

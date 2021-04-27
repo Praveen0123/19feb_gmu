@@ -1,0 +1,33 @@
+<section class="grid-y grid-frame text-center">
+
+  <div class="cell shrink top-bar">
+
+    <span class="message__label message__label--black message__label--bold message__label--small"
+          *ngIf="ordinal > 1">
+      #{{ordinal}}
+    </span>
+
+    <mat-icon class="icon-first-place"
+              *ngIf="ordinal === 1"
+              [svgIcon]="'icon-first-place'"></mat-icon>
+
+  </div>
+
+  <div class="cell auto">
+
+    <section class="grid-x align-center-middle company-container">
+      <div class="cell ">
+
+        <mat-icon class="icon-building"
+                  [svgIcon]="'icon-building'"></mat-icon>
+
+        <span class="message__label message__label--black message__label--medium">
+          {{employer.name}}
+        </span>
+
+      </div>
+    </section>
+
+  </div>
+
+</section>

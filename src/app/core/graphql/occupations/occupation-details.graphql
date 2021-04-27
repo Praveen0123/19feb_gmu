@@ -1,0 +1,127 @@
+query occupationDetailsByOnetCode($onetCode: ID!) {
+  occupationByOnetCode(onetCode: $onetCode) {
+    ...occupationDetailsFragment
+  }
+}
+
+query occupationDetailsById($id: ID!) {
+  occupationById(id: $id) {
+    ...occupationDetailsFragment
+  }
+}
+
+query occupationPreviewById($id: ID!) {
+  occupationById(id: $id) {
+    ...occupationPreviewFragment
+  }
+}
+
+fragment occupationPreviewFragment on Occupation {
+  vpOccupationId
+  onetCode
+  title
+  description
+  typicalEducationLevelGroupId
+  typicalLevelOfEducation
+  typicalWorkExperienceGroupId
+  typicalWorkExperience
+  projectedGrowthRate
+  projectedGrowthRateId
+  projectedJobOpenings2018To2028
+  percentOfPeopleWithDegree
+  imageName
+  videoId
+  videoUrl
+  posterUrl
+
+  preferredSalary {
+    minimumSalaryPerYear
+    minimumSalaryPerHour
+    medianSalaryPerYear
+    medianSalaryPerHour
+    maximumSalaryPerYear
+    maximumSalaryPerHour
+    salaryPrecisionType
+  }
+}
+
+fragment occupationDetailsFragment on Occupation {
+  ...occupationPreviewFragment
+
+  employers {
+    name
+    count
+  }
+
+  hotspotList {
+    ...hotspotFragment
+  }
+
+  pathways {
+    id
+    name
+    areaOfStudy
+    code
+    description
+    bachelorDegree {
+      id
+      cipCode
+      name
+    }
+    associateDegree {
+      id
+      cipCode
+      name
+    }
+    skills {
+      ...skillsFields
+    }
+    skillsByYear {
+      year
+      skillList {
+        ...skillsFields
+      }
+    }
+  }
+}
+
+fragment occupationCardFragment on Occupation {
+  vpOccupationId
+  onetCode
+  title
+  projectedGrowthRate
+  projectedGrowthRateId
+  imageName
+  videoId
+  videoUrl
+  posterUrl
+
+  preferredSalary {
+    minimumSalaryPerYear
+    minimumSalaryPerHour
+    medianSalaryPerYear
+    medianSalaryPerHour
+    maximumSalaryPerYear
+    maximumSalaryPerHour
+    salaryPrecisionType
+  }
+}
+
+fragment hotspotFragment on Hotspot {
+  cityName
+  countyFIPSCode
+  countyName
+  stateAbbreviation
+  latitude
+  longitude
+  demandLevel
+  preferredSalary {
+    minimumSalaryPerYear
+    minimumSalaryPerHour
+    medianSalaryPerYear
+    medianSalaryPerHour
+    maximumSalaryPerYear
+    maximumSalaryPerHour
+    salaryPrecisionType
+  }
+}

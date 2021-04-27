@@ -1,0 +1,29 @@
+@import "~@angular/material/theming";
+@import '~foundation-sites/scss/util/unit';
+@import 'common';
+
+@mixin occupation-salary-theme($theme) {
+  // retrieve variables from theme
+  // (all possible variables, use only what you really need)
+  $primary      : map-get($theme, primary);
+  // $accent    : map-get($theme, accent);
+  // $warn      : map-get($theme, warn);
+  // $foreground: map-get($theme, foreground);
+  // $background: map-get($theme, background);
+
+  .mat-button-toggle-label-content {
+    line-height: 36px !important;
+  }
+
+  .mat-button-toggle {
+    background-color: mat-color($primary, 300);
+    color           : mat-color($primary);
+    font-weight     : bold;
+  }
+
+  .mat-button-toggle-checked.mat-button-toggle-appearance-standard {
+    background : mat-color($primary, lighter-contrast);
+    color      : mat-color($primary, 500);
+    font-weight: bold;
+  }
+}

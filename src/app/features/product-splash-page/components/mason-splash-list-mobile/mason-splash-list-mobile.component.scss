@@ -1,0 +1,249 @@
+@import "common";
+@import "~@angular/material/theming";
+
+:host {
+  display: block;
+  margin-right: rem-calc(-35);
+  margin-left: rem-calc(-35);
+}
+
+.msg_wd {
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.margin__top__bm {
+  padding: rem-calc(35) 0;
+}
+
+.margin__bot_side {
+  padding-right: rem-calc(35);
+  padding-left: rem-calc(35);
+  padding-bottom: rem-calc(35);
+}
+
+.text__x3large {
+  font-size: rem-calc(22);
+  line-height: rem-calc(28);
+  font-family: Roboto !important;
+}
+.text__x2large {
+  font-size: rem-calc(20);
+  line-height: rem-calc(26);
+  font-family: Roboto !important;
+}
+.text__x1large {
+  font-size: rem-calc(18);
+  line-height: rem-calc(25);
+  font-family: Roboto !important;
+}
+.text__large {
+  font-size: rem-calc(22);
+  line-height: rem-calc(30);
+  font-family: Roboto !important;
+}
+.text__medium {
+  font-size: rem-calc(16);
+  line-height: rem-calc(23);
+  font-family: Roboto !important;
+}
+
+.md-grid-container {
+  @include breakpoint(small down) {
+    padding-right: rem-calc(24);
+    padding-left: rem-calc(24);
+  }
+
+  @include breakpoint(medium) {
+    @include mat-elevation-transition;
+    @include mat-elevation(2);
+  }
+}
+
+.shadow {
+  box-shadow: rem-calc(0) rem-calc(12) rem-calc(33) #0000000d;
+}
+
+.arrow__right {
+  color: $color-secondary;
+  font-size: rem-calc(35);
+}
+
+.fa-li {
+  color: $color-primary;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  &.group {
+    padding-top: rem-calc(20);
+    box-shadow: 0px 3px 6px #00000029;
+  }
+
+  &.integration {
+    height: rem-calc(387);
+    width: rem-calc(270);
+  }
+  &.future {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: rem-calc(10);
+    margin-bottom: rem-calc(10);
+    width: rem-calc(79);
+    height: rem-calc(79);
+  }
+  &.skill_focus {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: rem-calc(10);
+    margin-bottom: rem-calc(10);
+    width: rem-calc(116);
+    height: rem-calc(116);
+  }
+
+  &.shadow {
+    box-shadow: 0px 3px 6px #00000029;
+  }
+  &.skill_focus_bg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    padding-bottom: rem-calc(10);
+  }
+}
+
+.collaborating {
+  height: rem-calc(170);
+  background: $background-light-green;
+}
+.intergration_top {
+  position: relative;
+  top: 10%;
+}
+
+button {
+  color: $white;
+  background-color: $color-secondary;
+  border-radius: rem-calc(5);
+  font-size: rem-calc(18);
+  line-height: rem-calc(25);
+  font-family: Roboto;
+  height: rem-calc(44);
+  font-weight: 700;
+
+  &.learn_more {
+    width: rem-calc(180);
+  }
+
+  &.get_to_know {
+    width: 75%;
+  }
+
+  &.advancedEx {
+    width: 100%;
+  }
+
+  &.watch {
+    width: 100%;
+    border: rem-calc(2) solid $color-secondary;
+    background-color: $white;
+    color: $color-secondary;
+    margin-bottom: rem-calc(15);
+  }
+  &.connect_with_us {
+    width: 75%;
+    color: $color-header;
+    background-color: $color7;
+  }
+}
+
+.blockchain {
+  //height: rem-calc(500);
+  background-color: $color3;
+  letter-spacing: rem-calc(0);
+  color: $white;
+}
+
+.hero {
+  height: rem-calc(300);
+  background: $background-light-green;
+
+  .mason-hero {
+    background-image: url(/assets/splash-page/mason-hero-m@3x.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    width: 100%;
+    height: rem-calc(300);
+  }
+}
+
+.skill_focus_bg {
+  background-image: url(/assets/splash-page/skills-focused-bg@2x.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  height: rem-calc(650);
+}
+
+.coaching-support {
+  background-color: rgba(131, 206, 186, 0.15);
+}
+
+.footer {
+  background-image: url(/assets/splash-page/footer-bg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $white;
+  min-height: rem-calc(220);
+  width: 100%;
+}
+
+.icon-gmu {
+  height: rem-calc(74);
+  width: rem-calc(114);
+}
+
+.icon-nova {
+  height: rem-calc(61);
+  width: rem-calc(102);
+}
+
+.icon-vp {
+  height: rem-calc(68);
+  width: 7.8125rem;
+}
+.icon-bg {
+  height: rem-calc(59);
+  width: rem-calc(180);
+}
+
+.pad-2 {
+  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+}
+
+.pad-top {
+  padding-top: rem-calc(100);
+}
+
+.pad-top-25 {
+  padding-top: rem-calc(25);
+}
+
+.skill-focus {
+  background-color: rgba(131, 206, 186, 0.15);
+}
+
+.block-image {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}

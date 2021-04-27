@@ -1,0 +1,31 @@
+// custom-component-themes.scss
+
+// import custom componenet themes
+@import "../app/shared/components/career-occupations/career-occupations.component.scss-theme.scss";
+@import "../app/features/connect-with-coach/components/connect-with-coach-form/connect-with-coach-form.component.scss-theme.scss";
+@import "../app/features/home/components/nav-tabs/nav-tabs.component.scss-theme.scss";
+@import "../app/features/occupation/components/occupation-salary/occupation-salary.component.scss-theme.scss";
+@import "../app/features/admin/components/add-student-form/add-student-form.component.scss-theme.scss";
+@import "../app/shared/components/dialog/dialog.component.scss-theme.scss";
+@import "../app/shared/components/pathway-explorer-form/pathway-explorer-form.component.scss-theme.scss";
+@import "../app/shared/components/sidenav/sidenav.component.scss-theme.scss";
+@import "./custom-themes/notification.scss-theme.scss";
+@import "../app/features/student-view/containers/student-view-skills/student-view-skills.component.scss-theme.scss";
+@import "../app/shared/components/student-view-milestones/student-view-milestones.component.scss-theme.scss";
+@import "../app//shared/components/skills-view/skills-view.component.scss-theme.scss";
+
+// you only have to add additional componenets here (instead of in every theme class)
+@mixin custom-components-theme($theme, $notifications-theme) {
+  @include career-occupations-theme($theme);
+  @include connect-with-coach-form-theme($theme);
+  @include dialog-component-theme($theme);
+  @include nav-tabs-theme($theme);
+  @include notification-theme($notifications-theme);
+  @include occupation-salary-theme($theme);
+  @include pathway-explorer-form-theme($theme);
+  @include sidenav-component-theme($theme);
+  @include add-student-form-theme($theme);
+  @include student-view-skills-theme($theme);
+  @include student-view-milestones-theme($theme);
+  @include skills-view-theme($theme);
+}

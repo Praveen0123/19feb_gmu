@@ -1,0 +1,66 @@
+<section class="grid-y medium-grid-frame align-center-middle">
+
+  <!-- MEDIAN SALARY -->
+  <div class="cell medium-auto">
+    <section class="grid-x grid-margin-x">
+
+      <div class="cell xsmall-3 text-right">
+        <span class="message__label message__label--inline message__label--responsive-font-size message__label--bold">{{occupationProfileDetails.preferredSalary.medianSalaryPerYear | salarySuffix}}</span>
+      </div>
+
+      <div class="cell auto">
+        <span class="message__label message__label--inline message__label--responsive-font-size">Median Salary</span>
+      </div>
+
+    </section>
+  </div>
+
+
+  <!-- PEOPLE WITH DEGREE -->
+  <div class="cell medium-auto">
+    <section class="grid-x grid-margin-x">
+
+      <div class="cell xsmall-3 text-right">
+        <span class="message__label message__label--inline message__label--responsive-font-size message__label--bold">{{occupationProfileDetails.percentOfPeopleWithDegree | percent}}</span>
+      </div>
+
+      <div class="cell auto">
+        <span class="message__label message__label--inline message__label--responsive-font-size">People have a Degree</span>
+      </div>
+
+    </section>
+  </div>
+
+
+  <!-- PROJECTED GROWTH -->
+  <div class="cell medium-auto">
+    <section class="grid-x grid-margin-x">
+
+      <div class="cell xsmall-3 text-right">
+        <span class="message__label message__label--inline message__label--responsive-font-size message__label--bold">{{occupationProfileDetails.projectedGrowthRate}}</span>
+      </div>
+
+      <div class="cell auto">
+        <span class="message__label message__label--inline message__label--responsive-font-size">Projected Growth</span>
+      </div>
+
+    </section>
+  </div>
+
+
+  <!-- PROJECTED JOB OPENINGS -->
+  <div class="cell medium-auto">
+    <section class="grid-x grid-margin-x">
+
+      <div class="cell xsmall-3 text-right">
+        <span class="message__label message__label--inline message__label--responsive-font-size message__label--bold">{{occupationProfileDetails.projectedJobOpenings2018To2028 | number}}</span>
+      </div>
+
+      <div class="cell auto">
+        <span class="message__label message__label--inline message__label--responsive-font-size">10-year Projected Job Openings</span>
+      </div>
+
+    </section>
+  </div>
+
+</section>

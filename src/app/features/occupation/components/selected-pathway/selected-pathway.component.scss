@@ -1,0 +1,27 @@
+@import "common";
+@import "~@angular/material/theming";
+
+:host {
+  display: block;
+  @include mat-elevation-transition;
+  @include mat-elevation(2);
+}
+
+.selected-pathway-conainer {
+  background-color: $background-light-green;
+
+  > .grid-y {
+    padding: rem-calc(20);
+  }
+}
+
+.pathway-container {
+  height: 100%;
+}
+
+.mat-icon {
+  &.icon-check-mark {
+    height: rem-calc(125);
+    width: rem-calc(140);
+  }
+}

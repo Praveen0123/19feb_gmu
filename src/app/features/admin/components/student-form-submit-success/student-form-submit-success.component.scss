@@ -1,0 +1,23 @@
+@import 'common';
+
+:host{
+  display         : initial;
+  position        : relative;
+}
+
+
+.text-color {
+  color           : $color-header;
+}
+
+.hands-image {
+  height          : rem-calc(70);
+  width           : rem-calc(100);
+  margin-top      : rem-calc(-30);
+  margin-left     : rem-calc(-25);
+}
+
+.content-width {
+  margin          : 0 auto;
+  max-width       : rem-calc(315);
+}

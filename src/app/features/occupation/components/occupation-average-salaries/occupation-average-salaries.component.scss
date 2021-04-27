@@ -1,0 +1,8 @@
+@import 'common';
+
+.content-width {
+  position                  : relative;
+  max-width                 : rem-calc(450);
+  height                    : auto;
+  margin                    : 0 auto;
+}

@@ -1,0 +1,49 @@
+<ng-container *ngIf="{ areaOfStudyList:areaOfStudyList$ | async,
+                       occupationPreview:occupationPreview$ | async
+                     } as dataOwner">
+
+  <section class="grid-y grid-margin-y">
+
+    <!-- BACK BUTTON -->
+    <div class="cell">
+      <gmu-back-button></gmu-back-button>
+    </div>
+
+
+    <!-- OCCUPATION SEARCH BOX FORM -->
+    <div class="cell">
+
+      <gmu-occupation-auto-complete (onOccupationSelected)="onOccupationSelected($event)"></gmu-occupation-auto-complete>
+
+    </div>
+
+
+    <!-- OCCUPATION PREVIEW -->
+    <div class="cell">
+      <gmu-occupation-preview [occupationPreview]="dataOwner.occupationPreview"
+                              (onOccupationClick)="onOccupationPreviewClick($event)"></gmu-occupation-preview>
+    </div>
+
+
+    <!-- HEADER: COURSE OUTLINE -->
+    <div class="cell">
+      <gmu-section-header [title]="'Other Careers in this Area'"></gmu-section-header>
+    </div>
+
+
+    <!-- OCCUPATION CARDS BY AREA OF STUDY -->
+    <div class="cell ">
+      <gmu-occupation-list-by-area-of-study [areaOfStudyList]="dataOwner.areaOfStudyList"
+                                            (onAreaOfStudyClick)="onAreaOfStudyClick($event)"
+                                            (onOccupationClick)="onOccupationClick($event)"></gmu-occupation-list-by-area-of-study>
+    </div>
+
+
+    <!-- CONNECT WITH COACH FORM -->
+    <div class="cell">
+      <gmu-connect-with-coach [eventLabel]="'Careers Search'"></gmu-connect-with-coach>
+    </div>
+
+  </section>
+
+</ng-container>

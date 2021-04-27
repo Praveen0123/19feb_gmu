@@ -1,0 +1,16 @@
+<ng-container *ngIf="{student: student$ |async
+                       } as dataOwner">
+<ng-container *ngIf="dataOwner.student">
+  <section class="grid-x align-center grid-padding-y"
+           *ngIf="dataOwner.student?.milestones">
+    <div class="cell  medium-11">
+      
+      <gmu-student-view-milestones 
+      [milestones]="dataOwner.student?.milestones" 
+      [degree]="dataOwner.student.pathway.name" 
+      [studentId]="dataOwner.student.id"
+      (milestoneEventEmitter)="onUpdateMilestone($event)"></gmu-student-view-milestones>
+    </div>
+  </section>
+
+</ng-container>

@@ -1,0 +1,361 @@
+<form novalidate
+      autocomplete="off"
+      autocomplete="chrome-off"
+      [formGroup]="formGroup"
+      (ngSubmit)="onFormSubmit()">
+
+  <section class="grid-y grid-margin-y">
+
+    <!-- CONNECT WITH COACH ICON, CLOSE FORM CTA -->
+    <div class="cell">
+
+      <section class="grid-x grid-margin-x">
+
+        <div class="cell shrink">
+          <p>Connect with a</p>
+          <p class="coach">COACH!</p>
+        </div>
+
+        <div class="cell auto">
+          <mat-icon class="icon-coach"
+                    svgIcon="icon-coach_w_bg"></mat-icon>
+        </div>
+
+      </section>
+
+    </div>
+
+
+    <!-- IS CURRENT NOVA STUDENT -->
+    <div class="cell">
+
+      <mat-form-field appearance="outline">
+
+        <mat-label>Are you a current NOVA student.? </mat-label>
+
+        <mat-select id="area"
+                    formControlName="isCurrentNovaStudent"
+                    placeholder="Please select an option."
+                    required>
+          <mat-option [value]="true">YES</mat-option>
+          <mat-option [value]="false">NO</mat-option>
+        </mat-select>
+
+
+        <mat-error *ngIf="formGroup.controls.isCurrentNovaStudent.hasError('required')
+                          || (formGroup.get('isCurrentNovaStudent').invalid && formGroup.get('isCurrentNovaStudent').touched)">
+          You must select an option.
+        </mat-error>
+
+      </mat-form-field>
+
+    </div>
+
+
+    <!-- IS CURRENT NOVA STUDENT -->
+    <ng-container *ngIf="formGroup.controls.isCurrentNovaStudent.value === true">
+      <!-- CURREN ASSOCIATES (NOVA) PROGRAM -->
+      <div class="cell">
+
+        <mat-form-field appearance="outline">
+
+          <mat-label>What is your current NOVA program? </mat-label>
+          <mat-select formControlName="currentAssociatesProgram"
+                      placeholder="Please select an option."
+                      (selectionChange)="onSelectionAssociatesDegree($event.value)"
+                      required>
+
+            <mat-option *ngFor="let option of uniqueAssociatesDegreeList"
+                        [value]="option">{{option.associateDegree.name}}</mat-option>
+
+          </mat-select>
+
+          <mat-error *ngIf="formGroup.controls.currentAssociatesProgram.hasError('required')
+                          || (formGroup.get('currentAssociatesProgram').invalid && formGroup.get('currentAssociatesProgram').touched)">
+            You must select an option.
+          </mat-error>
+        </mat-form-field>
+
+      </div>
+
+      <!-- DESIRED BACHELORS (MASON) PROGRAM -->
+      <div class="cell">
+
+        <mat-form-field appearance="outline">
+
+          <mat-label>What is your desired Mason Program?</mat-label>
+          <mat-select formControlName="desiredBachelorProgram"
+                      placeholder="Please select an option."
+                      required>
+
+            <mat-option *ngFor="let option of uniqueBachelorsDegreeList"
+                        [value]="option">{{option.bachelorDegree.name}}</mat-option>
+
+          </mat-select>
+
+          <mat-error *ngIf="formGroup.controls.desiredBachelorProgram.hasError('required')
+                          || (formGroup.get('desiredBachelorProgram').invalid && formGroup.get('desiredBachelorProgram').touched)">
+            You must select an option.
+          </mat-error>
+
+        </mat-form-field>
+
+      </div>
+
+      <!-- STARTING SEMESTER AT MASON -->
+      <div class="cell">
+
+        <mat-form-field appearance="outline">
+
+          <mat-label>When do you anticipate starting at Mason?</mat-label>
+
+          <mat-select formControlName="startingSemesterAtMason"
+                      placeholder="Please select an option."
+                      required>
+            <mat-option value="Fall 2020">Fall 2020 </mat-option>
+            <mat-option value="Spring 2021">Spring 2021</mat-option>
+            <mat-option value="Fall 2021">Fall 2021 </mat-option>
+            <mat-option value="Spring 2022">Spring 2022</mat-option>
+          </mat-select>
+
+          <mat-error *ngIf="formGroup.controls.startingSemesterAtMason.hasError('required')
+                          || (formGroup.get('startingSemesterAtMason').invalid && formGroup.get('startingSemesterAtMason').touched)">
+            You must select an option.
+          </mat-error>
+
+        </mat-form-field>
+
+      </div>
+    </ng-container>
+
+
+    <!-- IS **NOT** CURRENT NOVA STUDENT -->
+    <ng-container *ngIf="formGroup.controls.isCurrentNovaStudent.value === false">
+      <!-- DESIRED ASSOCIATES (NOVA) PROGRAM -->
+      <div class="cell">
+
+        <mat-form-field appearance="outline">
+
+          <mat-label>What is your desired NOVA program?</mat-label>
+          <mat-select formControlName="desiredAssociatesProgram"
+                      placeholder="Please select an option."
+                      required>
+
+            <mat-option *ngFor="let option of uniqueAssociatesDegreeList"
+                        [value]="option">{{option.associateDegree.name}}</mat-option>
+
+          </mat-select>
+
+          <mat-error *ngIf="formGroup.controls.desiredAssociatesProgram.hasError('required')
+                          || (formGroup.get('desiredAssociatesProgram').invalid && formGroup.get('desiredAssociatesProgram').touched)">
+            You must select an option.
+          </mat-error>
+
+        </mat-form-field>
+
+      </div>
+
+      <!-- STARTING SEMESTER AT NOVA -->
+      <div class="cell">
+
+        <mat-form-field appearance="outline">
+
+          <mat-label>When do you anticipate starting at NOVA? </mat-label>
+
+          <mat-select formControlName="startingSemesterAtNova"
+                      placeholder="Please select an option."
+                      required>
+            <mat-option value="Fall 2020">Fall 2020 </mat-option>
+            <mat-option value="Spring 2021">Spring 2021</mat-option>
+            <mat-option value="Fall 2021">Fall 2021 </mat-option>
+            <mat-option value="Spring 2022">Spring 2022</mat-option>
+
+          </mat-select>
+
+          <mat-error *ngIf="formGroup.controls.startingSemesterAtNova.hasError('required')
+                          || (formGroup.get('startingSemesterAtNova').invalid && formGroup.get('startingSemesterAtNova').touched)">
+            You must select an option.
+          </mat-error>
+
+        </mat-form-field>
+
+      </div>
+    </ng-container>
+
+
+    <!-- First/Given Name -->
+    <div class="cell">
+
+      <mat-form-field appearance="outline">
+
+        <mat-label>First/Given Name </mat-label>
+
+        <input matInput
+               placeholder="Jane"
+               formControlName="firstName"
+               autocomplete="none"
+               required />
+
+        <mat-error *ngIf="formGroup.controls.firstName.hasError('required')
+                          || (formGroup.get('firstName').invalid && formGroup.get('firstName').touched)">
+          First/Given Name is required.
+        </mat-error>
+
+      </mat-form-field>
+
+    </div>
+
+    <!-- Last/Family Name -->
+    <div class="cell">
+
+      <mat-form-field appearance="outline">
+
+        <mat-label>Last/Family Name </mat-label>
+
+        <input matInput
+               placeholder="Doe"
+               formControlName="lastName"
+               autocomplete="none"
+               required />
+
+        <mat-error *ngIf="formGroup.controls.lastName.hasError('required')
+                          || (formGroup.get('lastName').invalid && formGroup.get('lastName').touched)">
+          Last/Family Name is required.
+        </mat-error>
+
+      </mat-form-field>
+
+    </div>
+
+
+    <!-- Message -->
+    <ng-container *ngIf="formGroup.controls.isCurrentNovaStudent.value === null || formGroup.controls.isCurrentNovaStudent.value === true">
+      <div class="cell">
+        <div class="message__label message__label--bold">
+          If you are a current NOVA student please use your VCCS email address.
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- Email -->
+    <div class="cell">
+
+      <mat-form-field appearance="outline">
+
+        <mat-label>Email </mat-label>
+
+        <input matInput
+               placeholder="jan@example.com"
+               formControlName="emailAddress"
+               autocomplete="none"
+               required />
+
+        <mat-error *ngIf="formGroup.controls.emailAddress.hasError('required')
+                          || formGroup.controls.emailAddress.hasError('email')
+                          || (formGroup.get('emailAddress').invalid && formGroup.get('emailAddress').touched)">
+          Please enter a valid email address.
+        </mat-error>
+
+      </mat-form-field>
+
+    </div>
+
+
+    <!-- Verify Email -->
+    <div class="cell">
+
+      <mat-form-field appearance="outline">
+
+        <mat-label>Verify Email</mat-label>
+
+        <input matInput
+               placeholder="jan@example.com"
+               formControlName="verifyEmailAddress"
+               autocomplete="none"
+               required />
+
+        <mat-error *ngIf="(formGroup.controls.verifyEmailAddress.hasError('required'))
+                          || (formGroup.get('verifyEmailAddress').invalid && formGroup.get('verifyEmailAddress').touched)
+                          && (!formGroup.controls.verifyEmailAddress.hasError('equalTo')
+                          && formGroup.controls.verifyEmailAddress.hasError('email'))">
+          Please enter a valid email address.
+        </mat-error>
+        <mat-error *ngIf="formGroup.controls.verifyEmailAddress.hasError('equalTo') && !formGroup.controls.verifyEmailAddress.hasError('required')">
+          Emails do not match.
+        </mat-error>
+
+      </mat-form-field>
+
+    </div>
+
+
+    <!-- Mobile Number -->
+    <div class="cell">
+
+      <mat-form-field appearance="outline">
+
+        <mat-label>Mobile Number</mat-label>
+
+        <input matInput
+               formControlName="mobileNumber"
+               [mask]="phoneNumberMask"
+               autocomplete="none" />
+
+      </mat-form-field>
+
+    </div>
+
+
+    <!-- Birthdate MM/DD/YY -->
+    <div class="cell">
+
+      <mat-form-field appearance="outline">
+
+        <mat-label>Birthdate MM/DD/YY</mat-label>
+
+        <input matInput
+               [min]="minimumDate"
+               [max]="maximumDate"
+               [matDatepicker]="picker"
+               formControlName="birthDate"
+               (focus)="picker.open()"
+               required />
+
+        <mat-datepicker-toggle matSuffix
+                               [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+
+        <mat-error *ngIf="formGroup.controls.birthDate.hasError('required')
+                          || (formGroup.get('birthDate').invalid && formGroup.get('birthDate').touched)">
+          Birth date is required.
+        </mat-error>
+
+      </mat-form-field>
+
+    </div>
+
+
+    <!-- Required and Submit button -->
+    <div class="cell">
+
+      <section class="grid-x align-middle align-justify">
+
+        <div class="cell auto">
+          <div class="required">Required <span>*</span></div>
+        </div>
+
+        <div class="cell auto text-right">
+          <button mat-raised-button
+                  type="submit"
+                  [disabled]="!formGroup.valid">
+            SUBMIT
+          </button>
+        </div>
+
+      </section>
+
+    </div>
+
+  </section>
+
+</form>

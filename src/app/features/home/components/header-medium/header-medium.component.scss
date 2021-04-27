@@ -1,0 +1,136 @@
+@import "common";
+
+:host {
+  display: block;
+}
+
+.nova-top {
+  width: 100%;
+}
+
+.header-image {
+  background-image: url(/assets/icons/NOVA_TopImage@2xBeta.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: rem-calc(183);
+}
+
+.advance-container {
+  background: $color-header;
+  color: $white;
+  //padding-bottom: rem-calc(14);
+  position: relative;
+  margin-right: rem-calc(72);
+
+  .setting {
+    height: 100%;
+    padding-top: rem-calc(14);
+    padding-bottom: rem-calc(8);
+  }
+
+  .advance {
+    cursor: pointer;
+    display: block;
+    font-size: rem-calc(36);
+    line-height: 30px;
+    font-weight: bold;
+    letter-spacing: normal;
+    padding-right: rem-calc(12);
+
+    @include breakpoint(large) {
+      font-size: rem-calc(48);
+    }
+  }
+
+  .partnership {
+    cursor: pointer;
+    display: block;
+    font-size: rem-calc(20);
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: 0.18px;
+
+    @include breakpoint(large) {
+      font-size: rem-calc(24);
+    }
+  }
+}
+
+.icon-gmu {
+  height: rem-calc(82);
+  width: rem-calc(127);
+}
+
+.icon-nova {
+  height: rem-calc(65);
+  width: rem-calc(97);
+}
+
+.plusStyle {
+  color: $color-primary;
+  font-size: rem-calc(20);
+  height: rem-calc(41);
+  margin-left: rem-calc(20);
+  margin-right: rem-calc(20);
+}
+
+button {
+  position: relative;
+  bottom: rem-calc(5);
+}
+
+a {
+  position: relative;
+  bottom: rem-calc(5);
+  cursor: pointer;
+  text-decoration: none;
+
+  .sign-in {
+    width: rem-calc(38);
+    height: rem-calc(38);
+    //margin-right: 6px;
+    display: inline-block;
+  }
+
+  h5 {
+    color: $color-header;
+    font: 700 rem-calc(12) Roboto;
+    margin: 0;
+    text-decoration: none;
+  }
+}
+
+.triangle-svg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 60px;
+  margin-right: -59px; //weird bleed sometimes without extra pixel of cover
+  fill: currentColor;
+
+  .color-header {
+    color: $color-header;
+  }
+
+  .header-background {
+    color: $background-header-bright-green;
+  }
+}
+
+.w-60-px {
+  width: 60px;
+}
+
+.lower-header-section {
+  background-image: linear-gradient(90deg, $color-header 50%, $white 50%);
+}
+.active {
+  font-weight: 700 !important;
+}
+.links {
+  color: $white;
+  font-weight: 300;
+}

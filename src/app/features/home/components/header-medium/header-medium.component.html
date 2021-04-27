@@ -1,0 +1,100 @@
+<section class="grid-y">
+  <!-- NOVA TOP HEADER IMAGE -->
+  <div class="cell header-image"></div>
+
+  <!-- Partnership -->
+  <div class="cell lower-header-section">
+    <section class="desktop-body-margin">
+      <section class="grid-x align-justify align-bottom">
+        <!-- PARTNERSHIP -->
+        <div class="cell auto advance-container">
+          <section class="grid-x align-bottom setting">
+            <div class="cell shrink">
+              <p (click)="onClickGoHome()"
+                 class="advance">ADVANCE</p>
+              <div>
+                <span class="partnership"
+                      (click)="onClickGoHome()">a NOVA | MASON partnership.</span>
+              </div>
+            </div>
+            <div class="cell auto">
+              <div class="grid-x align-right">
+              <div class="cell auto text-right">
+                  <button mat-raised-button class="search-button" (click)="onClickGoToFeedbackPage()">
+                    FEEDBACK
+                  </button>
+              </div>
+                <div class="cell auto text-right ">
+                  <a [routerLink]="['/']"
+                     [routerLinkActive]="['active']"
+                     [ngClass]="{'active': (!aboutActive.isActive && !signInActive.isActive && !isHome()) }"
+                     class=" message__label--large links  ">
+
+                    EXPLORE
+
+                  </a>
+                </div>
+
+                <div class="cell large-3 medium-3  text-right" [hidden]="!userDetails">
+                  <a [routerLink]="[homeLink]"
+                      [ngClass]="{'active': isHome() }"
+                      class="message__label--large links">
+                    My Home
+                  </a>
+                </div>
+
+                <div class="cell large-3 medium-3  text-right">
+                  <a [routerLink]="['/about']"
+                     [routerLinkActive]="['active']"
+                     #aboutActive="routerLinkActive"
+                     [ngClass]="{'active': (aboutActive.isActive && (!signInActive.isActive) ) }"
+                     class=" links message__label--large ">
+                    About
+                  </a>
+                </div>
+              </div>
+            </div>
+
+
+
+          </section>
+
+
+          <svg class="triangle-svg"
+               preserveAspectRatio="none"
+               viewBox="0 0 60 100">
+            <polygon class="header-background"
+                     points="20,0 35,0 60,50 35,100 20,100"></polygon>
+            <polygon class="color-header"
+                     points="0,0 20,0 45,50 20,100 0,100"></polygon>
+          </svg>
+        </div>
+
+        <!-- PROGRAM ICONS -->
+        <div class="cell shrink text-center">
+          <section class="grid-x align-bottom ">
+            <!-- SIGN-IN -->
+            <div class="cell shrink align-self-bottom text-center w-60-px"
+                 #signInActive="routerLinkActive"
+                 routerLinkActive="active"
+                 [routerLinkActiveOptions]="{ exact: true }">
+              <ng-container *ngIf="userDetails">
+                <a (click)="onClickSignOut()">
+                  <mat-icon class="sign-in"
+                            [svgIcon]="'icon-login'"></mat-icon>
+                  <h5>Sign Out</h5>
+                </a>
+              </ng-container>
+              <ng-container *ngIf="!userDetails">
+              <a (click)="onClickSignIn()">
+                <mat-icon class="sign-in" [svgIcon]="'icon-login'"></mat-icon>
+                <h5>Sign In / Register</h5>
+              </a>
+              </ng-container>
+            </div>
+          </section>
+        </div>
+      </section>
+    </section>
+  </div>
+</section>

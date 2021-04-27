@@ -1,0 +1,34 @@
+<!-- Nav Tabs with Router Outlet -->
+<gmu-nav-tabs [navLinks]="navLinks"></gmu-nav-tabs>
+
+<section class="router-outlet-wrapper">
+  <router-outlet></router-outlet>
+</section>
+
+<ng-container *ngIf="{ deviceCharacteristics: deviceCharacteristics$ | async } as dataOwner">
+  <section class="grid-x grid-margin-x grid-margin-y welcome-section">
+    <!-- WELCOME MESSAGE -->
+    <div class="cell medium-auto">
+      <section class="grid-y">
+        <div class="cell">
+          <h1 class="title">{{ title }}</h1>
+        </div>
+
+        <div class="cell">
+          <span class="message__label"
+                [ngClass]="{
+              'message__label--large':
+                dataOwner.deviceCharacteristics.isGreaterThanSmall
+            }">
+            {{ description }}
+          </span>
+        </div>
+      </section>
+    </div>
+
+    <!-- VIDEO -->
+    <div class="cell medium-auto">
+      <gmu-video [videoUrl]="welcomeVideoUrl"></gmu-video>
+    </div>
+  </section>
+</ng-container>

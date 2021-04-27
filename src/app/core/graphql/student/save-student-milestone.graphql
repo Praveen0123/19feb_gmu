@@ -1,0 +1,5 @@
+mutation saveStudentMilestone($milestoneInput: MilestoneInput!) {
+  saveStudentMilestone(milestoneInput: $milestoneInput) {
+    id
+  }
+}

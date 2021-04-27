@@ -1,0 +1,5 @@
+mutation saveStudentCourse($studentCourseInput: StudentCourseInput) {
+  saveStudentCourse(studentCourseInput: $studentCourseInput) {
+    id
+  }
+}

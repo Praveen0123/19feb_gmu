@@ -1,0 +1,75 @@
+<section class="grid-x">
+
+  <!-- CHECK MARK -->
+  <div class="cell medium-auto">
+
+    <section class="grid-x grid-padding-x align-center-middle pathway-container">
+
+      <!-- CHECK MARK -->
+      <div class="cell shrink">
+        <mat-icon class="icon-check-mark"
+                  [svgIcon]="'icon-check-mark'"></mat-icon>
+      </div>
+
+      <!-- MESSAGING -->
+      <div class="cell auto">
+
+        <section class="grid-y">
+          <div class="cell">
+            <span class="message__label message__label--large message__label--black">
+              This career aligns with this
+            </span>
+          </div>
+          <div class="cell">
+            <span class="message__label message__label--large message__label--black message__label--bold">
+              ADVANCE Pathway
+            </span>
+          </div>
+          <!-- <div class="cell">
+            What is a Pathway?
+          </div> -->
+        </section>
+
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <!-- SELECTED PATHWAY -->
+  <div class="cell medium-auto selected-pathway-conainer">
+
+    <section class="grid-y grid-margin-y">
+
+      <!-- AREA OF STUDY -->
+      <div class="cell">
+
+        <gmu-check-mark-bullet-item [title]="'Area Of Study'"
+                                    [subtitle]="selectedPathway.areaOfStudy"></gmu-check-mark-bullet-item>
+
+      </div>
+
+
+      <!-- MASON DEGREE -->
+      <div class="cell">
+
+        <gmu-check-mark-bullet-item [title]="'MASON Degree'"
+                                    [subtitle]="selectedPathway.bachelorDegree.name"></gmu-check-mark-bullet-item>
+
+      </div>
+
+
+      <!-- NOVA DEGREE -->
+      <div class="cell">
+
+        <gmu-check-mark-bullet-item [title]="'NOVA Degree'"
+                                    [subtitle]="selectedPathway.associateDegree.name"></gmu-check-mark-bullet-item>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</section>

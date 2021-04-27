@@ -1,0 +1,57 @@
+@import 'common';
+@import "~@angular/material/theming";
+
+
+:host {
+  display: block;
+  @include mat-elevation-transition;
+  @include mat-elevation(2);
+}
+
+
+
+.title-container {
+  background-color: $color-primary;
+  color           : $white;
+  font-size       : rem-calc(18);
+  padding         : rem-calc(20) 0 rem-calc(20) rem-calc(24);
+
+  @include breakpoint(medium) {
+    background-image: linear-gradient(to right, $color-primary, $background-header-bright-green);
+    font-size       : rem-calc(24);
+    font-weight     : 700;
+  }
+}
+
+.salaries-stats-container {
+  padding: rem-calc(16);
+
+  @include breakpoint(medium) {
+    padding: rem-calc(30);
+  }
+}
+
+.what-they-do-messaging {
+  background-color: $background-light-green;
+
+
+  >.grid-y {
+    padding: rem-calc(16);
+
+    @include breakpoint(medium) {
+      padding: rem-calc(30);
+    }
+  }
+
+  .message__label--primary {
+    margin-bottom: rem-calc(16);
+  }
+}
+
+gmu-occupation-salary {
+  margin-bottom: rem-calc(20);
+
+  @include breakpoint(medium) {
+    margin-bottom: rem-calc(0);
+  }
+}

@@ -1,0 +1,11 @@
+@import 'common';
+
+:host {
+  display: block;
+}
+
+a {
+  color          : $color-secondary;
+  cursor         : pointer;
+  text-decoration: none;
+}

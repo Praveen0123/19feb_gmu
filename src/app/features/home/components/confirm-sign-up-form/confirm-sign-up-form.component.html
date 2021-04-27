@@ -1,0 +1,65 @@
+<form novalidate
+      autocomplete="off"
+      autocomplete="chrome-off"
+      [formGroup]="formGroup"
+      (ngSubmit)="onFormSubmit()"
+      *ngIf="formGroup">
+  <section class="grid-y grid-margin-y align-center">
+
+    <!-- MESSAGE -->
+    <div class="cell">
+      <p class="message__label message__label--bold message__label--large"> Confirm Registration </p>
+    </div>
+
+    <div class="cell">
+      <p class="message__label message__label--bold">{{confirmSignUpInstructions}}</p>
+    </div>
+
+    <!-- VERIFICATION CODE -->
+    <div class="cell">
+
+      <mat-form-field appearance="outline">
+
+        <mat-label>Verification Code</mat-label>
+
+        <input matInput
+               placeholder="Verification Code"
+               formControlName="code"
+               autocomplete="none"
+               required />
+
+        <mat-error *ngIf="(formGroup.controls.code.hasError('required'))">
+          Code can not be empty
+        </mat-error>
+      </mat-form-field>
+
+    </div>
+    <div class="cell">
+
+      <section class="grid-x align-middle align-justify">
+
+        <div class="cell auto">
+          <div class="required">Required <span>*</span></div>
+        </div>
+
+        <div class="cell auto text-right">
+          <button mat-raised-button
+                  type="submit"
+                  class="search-button"
+                  [disabled]="!formGroup.valid">
+            CONFIRM REGISTRATION
+          </button>
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- SIGN IN LINK -->
+    <div class="cell text-right">
+      <a class="sign-in"
+         [routerLink]="['/home/login']">Sign In</a>
+    </div>
+
+  </section>
+</form>

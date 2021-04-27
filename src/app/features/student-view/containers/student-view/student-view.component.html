@@ -1,0 +1,23 @@
+<ng-container *ngIf="{student: student$ | async, role: role$ | async
+                       } as dataOwner">
+
+  <section class="grid-x">
+    <div class="cell  medium-2 desktop-body-margin-remove  ">
+      <gmu-student-view-details [student]="dataOwner.student"></gmu-student-view-details>
+    </div>
+
+    <div class="cell auto desktop-body-margin-remove2 ">
+
+      <gmu-student-view-skills [navLinks]="navLinks"></gmu-student-view-skills>
+      <ng-container *ngIf="dataOwner.role === 'coach'">
+      <div class="cell medium-11 width-80">
+      <gmu-search-box-form (onFormSearchSubmit)="search($event)"></gmu-search-box-form>
+
+      </div>
+      </ng-container>
+      <router-outlet></router-outlet>
+    </div>
+
+  </section>
+
+</ng-container>

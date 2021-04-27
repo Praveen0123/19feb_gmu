@@ -1,0 +1,11 @@
+{
+  "auth": {
+    "gmuadvancetoolkit64f835d9": {
+      "service": "Cognito",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

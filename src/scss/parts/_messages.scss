@@ -1,0 +1,89 @@
+.message__label {
+  display    : block;
+  font-size  : rem-calc(14);
+  line-height: 1.5;
+
+  &--black {
+    color: $black;
+  }
+
+  &--gray {
+    color: $gray-600;
+  }
+
+  &--primary {
+    color: $color-primary;
+  }
+
+  &--light {
+    font-weight: 100;
+  }
+
+  &--wrap {
+    white-space: initial;
+  }
+
+  &--nowrap {
+    white-space: nowrap;
+  }
+
+  &--bold {
+    font-weight: 700;
+  }
+
+  &--responsive-font-size {
+    font-size: rem-calc(12);
+
+    @include breakpoint(small) {
+      font-size: rem-calc(14);
+    }
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(18);
+    }
+
+    @include breakpoint(large) {
+      font-size: rem-calc(22);
+    }
+
+    @include breakpoint(xlarge) {
+      font-size: rem-calc(26);
+    }
+
+    @include breakpoint(xxlarge) {
+      font-size: rem-calc(32);
+    }
+  }
+
+  &--xsmall {
+    font-size: rem-calc(12);
+  }
+
+  &--small {
+    font-size: rem-calc(14);
+  }
+
+  &--medium {
+    font-size: rem-calc(18);
+  }
+
+  &--large {
+    font-size: rem-calc(22);
+  }
+
+  &--xlarge {
+    font-size: rem-calc(26);
+  }
+
+  &--xxlarge {
+    font-size: rem-calc(32);
+  }
+
+  &--inline {
+    display: inline;
+
+    &+.message__label--inline {
+      padding-left: rem-calc(6);
+    }
+  }
+}

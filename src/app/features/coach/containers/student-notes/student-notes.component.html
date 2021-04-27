@@ -1,0 +1,4 @@
+<ng-container *ngIf="{notes: notes$ | async} as dataOwner">
+<gmu-student-notes-form></gmu-student-notes-form>
+<gmu-student-notes-list [notes]="dataOwner.notes"></gmu-student-notes-list>
+</ng-container>

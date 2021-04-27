@@ -1,0 +1,146 @@
+@import 'common';
+
+
+:host {
+  display : block;
+  overflow: hidden;
+
+  &.has-progress-bar {
+    .occupation-list-container {
+      margin-bottom: rem-calc(-60);
+    }
+    .occupation-list-container2{
+       margin-bottom: rem-calc(-750);
+    }
+  }
+
+  // HIDE LEFT/RIGHT BUTTONS
+  @include breakpoint(small down) {
+    .occupation-list-container {
+      .left-side {
+        display: none;
+      }
+
+      .right-side {
+        display: none;
+      }
+    
+    }
+      .occupation-list-container2 {
+   
+       .left-side {
+        display: none;
+      }
+
+      .right-side {
+        display: none;
+      }
+    }
+  }
+}
+
+.occupation-list-container {
+  position: relative;
+
+  .left-side {
+    position: absolute;
+    left    : rem-calc(6);
+    top     : 46%;
+    z-index : 1000;
+  }
+
+
+  .right-side {
+    position: absolute;
+    right   : rem-calc(6);
+    top     : 46%;
+    z-index : 1000;
+  }
+
+ 
+}
+.occupation-list-container2 {
+  position: relative;
+
+  .left-side {
+    position: absolute;
+    left    : rem-calc(6);
+    top     : 12%;
+    z-index : 1000;
+  }
+
+
+  .right-side {
+    position: absolute;
+    right   : rem-calc(6);
+    top     : 12%;
+    z-index : 1000;
+  }
+}
+
+.viewport-occupation-list {
+  height         : rem-calc(216);
+  overflow-y     : hidden;
+  overflow-x     : auto;
+  width          : 100%;
+  scroll-behavior: smooth;
+
+  @include breakpoint(medium) {
+    height: rem-calc(316);
+  }
+
+  
+
+  ::ng-deep {
+    .cdk-virtual-scroll-content-wrapper {
+      display       : flex;
+      flex-direction: row;
+    }
+  }
+}
+
+
+.viewport-occupation-2 {
+  height         : rem-calc(1210) !important;
+  overflow-y     : hidden;
+  overflow-x     : auto;
+  width          : 100%;
+
+  scroll-behavior: smooth;
+
+  @include breakpoint(medium) {
+    height: rem-calc(316) ;
+   
+   
+  }
+
+  
+
+  ::ng-deep {
+    .cdk-virtual-scroll-content-wrapper {
+      display       : flex;
+      flex-direction: row;
+    }
+  }
+}
+
+button#leftScroll.mat-mini-fab.mat-accent,
+button#rightScroll.mat-mini-fab.mat-accent {
+  background-color: $white;
+  color           : $color-primary;
+  box-shadow      : 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+  transition      : background-color 0.5s ease, color 0.5s ease;
+
+  &.disabled {
+    background-color: $gray-200;
+    color           : $color-warning;
+  }
+
+  .mat-icon {
+    font-size: rem-calc(40);
+    height   : rem-calc(40);
+    width    : rem-calc(40);
+  }
+}
+
+

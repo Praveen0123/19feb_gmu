@@ -1,0 +1,33 @@
+<ng-container
+  *ngIf="{
+    pathwayList: pathwayList$ | async,
+    student: student$ | async,
+    coachList: coachList$ | async
+  } as dataOwner"
+>
+  <section class="grid-y grid-margin-y">
+    <!-- SEARCH FIELD -->
+    <div class="cell">
+      <gmu-search-box-form
+        [studentID]="studentID"
+        (onFormSearchSubmit)="onStudentSearch($event)"
+      ></gmu-search-box-form>
+    </div>
+  </section>
+
+  <!-- STUDENT ADD FORM -->
+  <ng-container *ngIf="dataOwner.student">
+  <div class="cell">
+    <gmu-add-student-form
+      [pathwayList]="dataOwner.pathwayList"
+      [student]="dataOwner.student"
+      [coachList]="dataOwner.coachList"
+      [forUpdate]="true"
+      (onFormSubmit)="onStudentFormSubmit($event)"
+    ></gmu-add-student-form>
+  </div>
+  </ng-container>
+<ng-container *ngIf="!dataOwner.student">
+<gmu-student-not-found></gmu-student-not-found>
+</ng-container>
+</ng-container>

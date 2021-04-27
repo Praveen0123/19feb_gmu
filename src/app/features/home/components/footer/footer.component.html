@@ -1,0 +1,18 @@
+<section class="grid-container">
+
+  <section class="grid-x grid-margin-x align-middle align-center">
+
+    <div class="cell shrink">
+      <span class="message__label message__label--gray  message__label--medium">
+        <mat-icon>copyright</mat-icon>{{copyright}}
+      </span>
+    </div>
+
+  </section>
+
+</section>
+
+<section class="what-am-i-container"
+         *ngIf="isDevelopment">
+  <h3 class="what-am-i">{{whatAmI}}</h3>
+</section>

@@ -1,0 +1,39 @@
+<section>
+
+  <!-- HEADING OF NOTES -->
+  <div class="cell course-header message__label message__label--small content">
+
+    <section class="grid-x grid-margin-x grid-padding-x  align-justify">
+
+      <div class="cell auto ">
+        NOTES
+      </div>
+      <div class="cell shrink">
+        Date
+      </div>
+    </section>
+
+  </div>
+
+  <!-- CONTENT OF NOTES -->
+  <div class="content">
+
+    <div class="cell course-item "
+         *ngFor="let note of notes;let i=index; let odd=odd"
+         [ngClass]="{ odd: odd}">
+
+      <section class="grid-x grid-margin-x grid-padding-x   align-justify">
+        <div class="cell auto font-weight">
+          <span>{{note.body}}</span>
+        </div>
+
+        <div class="cell shrink">
+          <span>{{note.lastModifiedDate}}</span>
+        </div>
+      </section>
+
+    </div>
+
+  </div>
+
+</section>

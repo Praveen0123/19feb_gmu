@@ -1,0 +1,62 @@
+<!-- TOGGLE BUTTONS -->
+<section class="grid-y  grid-padding-y grid-margin-y margin-top">
+  <div class="cell">
+    <section class="grid-x align-left">
+      <div class ="cell medium-8 padding-left"><gmu-faq-open-button></gmu-faq-open-button></div>
+      <div class="cell medium-2 buttonToggle">
+        <mat-button-toggle-group #group="matButtonToggleGroup"
+                                 [value]="selectedSkillType"
+                                 (change)="changeSkillType(group.value)">
+          <mat-button-toggle [value]="'Skills View'"
+                             [ngClass]="{'active': selectedSkillType === 'Skills View'}">Skills View</mat-button-toggle>
+          <mat-button-toggle [value]="'Course View'"
+                             [ngClass]="{'active': selectedSkillType === 'Course View'}">Course View</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+    </section>
+  </div>
+</section>
+
+
+<section class=" grid-x  grid-padding-x  grid-margin-x">
+
+  <!-- DESCRIPTION OF SKILLS ROADMAP -->
+  <div class="cell">
+
+    <p *ngIf="selectedSkillType == 'Skills View'"
+       class="font-size"> Below are the <b>TOP SKILLS</b> for your pathway.</p>
+    <p *ngIf="selectedSkillType == 'Skills View'"
+       class="font-size"> You will gain these skills and more in your ADVANCE degree coursework.</p>
+    <p *ngIf="selectedSkillType == 'Course View'"
+       class="font-size">Below is an example of the <b>COURSES</b> you will take in this Pathway.</p>
+  </div>
+
+
+  <!-- SENDING DATA IN SHARED COMP: ROADMAP-MEDIUM -->
+
+
+  <div class="cell medium-11">
+    <gmu-roadmap-medium [mode]="selectedSkillType"
+        [student]="student"></gmu-roadmap-medium>
+  </div>
+
+<!--LINE AND DOWN ARROW -->
+<section class="cell grid-x text-center ">
+  <div class="cell line ">
+    <span class="material-icons south-arrow">
+      south
+    </span>
+  </div>
+</section>
+
+
+<!-- OCCUPATION CARDS -->
+<section class="cell grid-y">
+  <div class="cell ">
+    <!-- <gmu-career-opportunities [occupationCardList]="pathway.occupationList"
+                                (onOccupationClick)="onOccupationClick(pathway, $event)"></gmu-career-opportunities> -->
+    <gmu-student-view-skill-roadmap-career-ready [pathway]="pathway"
+                                                 (onAreaOfStudyClick)="onAreaOfStudyClick($event)"
+                                                 (onOccupationClick)="onOccupationClick($event)"></gmu-student-view-skill-roadmap-career-ready>
+  </div>
+</section>

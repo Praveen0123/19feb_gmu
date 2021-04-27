@@ -1,0 +1,64 @@
+.bold {
+  font-weight: bold;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.grid-padding-y-bottom {
+  >.cell {
+    padding-top   : 0;
+    padding-bottom: 0.875rem;
+  }
+}
+
+// style for bottom sheet
+.skill-definition-bottom-sheet {
+  height: rem-calc(400) !important;
+  width : rem-calc(500) !important;
+}
+
+.my-component-bottom-sheet1 {
+  padding: rem-calc(0) !important;
+
+  @include breakpoint(medium) {
+    overflow: hidden !important;
+    width   : 90vw;
+  }
+
+  @include breakpoint(large) {
+    width    : 80vw;
+    max-width: rem-calc(1160) !important;
+  }
+}
+
+.search-button {
+  color         : $white;
+  background    : $color-secondary;
+  border-radius : rem-calc(30);
+  letter-spacing: 1.12px;
+  padding       : 0 rem-calc(14);
+  font-size     : rem-calc(14);
+}
+
+.splash_page_video {
+  width: rem-calc(556);
+  
+  .mat-dialog-container {
+       padding: 0;
+} 
+   
+}
+
+.get_to_know_popup {
+    width: rem-calc(1000);
+  }

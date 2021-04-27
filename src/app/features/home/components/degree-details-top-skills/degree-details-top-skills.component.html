@@ -1,0 +1,40 @@
+<section class="grid-y grid-margin-y">
+
+  <!-- HEADER: TOP SKILLS GAINED IN THIS MAJOR -->
+  <div class="cell">
+    <gmu-section-header [title]="'Top Skills Gained in this Pathway'"></gmu-section-header>
+  </div>
+
+
+  <!-- ESSENTIAL & TECHNICAL SKILLS LIST -->
+  <div class="cell">
+
+    <section class="grid-x skills-container grid-margin-x">
+
+      <!-- ESSENTIAL SKILLS -->
+      <div class="cell auto">
+
+        <gmu-skill-list [title]="'Essential'"
+                        [subTitle]="'Skills'"
+                        [topX]="4"
+                        [skillList]="essentialSkillList"
+                        (onClickSkill)="openBottomSheet($event)"></gmu-skill-list>
+
+      </div>
+
+      <!-- TECHNICAL SKILLS -->
+      <div class="cell auto">
+
+        <gmu-skill-list [title]="'Technical'"
+                        [subTitle]="'Skills'"
+                        [topX]="4"
+                        [skillList]="technicalSkillList"
+                        (onClickSkill)="openBottomSheet($event)"></gmu-skill-list>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</section>

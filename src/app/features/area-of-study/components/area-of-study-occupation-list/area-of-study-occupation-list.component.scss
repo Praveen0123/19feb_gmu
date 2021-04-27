@@ -1,0 +1,37 @@
+@import 'common';
+
+:host {
+  display: block;
+}
+
+mat-form-field {
+  width: rem-calc(60);
+
+  @include breakpoint(400) {
+    width: rem-calc(100);
+  }
+
+  @include breakpoint(small) {
+    width: rem-calc(150);
+  }
+}
+
+mat-label {
+  color: $color-header;
+}
+
+gmu-occupation-card {
+  display: inline-block;
+  margin : 0 rem-calc(12) rem-calc(24) rem-calc(12);
+}
+
+.small-offset-1-right {
+
+  @include breakpoint(small) {
+    margin-right: 8.33333333%;
+  }
+
+  @include breakpoint(medium) {
+    margin-right: 8.33333333%;
+  }
+}

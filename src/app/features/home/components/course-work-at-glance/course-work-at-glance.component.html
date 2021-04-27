@@ -1,0 +1,80 @@
+<section class="grid-y">
+
+  <!-- HEADER: COURSE WORK AT-A-GLANCE  -->
+  <div class="cell">
+    <gmu-section-header [title]="'Course Work At-A-Glance'"></gmu-section-header>
+  </div>
+
+
+  <!-- COURSE SUMMARY -->
+  <div class="cell">
+
+    <section class="course-container">
+
+      <!-- NOVA CLASSES/CREDITS -->
+      <section class="grid-x align-center-middle text-center">
+        <div class="cell xsmall-4 bold">NOVA</div>
+        <div class="cell shrink credits">
+          {{pathwaySummaryModel.novaClassCount}} Classes
+          ({{pathwaySummaryModel.novaCredits}} Credits)
+        </div>
+      </section>
+
+      <!-- MASON CLASSES/CREDITS -->
+      <section class="grid-x align-center-middle text-center">
+        <div class="cell xsmall-4 bold">+ MASON</div>
+        <div class="cell shrink credits">
+          {{pathwaySummaryModel.masonClassCount}} Classes
+          ({{pathwaySummaryModel.masonCredits}} Credits)
+        </div>
+      </section>
+
+      <div class="line"></div>
+
+      <!-- TOTAL -->
+      <section class="grid-x align-center-middle text-center">
+        <div class="cell xsmall-4 bold"> TOTAL </div>
+        <div class="cell shrink credits">
+          {{totalClassCount}} Classes
+          ({{totalCreditCount}} Credits)
+        </div>
+      </section>
+
+    </section>
+
+  </div>
+
+
+  <!-- VIEW SAMPLE COURSE OUTLINE -->
+  <div class="cell text-center">
+
+    <button mat-raised-button
+            class="course-button"
+            (click)="getCourseDetails()">
+
+      <span class="material-icons">school</span> VIEW SAMPLE COURSE OUTLINE
+
+    </button>
+
+  </div>
+
+
+  <div class="cell text-center">
+    <span class="or-message message__label message__label--bold message__label--xlarge">OR</span>
+  </div>
+
+
+  <!-- VIEW COURSE PDF -->
+  <div class="cell text-center">
+
+    <button mat-raised-button
+            class="course-button"
+            (click)="getCoursePDF()">
+
+      <span class="material-icons">picture_as_pdf</span> VIEW COURSE PDF
+
+    </button>
+
+  </div>
+
+</section>

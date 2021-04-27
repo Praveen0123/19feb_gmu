@@ -1,0 +1,24 @@
+<ng-container *ngIf="{ recentSearches: recentSearches$ | async, error: error$ | async
+                     } as dataOwner">
+
+  <section class="grid-y grid-margin-y">
+
+    <!--MESSAGE -->
+    <div class="cell">
+      <div class="message__label message__label--xlarge message__label--bold">Welcome Success Coach! </div>
+      <div class="message__label message__label--large">Use the search bar to find students and access their ADVANCE information.</div>
+    </div>
+
+    <!-- SEARCH BOX -->
+    <div class="cell">
+      <gmu-search-box-form (onFormSearchSubmit)="onSearchStudent($event)"></gmu-search-box-form>
+    </div>
+    <gmu-student-not-found *ngIf="dataOwner.error"></gmu-student-not-found>
+    <!-- RECENT SEARCHES -->
+    <ng-container *ngIf="dataOwner.recentSearches">
+    <div class="cell">
+      <gmu-coach-recent-searches [recentDataSource]="dataOwner.recentSearches"></gmu-coach-recent-searches>
+    </div>
+  </ng-container>
+  </section>
+</ng-container>

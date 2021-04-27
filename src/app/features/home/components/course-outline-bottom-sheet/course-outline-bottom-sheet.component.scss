@@ -1,0 +1,34 @@
+@import 'common';
+
+:host {
+  display: block;
+}
+
+gmu-section-header {
+  margin-bottom: rem-calc(20);
+}
+
+gmu-course-outline {
+  margin-bottom: rem-calc(16);
+
+  &.nova-courses {
+    @include breakpoint(small up) {
+      border-right: rem-calc(3) solid $color-header;
+    }
+  }
+}
+
+.course-outline-header {
+  padding: rem-calc(20) 0;
+}
+
+.course-list-container {
+  height  : 400px;
+  overflow: auto;
+
+  @include breakpoint(medium) {
+    height  : 100%;
+    overflow: inherit;
+  }
+
+}

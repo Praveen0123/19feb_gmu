@@ -1,0 +1,17 @@
+@import "common";
+
+:host {
+  display: block;
+}
+
+gmu-connect-with-coach {
+  @include breakpoint(medium) {
+    margin: 0;
+  }
+}
+
+.connect-with-coach-grid {
+  @include breakpoint(medium) {
+    height: 75%;
+  }
+}

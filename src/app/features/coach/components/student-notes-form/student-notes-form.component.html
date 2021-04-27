@@ -1,0 +1,38 @@
+<form novalidate
+      autocomplete="off"
+      [formGroup]="formGroup"
+      (ngSubmit)="onFormSubmit()">
+
+  <section class="grid-x grid-margin-x align-middle">
+
+    <!-- SEARCH TERM -->
+    <div class="cell auto">
+
+      <mat-form-field appearance="outline">
+
+        <mat-label>Add a New Note</mat-label>
+
+        <input matInput
+               placeholder="Write your notes here..."
+               formControlName="body"
+               autocomplete="none"
+               required />
+      </mat-form-field>
+
+    </div>
+
+    <!-- FORM BUTTON -->
+    <div class="cell">
+      <section class="grid-x align-middle align-justify">
+        <div class="cell auto text-right">
+          <button mat-raised-button
+                  type="submit"
+                  [disabled]="!formGroup.valid"
+                  class="submit-button">SUBMIT</button>
+        </div>
+      </section>
+    </div>
+
+  </section>
+
+</form>

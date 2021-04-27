@@ -1,0 +1,28 @@
+@import 'common';
+
+:host {
+  display: block;
+}
+
+h3 {
+  color      : $black;
+  font-size  : rem-calc(20);
+  font-weight: bold;
+
+  &.title {
+    display       : inline-block;
+    padding       : 0 rem-calc(8) 0 rem-calc(7);
+    text-transform: initial;
+    font-weight   : bold;
+  }
+}
+
+.view-all-button {
+  font-size: rem-calc(12);
+  color    : $color-primary;
+  padding  : 0;
+}
+
+gmu-occupation-list-scroll {
+  margin-bottom: rem-calc(40);
+}

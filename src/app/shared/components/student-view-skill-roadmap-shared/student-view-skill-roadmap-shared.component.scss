@@ -1,0 +1,71 @@
+@import "common";
+
+.line {
+  position: relative;
+  margin: rem-calc(15) rem-calc(70) rem-calc(0) rem-calc(70);
+  border-bottom: solid rem-calc(3) $black !important;
+  border-right: solid rem-calc(3) $black !important;
+  border-left: solid rem-calc(3) $black !important;
+  border-width: rem-calc(2) rem-calc(0) rem-calc(2) rem-calc(2);
+  height: rem-calc(15);
+  width: 75%;
+}
+.margin-top {
+  margin-top: rem-calc(15);
+}
+.south-arrow {
+  font-size: rem-calc(32);
+  margin-top: rem-calc(14);
+  color: $black;
+}
+
+.active {
+  position: relative;
+  background-color: $black !important;
+  color: $white;
+  border: rem-calc(1) solid $black;
+}
+
+.active:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 99%;
+  margin-left: rem-calc(-50);
+  width: 0;
+  height: 0;
+  border-top: solid rem-calc(8) $black !important;
+  border-left: solid rem-calc(8) transparent !important;
+  border-right: solid rem-calc(8) transparent !important;
+}
+
+.mat-button-toggle-checked {
+  background-color: $black;
+  color: $white;
+  font-weight: normal;
+}
+
+mat-button-toggle {
+  border: rem-calc(1) solid $black;
+  font-weight: normal;
+  background-color: $white;
+  color: $black;
+}
+
+.mat-button-toggle-standalone,
+.mat-button-toggle-group {
+  overflow: unset;
+}
+
+.font-size {
+  font-weight: 402;
+  font-size: rem-calc(16);
+  margin-top: rem-calc(14);
+}
+
+.padding-left {
+  padding-left: rem-calc(50);
+}
+// .buttonToggle {
+//   margin-right: 12.5%;
+// }

@@ -1,0 +1,6 @@
+<ng-container *ngIf="{registrationResult: registrationResults$ | async} as dataOwner">
+  <gmu-confirm-sign-up-form 
+    [email]="dataOwner.registrationResult?.userName" 
+    (confirmRegistrationEventEmitter)="onConfirm($event)">
+  </gmu-confirm-sign-up-form>
+</ng-container>

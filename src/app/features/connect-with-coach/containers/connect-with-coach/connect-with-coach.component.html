@@ -1,0 +1,17 @@
+<ng-container *ngIf="{ pathwayList:pathwayList$ | async
+                     } as dataOwner">
+
+  <section class="grid-y grid-margin-y">
+
+    <div class="cell">
+      <gmu-back-button></gmu-back-button>
+    </div>
+
+    <div class="cell">
+      <gmu-connect-with-coach-form [pathwaySourceList]="dataOwner.pathwayList"
+                                   (onFormSubmit)="onConnectWithCoachFormSubmit($event)"></gmu-connect-with-coach-form>
+
+    </div>
+  </section>
+
+</ng-container>

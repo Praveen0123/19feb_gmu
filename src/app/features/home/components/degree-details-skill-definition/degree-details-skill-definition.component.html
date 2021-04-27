@@ -1,0 +1,30 @@
+<section class="grid-y">
+
+  <!-- HEADER -->
+  <div class="cell">
+    <section class="grid-x">
+      <!-- HEADING -->
+      <div class="cell auto">
+        <h2 class="headingStyle">Skill Definition:</h2>
+        <h3><b>{{data.label }}</b></h3>
+      </div>
+
+      <!-- CLOSE THE BOTTOM SHEET -->
+      <div class="cell shrink"
+           (click)="afterCloseSheet($event)">
+        <a class="link">
+          <mat-icon aria-hidden="false"
+                    aria-label="clear"
+                    class="clear">clear</mat-icon>
+        </a>
+      </div>
+    </section>
+  </div>
+
+
+  <!-- SKILLZ -->
+  <div class="cell">
+    {{data.description}}
+  </div>
+
+</section>

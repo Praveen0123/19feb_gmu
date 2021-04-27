@@ -1,0 +1,52 @@
+<section class="grid-x align-center align-bottom">
+
+  <div class="cell text-left shrink ">
+    <span class="material-icons dehaze"
+          (click)="onClickDehaze()">
+      dehaze
+    </span>
+  </div>
+  <!-- PARTNERSHIP -->
+  <div class="cell shrink advance-container">
+    <a class="link advance"
+       (click)="onClickAdvance()">
+      ADVANCE
+    </a>
+    <div class="partnership">a partnership with</div>
+  </div>
+
+  <!-- NOVA ICON -->
+  <div class="cell shrink">
+    <mat-icon class="icon-nova"
+              [svgIcon]="'icon-nova'"></mat-icon>
+  </div>
+
+  <!-- PLUS ICON -->
+  <div class="cell shrink align-self-middle">
+    <i class="fa fa-plus fa-2x plusStyle"
+       aria-hidden="true"></i>
+  </div>
+
+  <!-- GMU ICON -->
+  <div class="cell shrink">
+    <mat-icon class="icon-gmu"
+              [svgIcon]="'icon-gmu'"></mat-icon>
+  </div>
+  <!-- SIGN-IN -->
+  <!-- <div class="cell shrink align-self-bottom text-center w-60-px">
+    <ng-container *ngIf="userDetails">
+      <a (click)="onClickSignOut()">
+        <mat-icon class="sign-in"
+                  [svgIcon]="'icon-login'"></mat-icon>
+        <h5>Sign Out</h5>
+      </a>
+    </ng-container>
+    <ng-container *ngIf="!userDetails">
+    <a (click)="onClickSignIn()">
+      <mat-icon class="sign-in"
+                [svgIcon]="'icon-login'"></mat-icon>
+      <h5>Sign In</h5>
+    </a>
+    </ng-container>
+  </div> -->
+</section>

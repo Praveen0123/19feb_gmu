@@ -1,0 +1,102 @@
+<ng-container *ngIf="alive">
+<form #form="ngForm"
+      novalidate
+      autocomplete="off"
+      autocomplete="chrome-off"
+      [formGroup]="formGroup"
+      (ngSubmit)="onFormSubmit()">
+
+
+  <!-- MESSAGE AND STUDENT STATUS-->
+  <section class="grid-x grid-margin-x  grid-margin-y grid-padding-y">
+
+    <!-- Message -->
+    <div class="cell">
+
+      <span class=" message__label--bold message__label--large"> Student Information</span>
+
+    </div>
+
+  </section>
+
+  <!-- ADDITIONAL FORM FILED -->
+  <!-- <section class="grid-x grid-margin-x  grid-margin-y background set-padd"> -->
+
+  <!-- COHORT YEAR -->
+  <!-- <section class="grid-x  grid-margin-x grid-padding-y background">
+    <div class="cell">
+      <mat-form-field appearance="outline">
+        <mat-label>What year did you start your studies at NOVA? </mat-label>
+        <mat-select id="area"
+                    formControlName="cohortYear"
+                    placeholder="Please select an option."
+                    (selectionChange)="onSelectionCohortYear($event.value)"
+                    required>         
+          <mat-option *ngFor="let year of cohortYears" [value]="year">{{year}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="formGroup.controls.cohortYear.hasError('required')
+                          || (formGroup.get('cohortYear').invalid && formGroup.get('cohortYear').touched)">
+          You must select an option.
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </section> -->
+
+
+  <!-- PATHWAY DETAILS FORM -->
+  <section class="grid-x grid-margin-x background set-padd ">
+    <div class="cell">
+      <gmu-pathway-year-explorer #explorer
+                                 [pathwayList]="pathwayList"
+                                 (getPathwayId)="pathwayValue($event)"
+                                 (onCohortYearSelection)="onSelectionCohortYear($event)"
+                                 [searchButtonVisible]="false"></gmu-pathway-year-explorer>
+    </div>
+  </section>
+
+
+  <!-- COACH DETAILS -->
+  <section class="grid-x  grid-margin-x background  grid-padding-y">
+    <div class="cell">
+      <mat-form-field appearance="outline">
+        <mat-label>Who is your success coach?</mat-label>
+        <mat-select formControlName="coachName"
+                    required>
+          <mat-option class="alternate"
+                      *ngFor="let option of coachList"
+                      [value]="option.id">{{option.name}}</mat-option>
+        </mat-select>
+
+        <mat-error *ngIf="formGroup.controls.coachName.hasError('required')
+                          || (formGroup.get('coachName').invalid && formGroup.get('coachName').touched)">
+          You must select an option.
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </section>
+
+  <!--REQUIRED AND SUBMIT BUTTONS -->
+  <section class="grid-x ">
+    <div class="cell">
+      <section class="grid-x align-middle align-justify">
+
+        <div class="cell auto">
+          <div class="required">Required <span>*</span></div>
+        </div>
+
+        <div class="cell auto text-right">
+          <!-- BUTTONS FOR ADD STUDENT AND MANAGE STUDENT  -->
+          <button mat-raised-button
+                  type="submit"
+                  [disabled]="!formGroup.valid"
+                  class="search-button">
+                   SAVE
+          </button>
+        </div>
+
+      </section>
+    </div>
+  </section>
+
+</form>
+</ng-container>

@@ -1,0 +1,44 @@
+@import "common";
+@import "~@angular/material/theming";
+
+.cell {
+  &.course-header {
+    background-color: $black;
+    color: $white;
+    height: rem-calc(30);
+    padding-top: rem-calc(15);
+    margin-top: rem-calc(15);
+    border-top-left-radius: rem-calc(10);
+    border-top-right-radius: rem-calc(10);
+    font-weight: 500;
+  }
+
+  &.course-item {
+    border-bottom: solid rem-calc(0.4) $color-primary;
+    padding-top: rem-calc(10);
+    padding-bottom: rem-calc(5);
+
+    &.odd {
+      background-color: $color6;
+    }
+  }
+}
+
+// .mat-checkbox {
+//   pointer-events              : none;
+//   cursor                      : none;
+// }
+
+.content {
+  @include breakpoint(medium up) {
+    @include mat-elevation-transition;
+    @include mat-elevation(2);
+  }
+}
+
+.font-weight {
+  font-weight: 500;
+}
+ol {
+  margin: rem-calc(2) rem-calc(-9);
+}

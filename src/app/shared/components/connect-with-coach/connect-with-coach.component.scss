@@ -1,0 +1,46 @@
+@import "common";
+
+:host {
+  border-radius: rem-calc(5px);
+  border: solid 1px $color-primary;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  width: rem-calc(302);
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+.messaging {
+  background-color: $color-secondary;
+  padding: rem-calc(5) rem-calc(9);
+}
+
+h2 {
+  color: $color-header;
+  font: 700 rem-calc(18) Roboto;
+  margin: 0;
+  padding: rem-calc(7) rem-calc(9) rem-calc(2) rem-calc(9);
+}
+
+p {
+  color: $white;
+  font-family: Roboto;
+  font-size: rem-calc(12);
+  line-height: 1.25;
+  margin: 0;
+}
+
+.mat-icon {
+  &.icon-coach {
+    bottom: rem-calc(6);
+    height: rem-calc(67);
+    position: absolute;
+    right: rem-calc(6);
+    width: rem-calc(72);
+  }
+}

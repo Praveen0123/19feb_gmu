@@ -1,0 +1,89 @@
+@import "common";
+@import "~@angular/material/theming";
+
+:host {
+  display: block;
+  height : 100%;
+
+  // border: solid 2px deeppink;
+
+  // @include breakpoint(small) {
+  //   border: solid 2px dodgerblue;
+  // }
+
+  // @include breakpoint(medium) {
+  //   border: solid 2px orange;
+  // }
+
+  // @include breakpoint(large) {
+  //   border: solid 2px limegreen;
+  // }
+
+  // @include breakpoint(xlarge) {
+  //   border: solid 2px purple;
+  // }
+
+}
+
+.page-container {
+  min-height: 55vh;
+
+  padding-top   : rem-calc(16);
+  padding-bottom: rem-calc(32);
+
+  @include breakpoint(medium) {
+    padding-top   : rem-calc(23);
+    padding-bottom: rem-calc(40);
+  }
+}
+
+.md-grid-container {
+
+  @include breakpoint(small down) {
+    padding-right: rem-calc(24);
+    padding-left : rem-calc(24);
+  }
+
+  @include breakpoint(medium) {
+    @include mat-elevation-transition;
+    @include mat-elevation(2);
+  }
+}
+
+.loading {
+  color      : white;
+  font-size  : rem-calc(20);
+  line-height: 1.5;
+  padding-top: 50px;
+
+  @include breakpoint(medium) {
+    font-size: rem-calc(28);
+  }
+}
+
+  mat-drawer-content {
+    background-color: $white;
+  }
+  mat-drawer {
+    width: rem-calc(110);
+  }
+
+  .active {
+    font-weight: 700 !important; 
+  }
+
+  ul {
+
+    padding: 0;
+  
+     li {
+      font-weight: 300 ;
+      margin-bottom: rem-calc(15);
+    }
+
+    li a {
+      text-decoration: none;
+      color: $color-header ;
+  }
+  }
+  

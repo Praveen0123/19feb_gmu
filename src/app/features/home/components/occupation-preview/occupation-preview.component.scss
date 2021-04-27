@@ -1,0 +1,27 @@
+@import 'common';
+
+
+:host {
+  border        : solid 1px $color-primary;
+  display       : block;
+  padding-bottom: rem-calc(20);
+}
+
+h3 {
+  background-color: $color-primary;
+  color           : $white;
+  font-size       : rem-calc(28);
+  font-weight     : bold;
+  margin          : 0 0 rem-calc(20) 0;
+  padding         : rem-calc(20);
+}
+
+.at-a-glance {
+  border-bottom: solid 1px $color-primary;
+  margin-bottom: rem-calc(12);
+}
+
+
+.grid-container {
+  padding: rem-calc(20);
+}

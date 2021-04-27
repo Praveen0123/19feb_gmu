@@ -1,0 +1,47 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-gmuadvancetoolkit-dev-193727-authRole",
+      "UnauthRoleArn": "arn:aws:iam::540204739101:role/amplify-gmuadvancetoolkit-dev-193727-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::540204739101:role/amplify-gmuadvancetoolkit-dev-193727-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-gmuadvancetoolkit-dev-193727-deployment",
+      "UnauthRoleName": "amplify-gmuadvancetoolkit-dev-193727-unauthRole",
+      "StackName": "amplify-gmuadvancetoolkit-dev-193727",
+      "StackId": "arn:aws:cloudformation:us-east-2:540204739101:stack/amplify-gmuadvancetoolkit-dev-193727/ebbffd20-1e35-11eb-99a4-06ef05137efa",
+      "AmplifyAppId": "d1r3n650a7wfia"
+    },
+    "categories": {
+      "auth": {
+        "gmuadvancetoolkit3f0842c5": {
+          "userPoolId": "us-east-2_FnAGGGW6W",
+          "userPoolName": "gmucoursesapp27b70532_userpool_27b70532-dev",
+          "webClientId": "3eqilqr9s9lp0upk7auq2mhc09",
+          "nativeClientId": "7926e7bbrci4ccqipdt9922f3v",
+          "identityPoolId": "us-east-2:707963a3-1021-4424-82b6-5fda2750f708",
+          "identityPoolName": "gmucoursesapp27b70532_identitypool_ce7c7b7b__dev",
+          "allowUnauthenticatedIdentities": false,
+          "authRoleArn": "arn:aws:iam::540204739101:role/amplify-gmucoursesapp-dev-195107-authRole",
+          "authRoleName": "amplify-gmucoursesapp-dev-195107-authRole",
+          "unauthRoleArn": "arn:aws:iam::540204739101:role/amplify-gmucoursesapp-dev-195107-unauthRole",
+          "unauthRoleName": "amplify-gmucoursesapp-dev-195107-unauthRole",
+          "hostedUIProviderCreds": "[]"
+        },
+        "gmuadvancetoolkit64f835d9": {
+          "userPoolId": "us-east-2_FnAGGGW6W",
+          "userPoolName": "gmucoursesapp27b70532_userpool_27b70532-dev",
+          "webClientId": "3eqilqr9s9lp0upk7auq2mhc09",
+          "nativeClientId": "7926e7bbrci4ccqipdt9922f3v",
+          "identityPoolId": "us-east-2:707963a3-1021-4424-82b6-5fda2750f708",
+          "identityPoolName": "gmucoursesapp27b70532_identitypool_ce7c7b7b__dev",
+          "allowUnauthenticatedIdentities": false,
+          "authRoleArn": "arn:aws:iam::540204739101:role/amplify-gmucoursesapp-dev-195107-authRole",
+          "authRoleName": "amplify-gmucoursesapp-dev-195107-authRole",
+          "unauthRoleArn": "arn:aws:iam::540204739101:role/amplify-gmucoursesapp-dev-195107-unauthRole",
+          "unauthRoleName": "amplify-gmucoursesapp-dev-195107-unauthRole",
+          "hostedUIProviderCreds": "[]"
+        }
+      }
+    }
+  }
+}

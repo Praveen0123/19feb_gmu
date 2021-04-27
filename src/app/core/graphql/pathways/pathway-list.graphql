@@ -1,0 +1,29 @@
+query pathwayList {
+  pathwayList {
+    ...pathwayFields
+    bachelorDegree {
+      ...degreeFields
+    }
+    associateDegree {
+      ...degreeFields
+    }
+  }
+}
+query fullPathwayList {
+  allPathwayList {
+    ...pathwayFields
+    bachelorDegree {
+      ...degreeFields
+    }
+    associateDegree {
+      ...degreeFields
+    }
+  }
+}
+fragment pathwayFields on Pathway {
+  id
+  areaOfStudy
+  academicYear
+  active
+  visible
+}

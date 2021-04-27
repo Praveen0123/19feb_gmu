@@ -1,0 +1,70 @@
+@import "common";
+@import "~@angular/material/theming";
+
+.router-outlet-wrapper {
+  @include breakpoint(medium up) {
+    @include mat-elevation-transition;
+    @include mat-elevation(2);
+    padding: rem-calc(10);
+  }
+}
+
+.tabHeading {
+  color: $color-header;
+  font-size: rem-calc(25);
+  font-weight: bold;
+}
+
+.tabSubHeading {
+  color: $black;
+  font-size: rem-calc(20);
+  font-weight: bold;
+  margin-top: rem-calc(-26);
+}
+
+.tabSubHeading2 {
+  color: $black;
+  font-size: rem-calc(20);
+}
+
+nav {
+  left: rem-calc(1);
+}
+
+.arrow2-down {
+  width: rem-calc(15);
+  height: rem-calc(15);
+  border-top: rem-calc(0) solid $gray-400;
+  border-right: rem-calc(2) solid $gray-400;
+  border-bottom: rem-calc(2) solid $gray-400;
+  border-left: rem-calc(0) solid $gray-400;
+  position: absolute;
+  bottom: rem-calc(-10);
+  //  left: 12%;
+  transform: rotate(45deg);
+  background: $white;
+  //padding-bottom: rem-calc(10);
+}
+
+.arrow-milestone {
+  left: 12%;
+}
+
+.arrow-profile {
+  left: 37%;
+}
+
+.arrow-roadmap {
+  left: 62%;
+}
+
+.arrow-transcript {
+  left: 87%;
+}
+
+.arrow2 {
+  position: relative;
+  z-index: 1;
+  margin-top: rem-calc(-24);
+  border-bottom: solid rem-calc(2) $gray-400;
+}

@@ -1,0 +1,14 @@
+@import 'common';
+
+:host {
+  display: block;
+}
+
+
+.mat-icon {
+
+  &.icon-white-arrow {
+    height: rem-calc(40);
+    width : rem-calc(120);
+  }
+}
